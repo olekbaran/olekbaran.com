@@ -1,0 +1,20 @@
+{
+  "name": "Olek Baran",
+  "short_name": "Olek Baran",
+  "description": "Front-end web developer",
+  "icons": [
+    {
+      "src": "/images/google-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "background_color": "#000000",
+  "theme_color": "#00B7CE",
+  "id": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "display": "standalone",
+  "dir": "ltr"
+}
