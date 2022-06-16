@@ -1,3 +1,7 @@
+<a href="https://olekbaran.com" align="center">
+  <img src="https://user-images.githubusercontent.com/74045117/174071293-7b3e88dd-75dc-4272-9e06-45616f511867.png" width="100%">
+</a>
+
 # olekbaran.com
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -7,8 +11,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
