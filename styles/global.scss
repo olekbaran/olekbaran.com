@@ -1,0 +1,37 @@
+@use 'styles/abstracts/variables' as vars;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: vars.$font-primary, vars.$fallback-font;
+  color: vars.$color-white;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: vars.$color-primary vars.$color-black;
+}
+
+*::selection {
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: vars.$color-primary;
+}
+
+body {
+  background: vars.$color-black;
+}

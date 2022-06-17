@@ -5,5 +5,4 @@ export interface Idictionary {
       description: string;
     };
   };
-  helloWorld: string;
 }

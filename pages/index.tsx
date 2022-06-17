@@ -2,14 +2,13 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import { config } from 'config';
 import { en, pl } from 'locales';
 
 const Home: NextPage = () => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'en' ? en : pl;
-  const url = `https://${config.domain}${router.pathname}`;
+  const url = `https://${process.env.NEXT_PUBLIC_DOMAIN}${router.pathname}`;
 
   return (
     <div>
@@ -26,7 +25,7 @@ const Home: NextPage = () => {
         <meta property="twitter:title" content={t.seo.home.title} />
         <meta property="twitter:description" content={t.seo.home.description} />
       </Head>
-      <h1>{t.helloWorld}</h1>
+      <h1>Home</h1>
     </div>
   );
 };
