@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import { en, pl } from 'locales';
+import { Header } from 'components';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
   const url = `https://${process.env.NEXT_PUBLIC_DOMAIN}${router.pathname}`;
 
   return (
-    <div>
+    <>
       <Head>
         <title>{t.seo.home.title}</title>
         <meta name="description" content={t.seo.home.description} />
@@ -25,8 +26,10 @@ const Home: NextPage = () => {
         <meta property="twitter:title" content={t.seo.home.title} />
         <meta property="twitter:description" content={t.seo.home.description} />
       </Head>
-      <h1>Home</h1>
-    </div>
+      <main>
+        <Header />
+      </main>
+    </>
   );
 };
 

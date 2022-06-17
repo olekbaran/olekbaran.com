@@ -1,0 +1,7 @@
+@use 'styles/abstracts/mixins' as mixins;
+
+.header {
+  height: 6rem;
+  padding: 0 6rem;
+  @include mixins.flex(space-between, center, row);
+}

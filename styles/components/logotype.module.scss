@@ -1,0 +1,35 @@
+@use 'styles/abstracts/variables' as vars;
+@use 'styles/abstracts/mixins' as mixins;
+
+.logotype {
+  margin-right: 1rem;
+  @include mixins.flex(flex-start, center, row);
+
+  &__image {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-right: 1rem;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: 0.2s ease;
+
+    @media screen and (min-width: vars.$md) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s ease;
+
+    @media screen and (min-width: vars.$md) {
+      &:hover {
+        color: vars.$color-primary;
+      }
+    }
+  }
+}
