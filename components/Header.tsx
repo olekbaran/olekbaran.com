@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import { appRoutes } from 'config';
 import { Logotype } from 'components';
 
 import styles from 'styles/components/header.module.scss';
@@ -16,7 +17,24 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <Logotype />
-      <nav>
+      <nav className={styles.nav}>
+        <ul className={styles.navRoutes}>
+          {Object.values(appRoutes).map((route) => (
+            <li key={route.slug} className={styles.route}>
+              <Link href={route.slug}>
+                <a
+                  className={`${styles.route__name} ${
+                    router.pathname === route.slug
+                      ? styles['route__name--active']
+                      : ''
+                  }`}
+                >
+                  {route.name[locale!]}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <div className={styles.locales}>
           <Link href={asPath} scroll={false}>
             <a

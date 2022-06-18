@@ -13,4 +13,11 @@ export const pl: Idictionary = {
       },
     },
   },
+  nav: {
+    home: 'Strona główna',
+    aboutMe: 'O mnie',
+    projects: 'Projekty',
+    uses: 'Sprzęt',
+    contact: 'Kontakt',
+  },
 };

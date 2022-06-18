@@ -13,4 +13,11 @@ export const en: Idictionary = {
       },
     },
   },
+  nav: {
+    home: 'Home',
+    aboutMe: 'About me',
+    projects: 'Projects',
+    uses: 'Uses',
+    contact: 'Contact',
+  },
 };

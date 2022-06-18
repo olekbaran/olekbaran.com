@@ -10,4 +10,11 @@ export interface Idictionary {
       };
     };
   };
+  nav: {
+    home: string;
+    aboutMe: string;
+    projects: string;
+    uses: string;
+    contact: string;
+  };
 }

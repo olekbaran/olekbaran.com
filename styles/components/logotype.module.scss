@@ -11,9 +11,10 @@
     margin-right: 1rem;
     border-radius: 100%;
     overflow: hidden;
-    transition: 0.2s ease;
 
     @media screen and (min-width: vars.$lg) {
+      transition: 0.2s ease;
+
       &:hover {
         transform: scale(1.2);
       }
@@ -24,9 +25,10 @@
     font-size: 1.125rem;
     font-weight: 700;
     text-decoration: none;
-    transition: 0.2s ease;
 
     @media screen and (min-width: vars.$lg) {
+      transition: 0.2s ease;
+
       &:hover {
         color: vars.$color-primary;
       }
