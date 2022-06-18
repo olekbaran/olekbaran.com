@@ -13,7 +13,7 @@
     overflow: hidden;
     transition: 0.2s ease;
 
-    @media screen and (min-width: vars.$md) {
+    @media screen and (min-width: vars.$lg) {
       &:hover {
         transform: scale(1.2);
       }
@@ -26,7 +26,7 @@
     text-decoration: none;
     transition: 0.2s ease;
 
-    @media screen and (min-width: vars.$md) {
+    @media screen and (min-width: vars.$lg) {
       &:hover {
         color: vars.$color-primary;
       }

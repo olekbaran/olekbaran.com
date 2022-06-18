@@ -4,5 +4,10 @@ export interface Idictionary {
       title: string;
       description: string;
     };
+    components: {
+      images: {
+        avatar: string;
+      };
+    };
   };
 }
