@@ -16,5 +16,6 @@ export interface Idictionary {
     projects: string;
     uses: string;
     contact: string;
+    blog: string;
   };
 }

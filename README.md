@@ -11,7 +11,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, add the environment variables to the `.env` file
 
 ```
-NEXT_PUBLIC_DOMAIN={your_domain}
+NEXT_PUBLIC_APP_DOMAIN={your_app_domain}
+NEXT_PUBLIC_BLOG_DOMAIN={your_blog_domain}
 ```
 
 Then, run the development server:

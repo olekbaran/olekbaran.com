@@ -19,5 +19,6 @@ export const en: Idictionary = {
     projects: 'Projects',
     uses: 'Uses',
     contact: 'Contact',
+    blog: 'Blog',
   },
 };

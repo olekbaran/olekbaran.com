@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'en' ? en : pl;
-  const url = `https://${process.env.NEXT_PUBLIC_DOMAIN}${router.pathname}`;
+  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
 
   return (
     <>
@@ -28,6 +28,8 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Header />
+        <section />
+        <section />
       </main>
     </>
   );

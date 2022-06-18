@@ -1,19 +1,27 @@
 /* Colors */
 $color-primary: #00b7ce;
 $color-white: #ffffff;
-$color-black: #000000;
 $color-grey: #888888;
+$color-black: #000000;
+
+/* Shadows */
+$shadow-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
 
 /* Typography */
 $font-primary: 'Inter';
 $fallback-font: sans-serif;
 
 /* Layout */
-$max-width: 2160px;
+$max-layout-width: 2160px;
+$desktop-layout-paddings: 15rem;
+$mobile-layout-paddings: 1.5rem;
+
+/* Components */
+$header-width: 5rem;
 
 /* Breakpoints */
 $sm: 640px;
 $md: 768px;
-$lg: 1024px;
+$lg: 1041px;
 $xl: 1280px;
-$xxl: 1536px;
+$xxl: 1473px;

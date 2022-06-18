@@ -1,2 +1,2 @@
-export { Logotype } from './Logotype';
 export { Header } from './Header';
+export { Logotype } from './Logotype';

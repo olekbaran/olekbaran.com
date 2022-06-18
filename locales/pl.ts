@@ -19,5 +19,6 @@ export const pl: Idictionary = {
     projects: 'Projekty',
     uses: 'Sprzęt',
     contact: 'Kontakt',
+    blog: 'Blog',
   },
 };

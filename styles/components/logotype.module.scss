@@ -2,7 +2,6 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .logotype {
-  margin-right: 1rem;
   @include mixins.flex(flex-start, center, row);
 
   &__image {
@@ -22,7 +21,6 @@
   }
 
   &__text {
-    font-size: 1.125rem;
     font-weight: 700;
     text-decoration: none;
 
