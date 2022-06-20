@@ -7,6 +7,7 @@ import { en, pl } from 'locales';
 import { Logotype } from 'components';
 
 import styles from 'styles/components/header.module.scss';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 export const Header = () => {
   const router = useRouter();
@@ -19,8 +20,12 @@ export const Header = () => {
 
   const blogUrl = `https://${process.env.NEXT_PUBLIC_BLOG_DOMAIN}`;
 
-  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [mobileNavShown, setMobileNavShown] = useState(false);
+  const toggleMobileNav = () => {
+    setMobileNavShown(!mobileNavShown);
+  };
 
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 0) {
@@ -34,12 +39,27 @@ export const Header = () => {
   return (
     <header
       className={`${styles.header} ${
-        headerScrolled ? styles['header--scrolled'] : ''
+        headerScrolled && !mobileNavShown ? styles['header--scrolled'] : ''
       }`}
     >
       <div className={styles.headerContent}>
         <Logotype />
-        <nav className={styles.nav}>
+        <button
+          type="button"
+          onClick={toggleMobileNav}
+          className={styles.mobileNavButton}
+        >
+          {!mobileNavShown ? (
+            <MenuIcon className={styles.mobileNavButton__icon} />
+          ) : (
+            <XIcon className={styles.mobileNavButton__icon} />
+          )}
+        </button>
+        <nav
+          className={`${styles.nav} ${
+            mobileNavShown ? styles['nav--visible'] : ''
+          }`}
+        >
           <ul className={styles.navRoutes}>
             {Object.values(appRoutes).map((route) => (
               <li key={route.slug} className={styles.route}>

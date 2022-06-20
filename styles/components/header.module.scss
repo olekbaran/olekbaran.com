@@ -3,28 +3,19 @@
 
 .header {
   width: 100%;
-  height: vars.$header-width;
+  height: vars.$header-height;
   position: fixed;
   top: 0;
-  background: vars.$color-black;
+  @include mixins.blur;
   transition: box-shadow 0.2s ease 0s;
-
-  @supports (
-    (-webkit-backdrop-filter: saturate(180%) blur(10px)) or
-      (backdrop-filter: saturate(180%) blur(10px))
-  ) {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: saturate(180%) blur(10px);
-  }
 
   &--scrolled {
     box-shadow: vars.$shadow-border-bottom;
   }
 
   .headerContent {
-    max-width: vars.$max-layout-width;
+    @include mixins.max-width;
     height: 100%;
-    margin: 0 auto;
     padding: 0 vars.$mobile-layout-paddings;
     @include mixins.flex(space-between, center, row);
 
@@ -32,15 +23,66 @@
       padding: 0 vars.$desktop-layout-paddings;
     }
 
+    .mobileNavButton {
+      width: 2.75rem;
+      height: 2.75rem;
+      background: none;
+      cursor: pointer;
+
+      @media screen and (min-width: vars.$lg) {
+        display: none;
+      }
+
+      &__icon {
+        stroke: vars.$color-white;
+        stroke-width: 1px;
+      }
+    }
+
     .nav {
-      margin-left: 3rem;
-      @include mixins.flex(space-between, center, row);
+      width: 100%;
+      height: calc(100vh - vars.$header-height);
+      padding: vars.$mobile-layout-paddings;
+      @include mixins.flex(center, center, column);
       gap: 3rem;
+      position: absolute;
+      top: vars.$header-height;
+      left: 0;
+      @include mixins.blur;
+      transform: translateY(calc(-100% - vars.$header-height));
+      z-index: -1;
+      transition: all 0.6s ease;
+
+      @media screen and (min-width: vars.$lg) {
+        width: auto;
+        height: auto;
+        margin-left: 3rem;
+        padding: 0;
+        @include mixins.flex(space-between, center, row);
+        gap: 3rem;
+        position: static;
+        background: none;
+        backdrop-filter: none;
+        transform: translateY(0);
+        z-index: 0;
+      }
+
+      &--visible {
+        transform: translate(0);
+      }
 
       .navRoutes {
         @include mixins.flex(space-between, center, row);
         gap: 3rem;
         list-style-type: none;
+
+        @media screen and (min-height: vars.$xs) {
+          @include mixins.flex(space-between, center, column);
+        }
+
+        @media screen and (min-width: vars.$lg) {
+          @include mixins.flex(space-between, center, row);
+        }
 
         .route {
           &__name {

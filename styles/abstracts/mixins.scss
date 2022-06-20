@@ -1,6 +1,25 @@
+@use 'styles/abstracts/variables' as vars;
+
+@mixin max-width {
+  max-width: vars.$max-layout-width;
+  margin: 0 auto;
+}
+
 @mixin flex($justify, $align, $direction) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direction;
+}
+
+@mixin blur {
+  background: vars.$color-black;
+
+  @supports (
+    (-webkit-backdrop-filter: saturate(180%) blur(5px)) or
+      (backdrop-filter: saturate(180%) blur(5px))
+  ) {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(5px);
+  }
 }

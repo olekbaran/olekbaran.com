@@ -38,9 +38,9 @@ body {
 }
 
 main {
-  margin-top: vars.$header-width;
+  margin-top: vars.$header-height;
 }
 
 section {
-  min-height: calc(100vh - vars.$header-width);
+  min-height: calc(100vh - vars.$header-height);
 }
