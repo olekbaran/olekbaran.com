@@ -43,18 +43,27 @@ export const Header = () => {
       }`}
     >
       <div className={styles.headerContent}>
-        <Logotype />
-        <button
-          type="button"
-          onClick={toggleMobileNav}
-          className={styles.mobileNavButton}
+        <div
+          className={`${styles.mobileHeader} ${
+            headerScrolled || mobileNavShown
+              ? styles['mobileHeader--scrolled']
+              : ''
+          }`}
         >
-          {!mobileNavShown ? (
-            <MenuIcon className={styles.mobileNavButton__icon} />
-          ) : (
-            <XIcon className={styles.mobileNavButton__icon} />
-          )}
-        </button>
+          <Logotype />
+          <button
+            type="button"
+            onClick={toggleMobileNav}
+            className={styles.mobileNavButton}
+            aria-label="menu"
+          >
+            {!mobileNavShown ? (
+              <MenuIcon className={styles.mobileNavButton__icon} />
+            ) : (
+              <XIcon className={styles.mobileNavButton__icon} />
+            )}
+          </button>
+        </div>
         <nav
           className={`${styles.nav} ${
             mobileNavShown ? styles['nav--visible'] : ''

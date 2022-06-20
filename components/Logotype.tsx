@@ -22,8 +22,8 @@ export const Logotype = () => {
             priority
             placeholder="blur"
             alt={t.seo.components.images.avatar}
-            width={86}
-            height={86}
+            width={88}
+            height={88}
           />
         </a>
       </Link>

@@ -6,36 +6,64 @@
   height: vars.$header-height;
   position: fixed;
   top: 0;
-  @include mixins.blur;
   transition: box-shadow 0.2s ease 0s;
 
+  @media screen and (min-width: vars.$lg) {
+    @include mixins.blur;
+  }
+
   &--scrolled {
-    box-shadow: vars.$shadow-border-bottom;
+    @media screen and (min-width: vars.$lg) {
+      box-shadow: vars.$shadow-border-bottom;
+    }
   }
 
   .headerContent {
     @include mixins.max-width;
     height: 100%;
-    padding: 0 vars.$mobile-layout-paddings;
     @include mixins.flex(space-between, center, row);
 
     @media screen and (min-width: vars.$xxl) {
       padding: 0 vars.$desktop-layout-paddings;
     }
 
-    .mobileNavButton {
-      width: 2.75rem;
-      height: 2.75rem;
-      background: none;
-      cursor: pointer;
+    .mobileHeader {
+      width: 100%;
+      height: vars.$header-height;
+      padding: 0 vars.$mobile-layout-paddings;
+      @include mixins.flex(space-between, center, row);
+      @include mixins.blur;
+      transition: box-shadow 0.2s ease 0s;
 
       @media screen and (min-width: vars.$lg) {
-        display: none;
+        width: auto;
+        padding: 0;
+        background: none;
+        backdrop-filter: none;
       }
 
-      &__icon {
-        stroke: vars.$color-white;
-        stroke-width: 1px;
+      &--scrolled {
+        box-shadow: vars.$shadow-border-bottom;
+
+        @media screen and (min-width: vars.$lg) {
+          box-shadow: none;
+        }
+      }
+
+      .mobileNavButton {
+        width: 2.75rem;
+        height: 2.75rem;
+        background: none;
+        cursor: pointer;
+
+        @media screen and (min-width: vars.$lg) {
+          display: none;
+        }
+
+        &__icon {
+          stroke: vars.$color-white;
+          stroke-width: 1px;
+        }
       }
     }
 
@@ -48,9 +76,9 @@
       position: absolute;
       top: vars.$header-height;
       left: 0;
-      @include mixins.blur;
       transform: translateY(calc(-100% - vars.$header-height));
       z-index: -1;
+      @include mixins.blur;
       transition: all 0.6s ease;
 
       @media screen and (min-width: vars.$lg) {
@@ -61,10 +89,10 @@
         @include mixins.flex(space-between, center, row);
         gap: 3rem;
         position: static;
-        background: none;
-        backdrop-filter: none;
         transform: translateY(0);
         z-index: 0;
+        background: none;
+        backdrop-filter: none;
       }
 
       &--visible {

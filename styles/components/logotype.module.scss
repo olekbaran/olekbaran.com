@@ -8,6 +8,7 @@
     width: 2.75rem;
     height: 2.75rem;
     margin-right: 1rem;
+    border-radius: 100%;
 
     @media screen and (min-width: vars.$lg) {
       transition: 0.2s ease;
