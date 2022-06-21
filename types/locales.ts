@@ -21,6 +21,7 @@ export interface Idictionary {
   home: {
     hero: {
       heading: string;
+      scroll: string;
     };
   };
 }

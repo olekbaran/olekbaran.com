@@ -24,6 +24,7 @@ export const pl: Idictionary = {
   home: {
     hero: {
       heading: 'Front-end\n web developer',
+      scroll: 'Sprawdź co jest niżej!',
     },
   },
 };
