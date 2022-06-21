@@ -82,6 +82,7 @@
       left: 0;
       transform: translateY(calc(-100% - vars.$header-height));
       z-index: -1;
+      opacity: 0;
       @include mixins.blur;
       transition: all 0.6s ease;
 
@@ -95,12 +96,14 @@
         position: static;
         transform: translateY(0);
         z-index: 0;
+        opacity: 1;
         background: none;
         backdrop-filter: none;
       }
 
       &--visible {
         transform: translate(0);
+        opacity: 1;
       }
 
       .navRoutes {

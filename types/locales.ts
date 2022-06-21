@@ -18,4 +18,9 @@ export interface Idictionary {
     contact: string;
     blog: string;
   };
+  home: {
+    hero: {
+      heading: string;
+    };
+  };
 }

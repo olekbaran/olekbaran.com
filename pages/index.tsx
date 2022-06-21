@@ -3,12 +3,17 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import { en, pl } from 'locales';
+import { SocialMedia } from 'components';
+
+import styles from 'styles/pages/home.module.scss';
 
 const Home: NextPage = () => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'en' ? en : pl;
   const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
+
+  const splittedHeading = t.home.hero.heading.split('\n');
 
   return (
     <>
@@ -26,7 +31,17 @@ const Home: NextPage = () => {
         <meta property="twitter:description" content={t.seo.home.description} />
       </Head>
       <main>
-        <section />
+        <section>
+          <h1 className={styles.heading}>
+            <span
+              className={`${styles.heading__line} ${styles['heading__line--bigger']}`}
+            >
+              {splittedHeading[0]}
+            </span>
+            <span className={styles.heading__line}>{splittedHeading[1]}</span>
+          </h1>
+          <SocialMedia />
+        </section>
       </main>
     </>
   );

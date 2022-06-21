@@ -33,6 +33,10 @@
   background: vars.$color-primary;
 }
 
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   background: vars.$color-black;
 }
@@ -42,5 +46,16 @@ main {
 }
 
 section {
+  @include mixins.max-width;
   min-height: calc(100vh - vars.$header-height);
+  padding: vars.$sections-spacing vars.$mobile-layout-paddings;
+  @include mixins.flex(center, center, row);
+
+  @media screen and (min-width: vars.$lg) {
+    @include mixins.flex(space-between, center, row);
+  }
+
+  @media screen and (min-width: vars.$xxl) {
+    padding: vars.$sections-spacing vars.$desktop-layout-paddings;
+  }
 }

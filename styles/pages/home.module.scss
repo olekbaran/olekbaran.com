@@ -1,0 +1,23 @@
+@use 'styles/abstracts/variables' as vars;
+
+.heading {
+  &__line {
+    display: block;
+    font-size: 7.5vw;
+    font-weight: 800;
+    text-align: center;
+
+    @media screen and (min-width: vars.$lg) {
+      font-size: 4.5rem;
+      text-align: left;
+    }
+
+    &--bigger {
+      font-size: 15vw;
+
+      @media screen and (min-width: vars.$lg) {
+        font-size: 9rem;
+      }
+    }
+  }
+}

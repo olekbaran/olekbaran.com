@@ -21,4 +21,9 @@ export const en: Idictionary = {
     contact: 'Contact',
     blog: 'Blog',
   },
+  home: {
+    hero: {
+      heading: 'Front-end\n web developer',
+    },
+  },
 };
