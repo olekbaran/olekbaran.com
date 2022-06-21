@@ -23,6 +23,10 @@
     height: 100%;
     @include mixins.flex(space-between, center, row);
 
+    @media screen and (min-width: vars.$lg) {
+      padding: 0 vars.$mobile-layout-paddings;
+    }
+
     @media screen and (min-width: vars.$xxl) {
       padding: 0 vars.$desktop-layout-paddings;
     }

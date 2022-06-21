@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import { en, pl } from 'locales';
-import { Header } from 'components';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -27,8 +26,6 @@ const Home: NextPage = () => {
         <meta property="twitter:description" content={t.seo.home.description} />
       </Head>
       <main>
-        <Header />
-        <section />
         <section />
       </main>
     </>
