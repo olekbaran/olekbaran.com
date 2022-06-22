@@ -2,11 +2,10 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
-import { MotionConfig, motion } from 'framer-motion';
 
 import { en, pl } from 'locales';
 import { images } from 'assets/images';
-import { SocialMedia } from 'components';
+import { ScrollDown, SocialMedia } from 'components';
 
 import styles from 'styles/pages/home.module.scss';
 
@@ -34,52 +33,31 @@ const Home: NextPage = () => {
         <meta property="twitter:description" content={t.seo.home.description} />
       </Head>
       <main>
-        <MotionConfig reducedMotion="user">
-          <section className={styles.hero}>
-            <div>
-              <h1 className={styles.heading}>
-                <span
-                  className={`${styles.heading__line} ${styles['heading__line--bigger']}`}
-                >
-                  {splittedHeading[0]}
-                </span>
-                <span className={styles.heading__line}>
-                  {splittedHeading[1]}
-                </span>
-              </h1>
-              <div className={styles.scrollDown}>
-                <div className={styles.scrollAnimation}>
-                  <motion.div
-                    className={styles.scrollAnimation__dot}
-                    animate={{
-                      scale: [0, 1, 1, 0],
-                      translateY: [-8, 8],
-                    }}
-                    transition={{
-                      duration: 1.6,
-                      ease: 'easeInOut',
-                      times: [0, 0.2, 0.5, 0.8, 1],
-                      repeat: Infinity,
-                      repeatDelay: 0.2,
-                    }}
-                  />
-                </div>
-                <p className={styles.scrollDown__text}>{t.home.hero.scroll}</p>
-              </div>
-            </div>
-            <div className={styles.heroImage}>
-              <Image
-                src={images.hero}
-                layout="responsive"
-                priority
-                placeholder="blur"
-                alt={t.seo.home.hero.photo}
-              />
-            </div>
-            <SocialMedia />
-          </section>
-          <section />
-        </MotionConfig>
+        <section className={styles.hero}>
+          <div className={styles.text}>
+            <h1 className={styles.heading}>
+              <span
+                className={`${styles.heading__line} ${styles['heading__line--bigger']}`}
+              >
+                {splittedHeading[0]}
+              </span>
+              <span className={styles.heading__line}>{splittedHeading[1]}</span>
+            </h1>
+            <ScrollDown />
+          </div>
+          <div className={styles.heroImage}>
+            <Image
+              src={images.hero}
+              priority
+              placeholder="blur"
+              alt={t.seo.home.hero.photo}
+              width={714}
+              height={893}
+            />
+          </div>
+          <SocialMedia />
+        </section>
+        <section />
       </main>
     </>
   );
