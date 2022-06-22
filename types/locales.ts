@@ -3,6 +3,9 @@ export interface Idictionary {
     home: {
       title: string;
       description: string;
+      hero: {
+        photo: string;
+      };
     };
     components: {
       images: {

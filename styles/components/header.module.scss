@@ -7,13 +7,14 @@
   position: fixed;
   top: 0;
   transition: box-shadow 0.2s ease 0s;
+  z-index: 2;
 
-  @media screen and (min-width: vars.$lg) {
+  @media screen and (min-width: vars.$md) {
     @include mixins.blur;
   }
 
   &--scrolled {
-    @media screen and (min-width: vars.$lg) {
+    @media screen and (min-width: vars.$md) {
       box-shadow: vars.$shadow-border-bottom;
     }
   }
@@ -23,11 +24,11 @@
     height: 100%;
     @include mixins.flex(space-between, center, row);
 
-    @media screen and (min-width: vars.$lg) {
+    @media screen and (min-width: vars.$md) {
       padding: 0 vars.$mobile-layout-paddings;
     }
 
-    @media screen and (min-width: vars.$xxl) {
+    @media screen and (min-width: vars.$xl) {
       padding: 0 vars.$desktop-layout-paddings;
     }
 
@@ -39,7 +40,7 @@
       @include mixins.blur;
       transition: box-shadow 0.2s ease 0s;
 
-      @media screen and (min-width: vars.$lg) {
+      @media screen and (min-width: vars.$md) {
         width: auto;
         padding: 0;
         background: none;
@@ -49,7 +50,7 @@
       &--scrolled {
         box-shadow: vars.$shadow-border-bottom;
 
-        @media screen and (min-width: vars.$lg) {
+        @media screen and (min-width: vars.$md) {
           box-shadow: none;
         }
       }
@@ -60,7 +61,7 @@
         background: none;
         cursor: pointer;
 
-        @media screen and (min-width: vars.$lg) {
+        @media screen and (min-width: vars.$md) {
           display: none;
         }
 
@@ -87,7 +88,7 @@
       @include mixins.blur;
       transition: all 0.6s ease;
 
-      @media screen and (min-width: vars.$lg) {
+      @media screen and (min-width: vars.$md) {
         width: auto;
         height: auto;
         margin-left: 3rem;
@@ -117,7 +118,7 @@
           @include mixins.flex(space-between, center, column);
         }
 
-        @media screen and (min-width: vars.$lg) {
+        @media screen and (min-width: vars.$md) {
           @include mixins.flex(space-between, center, row);
         }
 
@@ -126,7 +127,7 @@
             color: vars.$color-grey;
             text-decoration: none;
 
-            @media screen and (min-width: vars.$lg) {
+            @media screen and (min-width: vars.$md) {
               transition: 0.2s ease;
 
               &:hover {
@@ -153,7 +154,7 @@
       background: vars.$color-white;
       cursor: pointer;
 
-      @media screen and (min-width: vars.$lg) {
+      @media screen and (min-width: vars.$md) {
         transition: 0.4s ease;
 
         &:hover {
@@ -175,7 +176,7 @@
         position: relative;
         text-decoration: none;
 
-        @media screen and (min-width: vars.$lg) {
+        @media screen and (min-width: vars.$md) {
           &::after {
             content: '';
             width: 0;
@@ -198,7 +199,7 @@
         &--active {
           color: vars.$color-primary;
 
-          @media screen and (min-width: vars.$lg) {
+          @media screen and (min-width: vars.$md) {
             &::after {
               background: vars.$color-primary;
             }

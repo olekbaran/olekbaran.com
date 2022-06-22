@@ -1,9 +1,11 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Image from 'next/image';
 import { MotionConfig, motion } from 'framer-motion';
 
 import { en, pl } from 'locales';
+import { images } from 'assets/images';
 import { SocialMedia } from 'components';
 
 import styles from 'styles/pages/home.module.scss';
@@ -33,7 +35,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <MotionConfig reducedMotion="user">
-          <section>
+          <section className={styles.hero}>
             <div>
               <h1 className={styles.heading}>
                 <span
@@ -64,6 +66,15 @@ const Home: NextPage = () => {
                 </div>
                 <p className={styles.scrollDown__text}>{t.home.hero.scroll}</p>
               </div>
+            </div>
+            <div className={styles.heroImage}>
+              <Image
+                src={images.hero}
+                layout="responsive"
+                priority
+                placeholder="blur"
+                alt={t.seo.home.hero.photo}
+              />
             </div>
             <SocialMedia />
           </section>
