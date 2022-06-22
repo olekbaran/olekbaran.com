@@ -3,17 +3,27 @@
 
 .hero {
   padding-top: 0;
+  padding-bottom: 3.75rem;
+  background-image: url('/images/backgrounds/line1.svg'),
+    radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%);
+  background-repeat: no-repeat;
 
   @media screen and (min-width: vars.$md) {
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .text {
     @include mixins.flex(center, flex-start, column);
     gap: 2.25rem;
+    z-index: 1;
+
+    @media screen and (min-width: vars.$md) {
+      z-index: 0;
+    }
 
     .heading {
-      filter: drop-shadow(-2px 0px 10px rgba(0, 0, 0, 0.5));
+      @include mixins.drop-shadow;
 
       @media screen and (min-width: vars.$md) {
         filter: none;
@@ -56,12 +66,10 @@
     position: absolute;
     left: -16rem;
     user-select: none;
-    z-index: -2;
 
     @media screen and (min-width: vars.$md) {
       left: auto;
       right: calc(50vw - 32.5rem);
-      z-index: 0;
     }
 
     &::after {
@@ -73,10 +81,6 @@
       left: 0;
       bottom: 4px;
       background: vars.$color-primary;
-    }
-
-    img {
-      mix-blend-mode: luminosity;
     }
   }
 }

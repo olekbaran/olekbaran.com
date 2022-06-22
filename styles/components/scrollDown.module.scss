@@ -2,9 +2,10 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .scrollDown {
+  width: 100%;
   @include mixins.flex(center, center, row);
   gap: 1rem;
-  filter: drop-shadow(-2px 0px 10px rgba(0, 0, 0, 0.5));
+  @include mixins.drop-shadow;
 
   @media screen and (min-width: vars.$md) {
     @include mixins.flex(flex-start, center, row);

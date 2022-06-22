@@ -16,10 +16,21 @@
   background: vars.$color-black;
 
   @supports (
-    (-webkit-backdrop-filter: saturate(180%) blur(5px)) or
-      (backdrop-filter: saturate(180%) blur(5px))
+    (
+        -webkit-backdrop-filter: saturate(vars.$filter-saturate) blur(vars.$filter-blur)
+      )
+      or
+      (backdrop-filter: saturate(vars.$filter-saturate) blur(vars.$filter-blur))
   ) {
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: saturate(vars.$filter-saturate) blur(vars.$filter-blur);
   }
+}
+
+@mixin shadow-border-bottom {
+  box-shadow: inset 0 -1px 0 0 vars.$shadow-border-color;
+}
+
+@mixin drop-shadow {
+  filter: drop-shadow(-2px 0px 8px rgba(0, 0, 0, 0.3));
 }
