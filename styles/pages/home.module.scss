@@ -74,13 +74,18 @@
 
     &::after {
       content: '';
-      width: 100%;
+      width: 90%;
       height: 2px;
       border-radius: 2px;
       position: absolute;
-      left: 0;
+      left: 5%;
       bottom: 4px;
       background: vars.$color-primary;
+
+      @media screen and (min-width: vars.$md) {
+        width: 100%;
+        left: 0;
+      }
     }
   }
 }
