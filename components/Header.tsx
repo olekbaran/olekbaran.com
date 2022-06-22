@@ -70,17 +70,17 @@ export const Header = () => {
           }`}
         >
           <ul className={styles.navRoutes}>
-            {Object.values(appRoutes).map((route) => (
-              <li key={route.slug} className={styles.route}>
-                <Link href={route.slug}>
+            {Object.entries(appRoutes).map((route) => (
+              <li key={route[0]} className={styles.route}>
+                <Link href={route[1].slug}>
                   <a
                     className={`${styles.route__name} ${
-                      router.pathname === route.slug
+                      router.pathname === route[1].slug
                         ? styles['route__name--active']
                         : ''
                     }`}
                   >
-                    {route.name[locale!]}
+                    {route[1].name[locale!]}
                   </a>
                 </Link>
               </li>

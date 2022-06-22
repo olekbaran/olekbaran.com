@@ -11,13 +11,11 @@
   }
 
   .icon {
-    @media screen and (min-width: vars.$lg) {
-      display: block;
-      transition: 0.2s ease;
+    display: block;
+    transition: 0.2s ease;
 
-      &:hover {
-        transform: scale(1.2);
-      }
+    &:hover {
+      transform: scale(1.2);
     }
 
     svg {
