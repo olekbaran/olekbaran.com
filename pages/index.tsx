@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { en, pl } from 'locales';
 import { images } from 'assets/images';
-import { ScrollDown, SocialMedia } from 'components';
+import { ScrollDown, SocialMedia, Card, SecondaryButton } from 'components';
 import { technologies } from 'config';
 
 import styles from 'styles/pages/home.module.scss';
@@ -17,6 +19,15 @@ const Home: NextPage = () => {
   const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
 
   const splittedHeading = t.home.hero.heading.split('\n');
+  const email = process.env.NEXT_PUBLIC_EMAIL;
+
+  const [isCopied, setIsCopied] = useState(false);
+  const onCopyText = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
 
   return (
     <>
@@ -58,7 +69,9 @@ const Home: NextPage = () => {
           </div>
           <SocialMedia />
         </section>
-        <section className={styles.latestProjects} />
+        <section className={styles.latestProjects}>
+          <h2 className="heading">{t.home.latestProjects.heading}</h2>
+        </section>
         <section className={styles.technologies}>
           <ul className={styles.technologiesList}>
             {Object.entries(technologies).map((technology) => (
@@ -78,6 +91,41 @@ const Home: NextPage = () => {
               </li>
             ))}
           </ul>
+        </section>
+        <section className={styles.contact}>
+          <h2 className="heading">{t.home.contact.heading}</h2>
+          <div className={styles.contactCards}>
+            <Card
+              heading={t.home.contact.linkedIn.heading}
+              link={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+              footer={t.home.contact.linkedIn.footer}
+            >
+              <span />
+            </Card>
+            <Card
+              heading={t.home.contact.email.heading}
+              link={`mailto:${email}`}
+              footer={t.home.contact.email.footer}
+            >
+              <address className={styles.address}>
+                <span className={styles.address__name}>
+                  {email?.split('@')[0]}
+                </span>
+                <span className={styles.address__domain}>
+                  @{email?.split('@')[1]}
+                </span>
+              </address>
+              <CopyToClipboard text={email!} onCopy={onCopyText}>
+                <SecondaryButton
+                  text={`${
+                    isCopied
+                      ? t.home.contact.email.copied
+                      : t.home.contact.email.copy
+                  }`}
+                />
+              </CopyToClipboard>
+            </Card>
+          </div>
         </section>
       </main>
     </>

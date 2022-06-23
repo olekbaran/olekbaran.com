@@ -2,9 +2,10 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .hero {
-  min-height: 55.563rem;
+  min-height: 889px;
   padding-top: 0;
   padding-bottom: 3.75rem;
+  @include mixins.flex(center, center, row);
   background-image: url('/images/backgrounds/line1.svg'),
     radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%);
   background-repeat: no-repeat;
@@ -12,6 +13,7 @@
   @media screen and (min-width: vars.$md) {
     padding-top: vars.$sections-spacing;
     padding-bottom: vars.$sections-spacing;
+    @include mixins.flex(space-between, center, row);
   }
 
   .text {
@@ -92,8 +94,8 @@
 }
 
 .latestProjects {
-  min-height: calc(55.563rem + vars.$header-height);
-  padding-top: calc(vars.$sections-spacing + vars.$header-height);
+  min-height: calc(889px + vars.$header-height);
+  padding-top: calc(2 * vars.$sections-spacing);
 }
 
 .technologies {
@@ -102,7 +104,7 @@
   .technologiesList {
     width: 100%;
     border: 1px solid vars.$border-color;
-    border-radius: 0.75rem;
+    border-radius: 0.625rem;
     @include mixins.flex(center, center, column);
     list-style-type: none;
 
@@ -143,6 +145,35 @@
 
       &__name {
         font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+.contact {
+  padding-bottom: calc(2 * vars.$sections-spacing);
+
+  .contactCards {
+    width: 100%;
+    @include mixins.flex(space-between, center, column);
+    gap: vars.$components-spacing;
+
+    @media screen and (min-width: vars.$md) {
+      @include mixins.flex(space-between, center, row);
+    }
+
+    .address {
+      @include mixins.flex(center, center, row);
+      flex-wrap: wrap;
+      font-size: 1.125rem;
+      font-style: normal;
+
+      &__name {
+        font-weight: 700;
+      }
+
+      &__domain {
+        font-weight: 200;
       }
     }
   }

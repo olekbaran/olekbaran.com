@@ -29,5 +29,24 @@ export const en: Idictionary = {
       heading: 'Front-end\n web developer',
       scroll: "Check out what's below!",
     },
+    latestProjects: {
+      heading: 'Latest projects',
+    },
+    contact: {
+      heading: 'Contact',
+      linkedIn: {
+        heading: 'LinkedIn',
+        footer: 'Go to my LinkedIn profile →',
+      },
+      contactForm: {
+        heading: 'Send a message',
+      },
+      email: {
+        heading: 'Email',
+        copy: 'Copy to the clipboard',
+        copied: 'Copied',
+        footer: 'Open your email client →',
+      },
+    },
   },
 };

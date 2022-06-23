@@ -26,5 +26,24 @@ export interface Idictionary {
       heading: string;
       scroll: string;
     };
+    latestProjects: {
+      heading: string;
+    };
+    contact: {
+      heading: string;
+      linkedIn: {
+        heading: string;
+        footer: string;
+      };
+      contactForm: {
+        heading: string;
+      };
+      email: {
+        heading: string;
+        copy: string;
+        copied: string;
+        footer: string;
+      };
+    };
   };
 }
