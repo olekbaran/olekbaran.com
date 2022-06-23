@@ -2,6 +2,7 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .hero {
+  min-height: 55.563rem;
   padding-top: 0;
   padding-bottom: 3.75rem;
   background-image: url('/images/backgrounds/line1.svg'),
@@ -9,8 +10,8 @@
   background-repeat: no-repeat;
 
   @media screen and (min-width: vars.$md) {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: vars.$sections-spacing;
+    padding-bottom: vars.$sections-spacing;
   }
 
   .text {
@@ -85,6 +86,58 @@
       @media screen and (min-width: vars.$md) {
         width: 100%;
         left: 0;
+      }
+    }
+  }
+}
+
+.latestProjects {
+  min-height: calc(55.563rem + vars.$header-height);
+  padding-top: calc(vars.$sections-spacing + vars.$header-height);
+}
+
+.technologies {
+  min-height: auto;
+
+  .technologiesList {
+    width: 100%;
+    border: 1px solid vars.$border-color;
+    border-radius: 0.75rem;
+    @include mixins.flex(center, center, column);
+    list-style-type: none;
+
+    @media screen and (min-width: vars.$md) {
+      @include mixins.flex(space-between, center, row);
+    }
+
+    .technology {
+      width: 100%;
+      height: 9rem;
+      border-bottom: 1px solid vars.$border-color;
+      @include mixins.flex(center, center, column);
+      gap: 0.75rem;
+
+      @media screen and (min-width: vars.$md) {
+        width: 25vw;
+        border-right: 1px solid vars.$border-color;
+      }
+
+      &:last-child {
+        border-right: none;
+        border-bottom: none;
+      }
+
+      &__icon {
+        width: 2.25rem;
+        height: 2.25rem;
+
+        @media screen and (min-width: vars.$md) {
+          transition: 0.2s ease;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
       }
     }
   }

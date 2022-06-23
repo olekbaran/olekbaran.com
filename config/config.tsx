@@ -1,4 +1,13 @@
-import { GitHub, Instagram, LinkedIn, Email } from 'assets/icons';
+import {
+  GitHub,
+  Instagram,
+  LinkedIn,
+  Email,
+  JavaScript,
+  TypeScript,
+  React,
+  Next,
+} from 'assets/icons';
 
 const emailUrl = `mailto:${process.env.NEXT_PUBLIC_EMAIL}`;
 
@@ -18,5 +27,28 @@ export const socialMedia = {
   email: {
     url: emailUrl,
     icon: <Email />,
+  },
+};
+
+export const technologies = {
+  js: {
+    name: 'JavaScript',
+    icon: <JavaScript />,
+    url: 'https://www.javascript.com/',
+  },
+  ts: {
+    name: 'TypeScript',
+    icon: <TypeScript />,
+    url: 'https://www.typescriptlang.org/',
+  },
+  react: {
+    name: 'React',
+    icon: <React />,
+    url: 'https://reactjs.org/',
+  },
+  next: {
+    name: 'Next',
+    icon: <Next />,
+    url: 'https://nextjs.org/',
   },
 };

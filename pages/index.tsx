@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { en, pl } from 'locales';
 import { images } from 'assets/images';
 import { ScrollDown, SocialMedia } from 'components';
+import { technologies } from 'config';
 
 import styles from 'styles/pages/home.module.scss';
 
@@ -57,7 +58,25 @@ const Home: NextPage = () => {
           </div>
           <SocialMedia />
         </section>
-        <section />
+        <section className={styles.latestProjects} />
+        <section className={styles.technologies}>
+          <ul className={styles.technologiesList}>
+            {Object.entries(technologies).map((technology) => (
+              <li key={technology[0]} className={styles.technology}>
+                <a
+                  href={technology[1].url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={technology[1].name}
+                  className={styles.technology__icon}
+                >
+                  {technology[1].icon}
+                </a>
+                {technology[1].name}
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
     </>
   );

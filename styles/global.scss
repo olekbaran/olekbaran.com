@@ -47,7 +47,7 @@ main {
 
 section {
   @include mixins.max-width;
-  min-height: 55.563rem;
+  min-height: calc(55.563rem + vars.$sections-spacing);
   padding: vars.$sections-spacing vars.$mobile-layout-paddings;
   @include mixins.flex(center, center, row);
 

@@ -28,7 +28,7 @@
 }
 
 @mixin shadow-border-bottom {
-  box-shadow: inset 0 -1px 0 0 vars.$shadow-border-color;
+  box-shadow: inset 0 -1px 0 0 vars.$border-color;
 }
 
 @mixin drop-shadow {

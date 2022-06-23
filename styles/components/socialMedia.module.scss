@@ -12,20 +12,13 @@
   }
 
   .icon {
+    width: 2.75rem;
+    height: 2.75rem;
     display: block;
     transition: 0.2s ease;
 
     &:hover {
       transform: scale(1.2);
-    }
-
-    svg {
-      width: 2.75rem;
-      height: 2.75rem;
-
-      path {
-        fill: vars.$color-white;
-      }
     }
   }
 }

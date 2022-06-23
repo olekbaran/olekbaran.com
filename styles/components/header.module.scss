@@ -74,7 +74,7 @@
 
     .nav {
       width: 100%;
-      height: calc(100vh - vars.$header-height);
+      min-height: calc(100vh - vars.$header-height);
       padding: vars.$mobile-layout-paddings;
       @include mixins.flex(center, center, column);
       gap: 3rem;
@@ -90,7 +90,7 @@
 
       @media screen and (min-width: vars.$md) {
         width: auto;
-        height: auto;
+        min-height: auto;
         margin-left: 3rem;
         padding: 0;
         @include mixins.flex(space-between, center, row);
