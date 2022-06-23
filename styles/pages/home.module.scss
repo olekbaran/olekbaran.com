@@ -120,6 +120,7 @@
       @media screen and (min-width: vars.$md) {
         width: 25vw;
         border-right: 1px solid vars.$border-color;
+        border-bottom: none;
       }
 
       &:last-child {
@@ -138,6 +139,10 @@
             transform: scale(1.2);
           }
         }
+      }
+
+      &__name {
+        font-size: 0.875rem;
       }
     }
   }

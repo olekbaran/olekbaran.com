@@ -72,7 +72,9 @@ const Home: NextPage = () => {
                 >
                   {technology[1].icon}
                 </a>
-                {technology[1].name}
+                <span className={styles.technology__name}>
+                  {technology[1].name}
+                </span>
               </li>
             ))}
           </ul>
