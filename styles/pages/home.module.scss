@@ -118,7 +118,7 @@
       gap: 0.75rem;
 
       @media screen and (min-width: vars.$md) {
-        width: 25vw;
+        width: 25%;
         border-right: 1px solid vars.$border-color;
         border-bottom: none;
       }
