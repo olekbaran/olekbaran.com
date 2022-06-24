@@ -17,6 +17,8 @@ NEXT_PUBLIC_GITHUB_URL={github_url}
 NEXT_PUBLIC_INSTAGRAM_URL={instagram_url}
 NEXT_PUBLIC_LINKEDIN_URL={linkedin_url}
 NEXT_PUBLIC_EMAIL={email}
+GRAPHCMS_URL={graphcms_url}
+GRAPHCMS_TOKEN={graphcms_token}
 ```
 
 Then, run the development server:

@@ -10,4 +10,8 @@ module.exports = {
     defaultLocale: 'en',
   },
   trailingSlash: true,
+  images: {
+    dangerouslyAllowSVG: true,
+    domains: ['media.graphassets.com'],
+  },
 };
