@@ -6,9 +6,7 @@
   padding-top: 0;
   padding-bottom: 3.75rem;
   @include mixins.flex(center, center, row);
-  background-image: url('/images/backgrounds/line1.svg'),
-    radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%);
-  background-repeat: no-repeat;
+  @include mixins.background('/images/backgrounds/line1.svg');
 
   @media screen and (min-width: vars.$md) {
     padding-top: vars.$sections-spacing;

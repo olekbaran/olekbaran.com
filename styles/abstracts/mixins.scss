@@ -27,6 +27,16 @@
   }
 }
 
+@mixin background($location) {
+  background-image: linear-gradient(0deg, vars.$color-black 0%, transparent 20%),
+    linear-gradient(90deg, vars.$color-black 0%, transparent 20%),
+    linear-gradient(270deg, vars.$color-black 0%, transparent 20%),
+    url($location),
+    radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @mixin shadow-border-bottom {
   box-shadow: inset 0 -1px 0 0 vars.$border-color;
 }

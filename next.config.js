@@ -11,7 +11,8 @@ module.exports = {
   },
   trailingSlash: true,
   images: {
-    dangerouslyAllowSVG: true,
     domains: ['media.graphassets.com'],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 };
