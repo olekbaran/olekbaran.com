@@ -1,0 +1,50 @@
+@use 'styles/abstracts/variables' as vars;
+@use 'styles/abstracts/mixins' as mixins;
+
+.technologiesList {
+  width: 100%;
+  border: 1px solid vars.$border-color;
+  border-radius: 0.625rem;
+  @include mixins.flex(center, center, column);
+  list-style-type: none;
+
+  @media screen and (min-width: vars.$md) {
+    @include mixins.flex(space-between, center, row);
+  }
+
+  .technology {
+    width: 100%;
+    height: 9rem;
+    border-bottom: 1px solid vars.$border-color;
+    @include mixins.flex(center, center, column);
+    gap: 0.75rem;
+
+    @media screen and (min-width: vars.$md) {
+      width: 25%;
+      border-right: 1px solid vars.$border-color;
+      border-bottom: none;
+    }
+
+    &:last-child {
+      border-right: none;
+      border-bottom: none;
+    }
+
+    &__icon {
+      width: 2.25rem;
+      height: 2.25rem;
+
+      @media screen and (min-width: vars.$md) {
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &__name {
+      font-size: 0.875rem;
+    }
+  }
+}

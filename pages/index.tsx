@@ -7,9 +7,15 @@ import { GraphQLClient, gql } from 'graphql-request';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { en, pl } from 'locales';
+import {
+  ScrollDown,
+  SocialMedia,
+  Technologies,
+  Card,
+  SecondaryButton,
+} from 'components';
 import { images } from 'assets/images';
-import { ScrollDown, SocialMedia, Card, SecondaryButton } from 'components';
-import { technologies } from 'config';
+import { IlinkedInProfile } from 'types';
 
 import styles from 'styles/pages/home.module.scss';
 
@@ -46,16 +52,6 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-interface IlinkedInProfile {
-  name: string;
-  workplace: string;
-  companyLogo: {
-    url: string;
-    fileName: string;
-  };
-  companyUrl: string;
-}
 
 interface Ihome {
   linkedInProfile: IlinkedInProfile[];
@@ -127,24 +123,7 @@ const Home: NextPage<Ihome> = ({ linkedInProfile }) => {
           <h2 className="heading">{t.home.latestProjects.heading}</h2>
         </section>
         <section className={styles.technologies}>
-          <ul className={styles.technologiesList}>
-            {Object.entries(technologies).map((technology) => (
-              <li key={technology[0]} className={styles.technology}>
-                <a
-                  href={technology[1].url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={technology[1].name}
-                  className={styles.technology__icon}
-                >
-                  {technology[1].icon}
-                </a>
-                <span className={styles.technology__name}>
-                  {technology[1].name}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <Technologies />
         </section>
         <section className={styles.contact}>
           <h2 className="heading">{t.home.contact.heading}</h2>
