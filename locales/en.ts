@@ -38,9 +38,6 @@ export const en: Idictionary = {
         heading: 'LinkedIn',
         footer: 'Go to my LinkedIn profile →',
       },
-      contactForm: {
-        heading: 'Send a message',
-      },
       email: {
         heading: 'Email',
         copy: 'Copy to the clipboard',
@@ -48,5 +45,15 @@ export const en: Idictionary = {
         footer: 'Open your email client →',
       },
     },
+  },
+  contactForm: {
+    heading: 'Send a message',
+    placeholders: {
+      name: 'Full name *',
+      email: 'Email *',
+      subject: 'Subject *',
+      message: 'Message *',
+    },
+    send: 'Send',
   },
 };

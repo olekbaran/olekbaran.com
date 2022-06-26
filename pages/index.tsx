@@ -13,6 +13,7 @@ import {
   Technologies,
   Card,
   SecondaryButton,
+  ContactForm,
 } from 'components';
 import { images } from 'assets/images';
 import { IlinkedInProfile } from 'types';
@@ -168,6 +169,7 @@ const Home: NextPage<Ihome> = ({ linkedInProfile }) => {
                 </div>
               </div>
             </Card>
+            <ContactForm />
             <Card
               heading={t.home.contact.email.heading}
               link={`mailto:${email}`}

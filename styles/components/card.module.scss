@@ -2,7 +2,7 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .card {
-  width: 90%;
+  width: 100%;
   min-height: 26rem;
   padding: 2rem;
   border: 1px solid vars.$border-color;

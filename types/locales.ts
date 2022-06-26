@@ -35,9 +35,6 @@ export interface Idictionary {
         heading: string;
         footer: string;
       };
-      contactForm: {
-        heading: string;
-      };
       email: {
         heading: string;
         copy: string;
@@ -45,5 +42,15 @@ export interface Idictionary {
         footer: string;
       };
     };
+  };
+  contactForm: {
+    heading: string;
+    placeholders: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+    };
+    send: string;
   };
 }

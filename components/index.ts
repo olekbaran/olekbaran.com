@@ -6,3 +6,7 @@ export { SocialMedia } from './SocialMedia';
 export { Technologies } from './Technologies';
 export { Card } from './Card';
 export { SecondaryButton } from './SecondaryButton';
+export { PrimaryButton } from './PrimaryButton';
+export { ContactForm } from './ContactForm';
+export { FormInputField } from './FormInputField';
+export { FormTextarea } from './FormTextarea';

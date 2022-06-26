@@ -1,0 +1,33 @@
+@use 'styles/abstracts/variables' as vars;
+@use 'styles/abstracts/mixins' as mixins;
+
+.form {
+  width: 100%;
+  min-height: 36rem;
+  padding: 2.5rem;
+  border: 1px solid vars.$border-color;
+  @include mixins.flex(space-between, flex-start, column);
+  gap: 2.5rem;
+  border-radius: 1rem;
+  background: vars.$color-black;
+
+  @media screen and (min-width: vars.$md) {
+    width: 28rem;
+  }
+
+  &__heading {
+    font-size: 1.875rem;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__textarea {
+    width: 100%;
+  }
+
+  &__submitButton {
+    width: 100%;
+  }
+}

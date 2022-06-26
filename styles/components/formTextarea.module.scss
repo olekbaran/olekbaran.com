@@ -1,0 +1,34 @@
+@use 'styles/abstracts/variables' as vars;
+
+.textarea {
+  width: 100%;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid vars.$color-grey;
+  outline: none;
+  background: none;
+  resize: none;
+  overflow-y: hidden;
+  font-size: 0.875rem;
+  transition: 0.2s ease;
+
+  @media screen and (min-width: vars.$md) {
+    width: 23rem;
+  }
+
+  &:focus {
+    border-color: vars.$color-primary;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &::placeholder {
+    color: vars.$color-grey;
+    transition: 0.2s ease;
+  }
+
+  &--error {
+    border-color: vars.$color-error;
+  }
+}
