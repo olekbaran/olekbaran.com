@@ -27,15 +27,26 @@
   }
 }
 
-@mixin background-image($location) {
+@mixin background-image($image-desktop, $image-mobile, $gradient) {
   background-image: linear-gradient(0deg, vars.$color-black 0%, transparent 20%),
     linear-gradient(90deg, vars.$color-black 0%, transparent 20%),
     linear-gradient(180deg, vars.$color-black 0%, transparent 20%),
     linear-gradient(270deg, vars.$color-black 0%, transparent 20%),
-    url($location),
-    radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%);
+    url($image-mobile), $gradient;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (min-width: vars.$md) {
+    background-image: linear-gradient(
+        0deg,
+        vars.$color-black 0%,
+        transparent 20%
+      ),
+      linear-gradient(90deg, vars.$color-black 0%, transparent 20%),
+      linear-gradient(180deg, vars.$color-black 0%, transparent 20%),
+      linear-gradient(270deg, vars.$color-black 0%, transparent 20%),
+      url($image-desktop), $gradient;
+  }
 }
 
 @mixin shadow-border-bottom {

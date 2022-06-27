@@ -6,7 +6,11 @@
   padding-top: 0;
   padding-bottom: 3.75rem;
   @include mixins.flex(center, center, row);
-  @include mixins.background-image('/images/backgrounds/line1.svg');
+  @include mixins.background-image(
+    '/images/backgrounds/line1.svg',
+    '/images/backgrounds/line1.svg',
+    radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%)
+  );
 
   @media screen and (min-width: vars.$md) {
     padding-top: vars.$sections-spacing;
@@ -101,12 +105,21 @@
 }
 
 .contact {
-  padding-bottom: calc(2 * vars.$sections-spacing);
+  @include mixins.background-image(
+    '/images/backgrounds/line2.svg',
+    '/images/backgrounds/line3.svg',
+    radial-gradient(at 50% 50%, vars.$color-primary 0, transparent 0%)
+  );
 
   .contactCards {
     width: 100%;
     @include mixins.flex(space-between, center, column);
-    gap: vars.$components-spacing;
+    gap: 3rem;
+    background: radial-gradient(
+      at 50% 50%,
+      vars.$color-primary 0,
+      transparent 60%
+    );
 
     @media screen and (min-width: vars.$md) {
       @include mixins.flex(space-between, center, row);

@@ -27,7 +27,6 @@ const handleSubmit = (
   values: IformValues,
   { resetForm }: FormikHelpers<IformValues>
 ) => {
-  console.log(values);
   resetForm();
 };
 
