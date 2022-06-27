@@ -4,15 +4,11 @@ import { object, string } from 'yup';
 
 import { en, pl } from 'locales';
 import { FormInputField, FormTextarea, PrimaryButton } from 'components';
+import { postEmail } from 'services';
+
+import { IcontactForm } from 'types';
 
 import styles from 'styles/components/contactForm.module.scss';
-
-interface IformValues {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
 
 const Validation = object().shape({
   name: string().required(),
@@ -23,11 +19,18 @@ const Validation = object().shape({
   message: string().required(),
 });
 
-const handleSubmit = (
-  values: IformValues,
-  { resetForm }: FormikHelpers<IformValues>
+const handleSubmit = async (
+  values: IcontactForm,
+  { resetForm }: FormikHelpers<IcontactForm>
 ) => {
-  resetForm();
+  try {
+    const res = await postEmail(values);
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    resetForm();
+  }
 };
 
 export const ContactForm = () => {
