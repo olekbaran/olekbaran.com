@@ -6,15 +6,27 @@ import styles from 'styles/components/formInputField.module.scss';
 interface IformInputField extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   className?: string;
+  disabled?: boolean;
+  loading?: boolean;
+  error?: boolean;
+  isOK?: boolean | null;
 }
 
 const defaultProps = {
   className: '',
+  disabled: false,
+  loading: false,
+  error: false,
+  isOK: null,
 };
 
 export const FormInputField: React.FunctionComponent<IformInputField> = ({
   name,
   className,
+  disabled,
+  loading,
+  error,
+  isOK,
   ...props
 }) => {
   const [field, meta] = useField(name);
@@ -24,8 +36,11 @@ export const FormInputField: React.FunctionComponent<IformInputField> = ({
       {...field}
       {...props}
       className={`${styles.input} ${className} ${
-        meta.error && meta.touched ? styles['input--error'] : ''
-      }`}
+        disabled ? styles['input--disabled'] : ''
+      } ${loading ? styles['input--loading'] : ''} ${
+        isOK ? styles['input--ok'] : ''
+      } ${(meta.error && meta.touched) || error ? styles['input--error'] : ''}`}
+      disabled={disabled}
     />
   );
 };
