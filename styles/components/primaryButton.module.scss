@@ -10,6 +10,7 @@
   color: vars.$color-black;
   background: vars.$color-white;
   cursor: pointer;
+  transition: 0.2s ease;
 
   @media screen and (min-width: vars.$md) {
     width: 23rem;
@@ -44,9 +45,11 @@
 
   &--error {
     border-color: vars.$color-error;
+    opacity: 1;
   }
 
   &--ok {
     border-color: vars.$color-ok;
+    opacity: 1;
   }
 }

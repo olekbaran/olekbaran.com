@@ -53,9 +53,11 @@
 
   &--error {
     border-color: vars.$color-error;
+    opacity: 1;
   }
 
   &--ok {
     border-color: vars.$color-ok;
+    opacity: 1;
   }
 }
