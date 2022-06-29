@@ -16,7 +16,7 @@ import {
   ContactForm,
 } from 'components';
 import { images } from 'assets/images';
-import { IlinkedInProfile } from 'types';
+import type { ILinkedInProfile } from 'types';
 
 import styles from 'styles/pages/home.module.scss';
 
@@ -54,11 +54,11 @@ export const getStaticProps = async () => {
   };
 };
 
-interface Ihome {
-  linkedInProfile: IlinkedInProfile[];
+interface IHome {
+  linkedInProfile: ILinkedInProfile[];
 }
 
-const Home: NextPage<Ihome> = ({ linkedInProfile }) => {
+const Home: NextPage<IHome> = ({ linkedInProfile }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;

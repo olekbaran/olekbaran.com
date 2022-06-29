@@ -2,14 +2,14 @@ import React from 'react';
 
 import styles from 'styles/components/card.module.scss';
 
-interface Icard {
+interface ICard {
   heading: string;
   link: string | undefined;
   footer: string | null;
   children: React.ReactNode;
 }
 
-export const Card: React.FunctionComponent<Icard> = ({
+export const Card: React.FunctionComponent<ICard> = ({
   heading,
   link,
   footer,

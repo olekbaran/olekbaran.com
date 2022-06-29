@@ -2,12 +2,12 @@ import React from 'react';
 
 import styles from 'styles/components/secondaryButton.module.scss';
 
-interface IsecondaryButton
+interface ISecondaryButton
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-export const SecondaryButton: React.FunctionComponent<IsecondaryButton> = ({
+export const SecondaryButton: React.FunctionComponent<ISecondaryButton> = ({
   text,
   ...props
 }) => (

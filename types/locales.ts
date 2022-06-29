@@ -1,4 +1,4 @@
-export interface Idictionary {
+export interface IDictionary {
   seo: {
     home: {
       title: string;

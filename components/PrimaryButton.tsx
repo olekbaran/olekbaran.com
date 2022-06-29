@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from 'styles/components/primaryButton.module.scss';
 
-interface IprimaryButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IPrimaryButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   className?: string;
   disabled?: boolean;
@@ -19,7 +19,7 @@ const defaultProps = {
   isOK: null,
 };
 
-export const PrimaryButton: React.FunctionComponent<IprimaryButton> = ({
+export const PrimaryButton: React.FunctionComponent<IPrimaryButton> = ({
   text,
   className,
   disabled,

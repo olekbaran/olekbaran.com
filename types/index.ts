@@ -1,5 +1,5 @@
-export type { IappRoutes } from './appRoutes';
-export type { Idictionary } from './locales';
-export type { IlinkedInProfile } from './cmsData';
-export type { IcontactForm } from './common';
-export type { IsendEmail } from './apiResponses';
+export type { IAppRoutes } from './appRoutes';
+export type { IDictionary } from './locales';
+export type { ILinkedInProfile } from './cmsData';
+export type { IContactForm } from './common';
+export type { ISendEmail } from './apiResponses';

@@ -1,4 +1,4 @@
-export interface IlinkedInProfile {
+export interface ILinkedInProfile {
   name: string;
   workplace: string;
   companyLogo: {

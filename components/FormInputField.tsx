@@ -3,7 +3,7 @@ import { useField } from 'formik';
 
 import styles from 'styles/components/formInputField.module.scss';
 
-interface IformInputField extends React.InputHTMLAttributes<HTMLInputElement> {
+interface IFormInputField extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   className?: string;
   disabled?: boolean;
@@ -20,7 +20,7 @@ const defaultProps = {
   isOK: null,
 };
 
-export const FormInputField: React.FunctionComponent<IformInputField> = ({
+export const FormInputField: React.FunctionComponent<IFormInputField> = ({
   name,
   className,
   disabled,

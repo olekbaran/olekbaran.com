@@ -6,7 +6,7 @@ import TextareaAutosize, {
 
 import styles from 'styles/components/formTextarea.module.scss';
 
-interface IformTextarea extends TextareaAutosizeProps {
+interface IFormTextarea extends TextareaAutosizeProps {
   name: string;
   className?: string;
   disabled?: boolean;
@@ -23,7 +23,7 @@ const defaultProps = {
   isOK: null,
 };
 
-export const FormTextarea: React.FunctionComponent<IformTextarea> = ({
+export const FormTextarea: React.FunctionComponent<IFormTextarea> = ({
   name,
   className,
   disabled,

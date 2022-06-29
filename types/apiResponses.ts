@@ -1,4 +1,4 @@
-export interface IsendEmail {
+export interface ISendEmail {
   status: number;
   message: string;
 }

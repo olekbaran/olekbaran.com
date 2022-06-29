@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 
-import { IsendEmail } from 'types';
+import type { ISendEmail } from 'types';
 
 const { OAuth2 } = google.auth;
 const oAuth2Client = new OAuth2(
@@ -16,7 +16,7 @@ oAuth2Client.setCredentials({
 
 const sendEmail = async (
   req: NextApiRequest,
-  res: NextApiResponse<IsendEmail>
+  res: NextApiResponse<ISendEmail>
 ) => {
   const accessToken = `${oAuth2Client.getAccessToken()}`;
   const { name, email, subject, message } = req.body;

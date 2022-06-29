@@ -1,4 +1,4 @@
-export interface IappRoutes {
+export interface IAppRoutes {
   home: {
     name: {
       en: string;

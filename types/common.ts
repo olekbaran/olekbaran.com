@@ -1,4 +1,4 @@
-export interface IcontactForm {
+export interface IContactForm {
   name: string;
   email: string;
   subject: string;

@@ -7,7 +7,7 @@ import { en, pl } from 'locales';
 import { FormInputField, FormTextarea, PrimaryButton } from 'components';
 import { postEmail } from 'services';
 
-import { IcontactForm } from 'types';
+import type { IContactForm } from 'types';
 
 import styles from 'styles/components/contactForm.module.scss';
 
@@ -31,8 +31,8 @@ export const ContactForm = () => {
   const [isResponseOK, setIsResponseOK] = useState<boolean | null>(null);
 
   const handleSubmit = async (
-    values: IcontactForm,
-    { resetForm }: FormikHelpers<IcontactForm>
+    values: IContactForm,
+    { resetForm }: FormikHelpers<IContactForm>
   ) => {
     try {
       setDisableInputs(true);
@@ -41,7 +41,7 @@ export const ContactForm = () => {
       if (res.status === 200) {
         setIsResponseOK(true);
       }
-    } catch (error) {
+    } catch {
       setIsError(true);
     } finally {
       setIsLoading(false);

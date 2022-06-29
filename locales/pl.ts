@@ -1,6 +1,6 @@
-import { Idictionary } from 'types';
+import type { IDictionary } from 'types';
 
-export const pl: Idictionary = {
+export const pl: IDictionary = {
   seo: {
     home: {
       title: 'Olek Baran',

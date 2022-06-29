@@ -1,7 +1,7 @@
 import { en, pl } from 'locales';
-import { IappRoutes } from 'types';
+import type { IAppRoutes } from 'types';
 
-export const appRoutes: IappRoutes = {
+export const appRoutes: IAppRoutes = {
   home: {
     name: {
       en: en.nav.home,
