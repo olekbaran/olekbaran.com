@@ -1,3 +1,4 @@
 export interface IsendEmail {
-  status: string;
+  status: number;
+  message: string;
 }

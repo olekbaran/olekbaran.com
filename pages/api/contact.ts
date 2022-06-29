@@ -44,14 +44,16 @@ const sendEmail = async (
       });
     } catch {
       return res.status(500).json({
-        status: 'Server error',
+        status: 500,
+        message: 'Server error',
       });
     }
-    return res.status(200).json({ status: 'Email was sent' });
+    return res.status(200).json({ status: 200, message: 'Email was sent' });
   }
 
   return res.status(404).json({
-    status: 'No data provided',
+    status: 404,
+    message: 'No data provided',
   });
 };
 
