@@ -2,21 +2,24 @@ import type { NextPage } from 'next';
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { en, pl } from 'locales';
+import { appRoutes } from 'config';
 import {
   ScrollDown,
   SocialMedia,
+  PrimaryButton,
   Technologies,
   Card,
   SecondaryButton,
   ContactForm,
 } from 'components';
 import { images } from 'assets/images';
-import type { ILinkedInProfile } from 'types';
+import type { ILatestProjects, ILinkedInProfile } from 'types';
 
 import styles from 'styles/pages/home.module.scss';
 
@@ -27,6 +30,22 @@ export const getStaticProps = async () => {
       Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
     },
   });
+
+  const latestProjectsQuery = gql`
+    {
+      projects(orderBy: endDate_DESC, first: 3) {
+        localizations(includeCurrent: true) {
+          name
+          slug
+          type
+          langLogo {
+            url
+            fileName
+          }
+        }
+      }
+    }
+  `;
 
   const linkedInQuery = gql`
     {
@@ -44,21 +63,26 @@ export const getStaticProps = async () => {
     }
   `;
 
+  const latestProjectsData = await graphQLClient.request(latestProjectsQuery);
+  const latestProjects = latestProjectsData.projects;
+
   const linkedInData = await graphQLClient.request(linkedInQuery);
   const linkedInProfile = linkedInData.dev.localizations;
 
   return {
     props: {
+      latestProjects,
       linkedInProfile,
     },
   };
 };
 
 interface IHome {
+  latestProjects: ILatestProjects[];
   linkedInProfile: ILinkedInProfile[];
 }
 
-const Home: NextPage<IHome> = ({ linkedInProfile }) => {
+const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
@@ -120,13 +144,55 @@ const Home: NextPage<IHome> = ({ linkedInProfile }) => {
           </div>
           <SocialMedia />
         </section>
-        <section className={styles.latestProjects}>
+        <section id="latest-projects" className={styles.latestProjects}>
           <h2 className="heading">{t.home.latestProjects.heading}</h2>
+          <div className={styles.projects}>
+            {latestProjects.map((project) => {
+              const tProject =
+                locale === 'pl'
+                  ? project.localizations[1]
+                  : project.localizations[0];
+              const langLogoAlt = tProject.langLogo.fileName.slice(
+                0,
+                tLinkkedIn.companyLogo.fileName.indexOf('.')
+              );
+
+              return (
+                <Link
+                  key={tProject.slug}
+                  href={`${appRoutes.projects.slug}/${tProject.slug}`}
+                >
+                  <a className={styles.projectWrapper}>
+                    <div className={styles.project}>
+                      <div className={styles.content}>
+                        <p>{tProject.name}</p>
+                        <p>{tProject.type}</p>
+                      </div>
+                      <div className={styles.technology}>
+                        <div className={styles.technology__icon}>
+                          <Image
+                            src={tProject.langLogo.url}
+                            layout="fill"
+                            alt={langLogoAlt}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
+          <Link href={appRoutes.projects.slug}>
+            <a className={styles.latestProjects__seeMore}>
+              <PrimaryButton text={t.home.latestProjects.seeMore} />
+            </a>
+          </Link>
         </section>
-        <section className={styles.technologies}>
+        <section id="technologies" className={styles.technologies}>
           <Technologies />
         </section>
-        <section className={styles.contact}>
+        <section id="contact" className={styles.contact}>
           <h2 className="heading">{t.home.contact.heading}</h2>
           <div className={styles.contactCards}>
             <Card

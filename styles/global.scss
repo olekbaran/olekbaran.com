@@ -30,6 +30,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
+  border-radius: 2px;
   background: vars.$color-primary;
 }
 
@@ -49,12 +50,8 @@ section {
   @include mixins.max-width;
   min-height: calc(889px + vars.$sections-spacing);
   padding: vars.$sections-spacing vars.$mobile-layout-paddings;
-  @include mixins.flex(center, center, column);
+  @include mixins.flex(space-between, center, column);
   gap: vars.$components-spacing;
-
-  @media screen and (min-width: vars.$md) {
-    @include mixins.flex(space-between, center, column);
-  }
 
   @media screen and (min-width: vars.$xl) {
     padding: vars.$sections-spacing vars.$desktop-layout-paddings;

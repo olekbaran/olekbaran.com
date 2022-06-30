@@ -31,6 +31,7 @@ export const en: IDictionary = {
     },
     latestProjects: {
       heading: 'Latest projects',
+      seeMore: 'See more',
     },
     contact: {
       heading: 'Contact',

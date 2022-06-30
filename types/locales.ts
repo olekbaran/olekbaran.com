@@ -28,6 +28,7 @@ export interface IDictionary {
     };
     latestProjects: {
       heading: string;
+      seeMore: string;
     };
     contact: {
       heading: string;

@@ -97,6 +97,72 @@
 
 .latestProjects {
   padding-top: calc(2 * vars.$sections-spacing);
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2.5rem;
+
+    .projectWrapper {
+      text-decoration: none;
+
+      &:first-child {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+
+      &:nth-child(2) {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      &:nth-child(3) {
+        grid-area: 3 / 3 / 4 / 4;
+      }
+
+      .project {
+        width: 100%;
+        height: 9rem;
+        border: 1px solid vars.$border-color;
+        border-radius: 0.625rem;
+        @include mixins.flex(flex-start, center, row);
+        background: vars.$color-black;
+        cursor: pointer;
+
+        @media screen and (min-width: vars.$md) {
+          width: 32rem;
+        }
+
+        .content {
+          width: 75%;
+          height: 100%;
+          padding: 2rem;
+          @include mixins.flex(center, flex-start, column);
+          gap: 0.625rem;
+        }
+
+        .technology {
+          width: 25%;
+          height: 100%;
+          border-left: 1px solid vars.$border-color;
+          @include mixins.flex(center, center, row);
+
+          &__icon {
+            width: 55%;
+            height: 2.25rem;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+  &__seeMore {
+    width: 100%;
+
+    @media screen and (min-width: vars.$md) {
+      width: auto;
+    }
+  }
 }
 
 .technologies {
