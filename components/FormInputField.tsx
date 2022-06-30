@@ -36,10 +36,10 @@ export const FormInputField: React.FunctionComponent<IFormInputField> = ({
       {...field}
       {...props}
       className={`${styles.input} ${className} ${
-        disabled ? styles['input--disabled'] : ''
-      } ${loading ? styles['input--loading'] : ''} ${
-        isOK ? styles['input--ok'] : ''
-      } ${(meta.error && meta.touched) || error ? styles['input--error'] : ''}`}
+        loading ? styles['input--loading'] : ''
+      } ${isOK ? styles['input--ok'] : ''} ${
+        (meta.error && meta.touched) || error ? styles['input--error'] : ''
+      }`}
       disabled={disabled}
     />
   );

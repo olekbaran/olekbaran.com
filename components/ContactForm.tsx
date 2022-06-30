@@ -107,8 +107,6 @@ export const ContactForm = () => {
           className={styles.form__submitButton}
           disabled={disableInputs}
           loading={isLoading}
-          error={isError}
-          isOK={isResponseOK}
         />
       </Form>
     </Formik>

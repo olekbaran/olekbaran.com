@@ -39,10 +39,8 @@ export const FormTextarea: React.FunctionComponent<IFormTextarea> = ({
       {...field}
       {...props}
       className={`${styles.textarea} ${className} ${
-        disabled ? styles['textarea--disabled'] : ''
-      } ${loading ? styles['textarea--loading'] : ''} ${
-        isOK ? styles['textarea--ok'] : ''
-      } ${
+        loading ? styles['textarea--loading'] : ''
+      } ${isOK ? styles['textarea--ok'] : ''} ${
         (meta.error && meta.touched) || error ? styles['textarea--error'] : ''
       }`}
       disabled={disabled}

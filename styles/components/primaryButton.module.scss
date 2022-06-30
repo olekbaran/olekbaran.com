@@ -22,14 +22,11 @@
     }
   }
 
-  &--disabled {
+  &--loading {
     border: 1px solid vars.$border-color;
     color: vars.$color-grey;
     background: vars.$color-dark-grey;
     pointer-events: none;
-  }
-
-  &--loading {
     animation: blink 2s infinite both;
 
     @keyframes blink {
@@ -41,15 +38,5 @@
         opacity: 1;
       }
     }
-  }
-
-  &--error {
-    border-color: vars.$color-error;
-    opacity: 1;
-  }
-
-  &--ok {
-    border-color: vars.$color-ok;
-    opacity: 1;
   }
 }

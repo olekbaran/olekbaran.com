@@ -71,7 +71,7 @@ const sendEmail = async (
                 border-top-right-radius: 0.75rem;
               "
             >
-              olekbaran.com
+              ${process.env.NEXT_PUBLIC_APP_DOMAIN}
             </a>
             <div
               style="
