@@ -13,8 +13,9 @@ import {
   ScrollDown,
   SocialMedia,
   PrimaryButton,
+  ProjectSmallCard,
   Technologies,
-  Card,
+  ContactCard,
   SecondaryButton,
   ContactForm,
 } from 'components';
@@ -146,43 +147,20 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
         </section>
         <section id="latest-projects" className={styles.latestProjects}>
           <h2 className="heading">{t.home.latestProjects.heading}</h2>
-          <div className={styles.projects}>
+          <ul className={styles.projects}>
             {latestProjects.map((project) => {
               const tProject =
                 locale === 'pl'
                   ? project.localizations[1]
                   : project.localizations[0];
-              const langLogoAlt = tProject.langLogo.fileName.slice(
-                0,
-                tLinkkedIn.companyLogo.fileName.indexOf('.')
-              );
 
               return (
-                <Link
-                  key={tProject.slug}
-                  href={`${appRoutes.projects.slug}/${tProject.slug}`}
-                >
-                  <a className={styles.projectWrapper}>
-                    <div className={styles.project}>
-                      <div className={styles.content}>
-                        <p className={styles.content__name}>{tProject.name}</p>
-                        <p className={styles.content__type}>{tProject.type}</p>
-                      </div>
-                      <div className={styles.technology}>
-                        <div className={styles.technology__icon}>
-                          <Image
-                            src={tProject.langLogo.url}
-                            layout="fill"
-                            alt={langLogoAlt}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
+                <li key={tProject.slug} className={styles.projectWrapper}>
+                  <ProjectSmallCard project={tProject} latestProjectsSection />
+                </li>
               );
             })}
-          </div>
+          </ul>
           <Link href={appRoutes.projects.slug}>
             <a className={styles.latestProjects__seeMore}>
               <PrimaryButton text={t.home.latestProjects.seeMore} />
@@ -195,7 +173,7 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
         <section id="contact" className={styles.contact}>
           <h2 className="heading">{t.home.contact.heading}</h2>
           <div className={styles.contactCards}>
-            <Card
+            <ContactCard
               heading={t.home.contact.linkedIn.heading}
               link={process.env.NEXT_PUBLIC_LINKEDIN_URL}
               footer={t.home.contact.linkedIn.footer}
@@ -234,9 +212,9 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
                   </span>
                 </div>
               </div>
-            </Card>
+            </ContactCard>
             <ContactForm />
-            <Card
+            <ContactCard
               heading={t.home.contact.email.heading}
               link={`mailto:${email}`}
               footer={t.home.contact.email.footer}
@@ -260,7 +238,7 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
                   }`}
                 />
               </CopyToClipboard>
-            </Card>
+            </ContactCard>
           </div>
         </section>
       </main>

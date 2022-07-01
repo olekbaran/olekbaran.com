@@ -1,4 +1,4 @@
-interface IProject {
+export interface ILatestProject {
   name: string;
   slug: string;
   type: string;
@@ -9,7 +9,7 @@ interface IProject {
 }
 
 export interface ILatestProjects {
-  localizations: IProject[];
+  localizations: ILatestProject[];
 }
 
 export interface ILinkedInProfile {

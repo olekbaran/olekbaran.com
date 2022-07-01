@@ -102,6 +102,7 @@
     '/images/backgrounds/line2.svg',
     radial-gradient(at 50% 50%, vars.$color-primary 0, transparent 0)
   );
+  background-position: center;
 
   @media screen and (min-width: vars.$md) {
     background-size: auto;
@@ -114,6 +115,7 @@
     grid-template-columns: 1.313rem 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 2.5rem;
+    list-style-type: none;
 
     @media screen and (min-width: vars.$md) {
       width: 80%;
@@ -124,7 +126,7 @@
       content: '';
       width: 1px;
       height: 100%;
-      border-left: 1px dashed vars.$color-primary;
+      border-left: 1px dashed vars.$color-grey;
       position: absolute;
       left: calc(0.6565rem - 1px);
 
@@ -134,8 +136,6 @@
     }
 
     .projectWrapper {
-      text-decoration: none;
-
       &:first-child {
         grid-area: 1 / 2 / 2 / 3;
 
@@ -157,77 +157,6 @@
 
         @media screen and (min-width: vars.$md) {
           grid-area: 3 / 3 / 4 / 4;
-        }
-      }
-
-      .project {
-        width: 100%;
-        height: 8rem;
-        border: 1px solid vars.$border-color;
-        border-radius: 0.625rem;
-        @include mixins.flex(flex-start, center, row);
-        background: vars.$color-black;
-        cursor: pointer;
-
-        @media screen and (min-width: vars.$md) {
-          transition: 0.2s ease;
-
-          &:hover {
-            border-color: vars.$color-primary;
-          }
-        }
-
-        &::before {
-          content: '';
-          width: 1.313rem;
-          height: 1.313rem;
-          border: 1px solid vars.$color-grey;
-          border-radius: 100%;
-          position: absolute;
-          left: 0;
-          background: vars.$color-black;
-          box-shadow: 0px 0px 100px 30px vars.$color-primary;
-          pointer-events: none;
-          z-index: 1;
-
-          @media screen and (min-width: vars.$md) {
-            left: calc(50% - 0.6565rem);
-          }
-        }
-
-        .content {
-          width: 75%;
-          height: 100%;
-          padding: 1.5rem;
-          @include mixins.flex(center, flex-start, column);
-          gap: 0.625rem;
-
-          &__name {
-            font-size: 1.125rem;
-            font-weight: 700;
-          }
-
-          &__type {
-            font-size: 0.875rem;
-            color: vars.$color-grey;
-          }
-        }
-
-        .technology {
-          width: 25%;
-          height: 100%;
-          border-left: 1px solid vars.$border-color;
-          border-top-right-radius: inherit;
-          border-bottom-right-radius: inherit;
-          @include mixins.flex(center, center, row);
-          box-sizing: content-box;
-          background: vars.$color-dark-grey;
-
-          &__icon {
-            width: 55%;
-            height: 2.25rem;
-            position: relative;
-          }
         }
       }
     }

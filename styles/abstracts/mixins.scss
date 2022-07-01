@@ -35,7 +35,6 @@
     url($image-mobile), $gradient;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
 
   @media screen and (min-width: vars.$md) {
     background-image: linear-gradient(
