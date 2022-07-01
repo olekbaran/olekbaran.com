@@ -165,8 +165,8 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
                   <a className={styles.projectWrapper}>
                     <div className={styles.project}>
                       <div className={styles.content}>
-                        <p>{tProject.name}</p>
-                        <p>{tProject.type}</p>
+                        <p className={styles.content__name}>{tProject.name}</p>
+                        <p className={styles.content__type}>{tProject.type}</p>
                       </div>
                       <div className={styles.technology}>
                         <div className={styles.technology__icon}>
