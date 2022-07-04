@@ -22,7 +22,7 @@ export const pl: IDictionary = {
     projects: 'Projekty',
     uses: 'Sprzęt',
     contact: 'Kontakt',
-    blog: 'Blog',
+    externalWebsite: 'Blog',
   },
   home: {
     hero: {

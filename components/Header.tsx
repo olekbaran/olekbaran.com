@@ -14,7 +14,7 @@ export const Header = () => {
   const { locale } = router;
   const t = locale === 'en' ? en : pl;
 
-  const blogUrl = `https://${process.env.NEXT_PUBLIC_BLOG_DOMAIN}`;
+  const externalWebsiteUrl = `https://${process.env.NEXT_PUBLIC_EXTERNAL_WEBSITE_DOMAIN}`;
 
   const [mobileNavShown, setMobileNavShown] = useState(false);
   const toggleMobileNav = () => {
@@ -82,9 +82,9 @@ export const Header = () => {
               </li>
             ))}
           </ul>
-          <a href={blogUrl} target="_blank" rel="noreferrer">
-            <button type="button" className={styles.blogButton}>
-              {t.nav.blog}
+          <a href={externalWebsiteUrl} target="_blank" rel="noreferrer">
+            <button type="button" className={styles.externalWebsiteButton}>
+              {t.nav.externalWebsite}
             </button>
           </a>
           <LocaleSwitcher />

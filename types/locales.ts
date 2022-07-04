@@ -19,7 +19,7 @@ export interface IDictionary {
     projects: string;
     uses: string;
     contact: string;
-    blog: string;
+    externalWebsite: string;
   };
   home: {
     hero: {
