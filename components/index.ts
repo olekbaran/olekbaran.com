@@ -1,6 +1,7 @@
 export { Logotype } from './Logotype';
 export { LocaleSwitcher } from './LocaleSwitcher';
 export { Header } from './Header';
+export { Footer } from './Footer';
 export { ScrollDown } from './ScrollDown';
 export { SocialMedia } from './SocialMedia';
 export { ProjectSmallCard } from './ProjectSmallCard';

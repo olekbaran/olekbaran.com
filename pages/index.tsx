@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -143,7 +143,9 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
               height={893}
             />
           </div>
-          <SocialMedia />
+          <div className={styles.hero__socialMedia}>
+            <SocialMedia />
+          </div>
         </section>
         <section id="latest-projects" className={styles.latestProjects}>
           <h2 className="heading">{t.home.latestProjects.heading}</h2>

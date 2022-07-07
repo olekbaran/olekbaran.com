@@ -1,20 +1,11 @@
 @use 'styles/abstracts/variables' as vars;
-@use 'styles/abstracts/mixins' as mixins;
 
-.socialMedia {
-  display: none;
+.icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: block;
 
   @media screen and (min-width: vars.$md) {
-    @include mixins.flex(space-between, center, column);
-    gap: 4.5rem;
-    list-style-type: none;
-    z-index: 1;
-  }
-
-  .icon {
-    width: 2.75rem;
-    height: 2.75rem;
-    display: block;
     transition: 0.2s ease;
 
     &:hover {

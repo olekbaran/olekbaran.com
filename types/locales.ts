@@ -21,6 +21,9 @@ export interface IDictionary {
     contact: string;
     externalWebsite: string;
   };
+  footer: {
+    license: string;
+  };
   home: {
     hero: {
       heading: string;

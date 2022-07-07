@@ -24,6 +24,9 @@ export const pl: IDictionary = {
     contact: 'Kontakt',
     externalWebsite: 'Blog',
   },
+  footer: {
+    license: 'Licencja MIT',
+  },
   home: {
     hero: {
       heading: 'Front-end\n web developer',

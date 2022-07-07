@@ -3,9 +3,9 @@ import { socialMedia } from 'config';
 import styles from 'styles/components/socialMedia.module.scss';
 
 export const SocialMedia = () => (
-  <ul className={styles.socialMedia}>
+  <>
     {Object.entries(socialMedia).map((service) => (
-      <li key={service[0]}>
+      <div key={service[0]}>
         <a
           href={service[1].url}
           target="_blank"
@@ -15,7 +15,7 @@ export const SocialMedia = () => (
         >
           {service[1].icon}
         </a>
-      </li>
+      </div>
     ))}
-  </ul>
+  </>
 );
