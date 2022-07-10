@@ -1,4 +1,5 @@
 import { en, pl } from 'locales';
+
 import type { IAppRoutes } from 'types';
 
 export const appRoutes: IAppRoutes = {

@@ -1,7 +1,7 @@
 @use 'styles/abstracts/variables' as vars;
 @use 'styles/abstracts/mixins' as mixins;
 
-.logotype {
+.logo {
   @include mixins.flex(flex-start, center, row);
 
   &__image {

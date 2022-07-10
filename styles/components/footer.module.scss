@@ -2,10 +2,11 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .footer {
-  width: 100%;
   @include mixins.max-width;
+  width: 100%;
   padding: vars.$sections-spacing vars.$mobile-layout-paddings;
   border-top: 1px solid vars.$border-color;
+  margin-top: vars.$sections-spacing;
   background: vars.$color-black;
   transition: 0.4s ease;
 
@@ -41,6 +42,10 @@
       @include mixins.flex(center, center, row);
       flex-wrap: wrap;
       gap: 2.75rem;
+
+      @media screen and (min-width: vars.$md) {
+        gap: 4.5rem;
+      }
     }
   }
 }

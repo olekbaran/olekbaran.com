@@ -1,6 +1,7 @@
 @use 'styles/abstracts/variables' as vars;
 
 .input {
+  max-width: 30rem;
   width: 100%;
   padding: 0.625rem 0;
   border-bottom: 1px solid vars.$color-grey;
@@ -9,10 +10,6 @@
   background: none;
   font-size: 0.875rem;
   transition: 0.2s ease;
-
-  @media screen and (min-width: vars.$md) {
-    width: 23rem;
-  }
 
   &:focus {
     border-color: vars.$color-primary;

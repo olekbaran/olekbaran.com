@@ -1,28 +1,17 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
-import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { en, pl } from 'locales';
-import { appRoutes } from 'config';
 import {
-  ScrollDown,
-  SocialMedia,
-  PrimaryButton,
-  ProjectSmallCard,
+  Hero,
+  LatestProjects,
   Technologies,
-  ContactCard,
-  SecondaryButton,
-  ContactForm,
-} from 'components';
-import { images } from 'assets/images';
-import type { ILatestProjects, ILinkedInProfile } from 'types';
+  Contact,
+} from 'components/sections';
 
-import styles from 'styles/pages/home.module.scss';
+import type { ILatestProjects, ILinkedInProfile } from 'types';
 
 export const getStaticProps = async () => {
   const url = process.env.GRAPHCMS_URL!;
@@ -87,23 +76,7 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
-  const tLinkkedIn = locale === 'pl' ? linkedInProfile[1] : linkedInProfile[0];
   const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
-
-  const splittedHeading = t.home.hero.heading.split('\n');
-  const email = process.env.NEXT_PUBLIC_EMAIL;
-  const companyLogoAlt = tLinkkedIn.companyLogo.fileName.slice(
-    0,
-    tLinkkedIn.companyLogo.fileName.indexOf('.')
-  );
-
-  const [isCopied, setIsCopied] = useState(false);
-  const onCopyText = () => {
-    setIsCopied(true);
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 2000);
-  };
 
   return (
     <>
@@ -121,128 +94,10 @@ const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
         <meta property="twitter:description" content={t.seo.home.description} />
       </Head>
       <main>
-        <section className={styles.hero}>
-          <div className={styles.text}>
-            <h1 className={styles.heading}>
-              <span
-                className={`${styles.heading__line} ${styles['heading__line--bigger']}`}
-              >
-                {splittedHeading[0]}
-              </span>
-              <span className={styles.heading__line}>{splittedHeading[1]}</span>
-            </h1>
-            <ScrollDown />
-          </div>
-          <div className={styles.heroImage}>
-            <Image
-              src={images.hero}
-              priority
-              placeholder="blur"
-              alt={t.seo.home.hero.photo}
-              width={714}
-              height={893}
-            />
-          </div>
-          <div className={styles.hero__socialMedia}>
-            <SocialMedia />
-          </div>
-        </section>
-        <section id="latest-projects" className={styles.latestProjects}>
-          <h2 className="heading">{t.home.latestProjects.heading}</h2>
-          <ul className={styles.projects}>
-            {latestProjects.map((project) => {
-              const tProject =
-                locale === 'pl'
-                  ? project.localizations[1]
-                  : project.localizations[0];
-
-              return (
-                <li key={tProject.slug} className={styles.projectWrapper}>
-                  <ProjectSmallCard project={tProject} latestProjectsSection />
-                </li>
-              );
-            })}
-          </ul>
-          <Link href={appRoutes.projects.slug}>
-            <a className={styles.latestProjects__seeMore}>
-              <PrimaryButton text={t.home.latestProjects.seeMore} />
-            </a>
-          </Link>
-        </section>
-        <section id="technologies" className={styles.technologies}>
-          <Technologies />
-        </section>
-        <section id="contact" className={styles.contact}>
-          <h2 className="heading">{t.home.contact.heading}</h2>
-          <div className={styles.contactCards}>
-            <ContactCard
-              heading={t.home.contact.linkedIn.heading}
-              link={process.env.NEXT_PUBLIC_LINKEDIN_URL}
-              footer={t.home.contact.linkedIn.footer}
-            >
-              <div className={styles.linkedIn}>
-                <div className={styles.profile}>
-                  <div className={styles.profile__image}>
-                    <Image
-                      src={images.avatar}
-                      placeholder="blur"
-                      alt={t.seo.components.images.avatar}
-                      width={88}
-                      height={88}
-                    />
-                  </div>
-                  <span className={styles.profile__name}>
-                    {tLinkkedIn.name}
-                  </span>
-                </div>
-                <div className={styles.workplace}>
-                  <a
-                    href={tLinkkedIn.companyUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={companyLogoAlt}
-                    className={styles.workplace__logo}
-                  >
-                    <Image
-                      src={tLinkkedIn.companyLogo.url}
-                      layout="fill"
-                      alt={companyLogoAlt}
-                    />
-                  </a>
-                  <span className={styles.workplace__name}>
-                    {tLinkkedIn.workplace}
-                  </span>
-                </div>
-              </div>
-            </ContactCard>
-            <ContactForm />
-            <ContactCard
-              heading={t.home.contact.email.heading}
-              link={`mailto:${email}`}
-              footer={t.home.contact.email.footer}
-            >
-              <div className={styles.email}>
-                <address className={styles.address}>
-                  <span className={styles.address__name}>
-                    {email?.split('@')[0]}
-                  </span>
-                  <span className={styles.address__domain}>
-                    @{email?.split('@')[1]}
-                  </span>
-                </address>
-              </div>
-              <CopyToClipboard text={email!} onCopy={onCopyText}>
-                <SecondaryButton
-                  text={`${
-                    isCopied
-                      ? t.home.contact.email.copied
-                      : t.home.contact.email.copy
-                  }`}
-                />
-              </CopyToClipboard>
-            </ContactCard>
-          </div>
-        </section>
+        <Hero />
+        <LatestProjects latestProjects={latestProjects} />
+        <Technologies />
+        <Contact linkedInProfile={linkedInProfile} />
       </main>
     </>
   );

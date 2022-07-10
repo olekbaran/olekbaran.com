@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { appRoutes } from 'config';
 import { en, pl } from 'locales';
-import { Logotype, LocaleSwitcher } from 'components';
+import { Logo, LocaleSwitcher } from 'components';
 
 import styles from 'styles/components/header.module.scss';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
@@ -46,7 +46,7 @@ export const Header = () => {
               : ''
           }`}
         >
-          <Logotype />
+          <Logo />
           <button
             type="button"
             onClick={toggleMobileNav}

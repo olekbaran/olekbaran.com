@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 import { en, pl } from 'locales';
-import { Logotype, SocialMedia } from 'components';
+import { Logo, SocialMedia } from 'components';
 
 import styles from 'styles/components/footer.module.scss';
 
@@ -16,7 +16,7 @@ export const Footer = () => {
       <nav />
       <div className={styles.content}>
         <div className={styles.copyright}>
-          <Logotype />
+          <Logo />
           <span className={styles.copyright__text}>
             Copyright © {year} Aleksander Baran. {t.footer.license}
           </span>

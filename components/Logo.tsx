@@ -6,17 +6,17 @@ import { appRoutes } from 'config';
 import { en, pl } from 'locales';
 import { images } from 'assets/images';
 
-import styles from 'styles/components/logotype.module.scss';
+import styles from 'styles/components/logo.module.scss';
 
-export const Logotype = () => {
+export const Logo = () => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'en' ? en : pl;
 
   return (
-    <div className={styles.logotype}>
+    <div className={styles.logo}>
       <Link href={appRoutes.home.slug}>
-        <a className={styles.logotype__image}>
+        <a className={styles.logo__image}>
           <Image
             src={images.avatar}
             priority
@@ -28,7 +28,7 @@ export const Logotype = () => {
         </a>
       </Link>
       <Link href={appRoutes.home.slug}>
-        <a className={styles.logotype__text}>Olek Baran</a>
+        <a className={styles.logo__text}>Olek Baran</a>
       </Link>
     </div>
   );

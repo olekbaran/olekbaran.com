@@ -2,6 +2,7 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .contactCard {
+  max-width: 22rem;
   width: 100%;
   min-height: 26rem;
   padding: 2rem;
@@ -10,10 +11,6 @@
   gap: 2rem;
   border-radius: 0.75rem;
   background: vars.$color-black;
-
-  @media screen and (min-width: vars.$md) {
-    width: 22rem;
-  }
 
   &__heading {
     font-size: 1.625rem;

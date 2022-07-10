@@ -1,0 +1,106 @@
+@use 'styles/abstracts/variables' as vars;
+@use 'styles/abstracts/mixins' as mixins;
+
+.hero {
+  min-height: 889px;
+  padding-top: 0;
+  padding-bottom: 3.75rem;
+  @include mixins.flex(center, center, row);
+  @include mixins.background-image(
+    '/images/backgrounds/line1.svg',
+    '/images/backgrounds/line1.svg',
+    radial-gradient(at 46% 50%, vars.$color-primary 0, transparent 40%)
+  );
+
+  @media screen and (min-width: vars.$md) {
+    padding-top: vars.$sections-spacing;
+    padding-bottom: vars.$sections-spacing;
+    @include mixins.flex(space-between, center, row);
+  }
+
+  .text {
+    @include mixins.flex(center, flex-start, column);
+    gap: 2.25rem;
+    z-index: 1;
+
+    @media screen and (min-width: vars.$md) {
+      z-index: 0;
+    }
+
+    .heading {
+      @include mixins.drop-shadow;
+
+      @media screen and (min-width: vars.$md) {
+        filter: none;
+      }
+
+      &__line {
+        display: block;
+        font-size: 5.5vw;
+        font-weight: 800;
+        text-align: center;
+
+        @media screen and (min-width: vars.$md) {
+          text-align: left;
+        }
+
+        @media screen and (min-width: vars.$xl) {
+          font-size: 3.5rem;
+        }
+
+        @media screen and (min-width: vars.$xxl) {
+          font-size: 4.5rem;
+        }
+
+        &--bigger {
+          font-size: 13vw;
+
+          @media screen and (min-width: vars.$xl) {
+            font-size: 9rem;
+          }
+
+          @media screen and (min-width: vars.$xxl) {
+            font-size: 10rem;
+          }
+        }
+      }
+    }
+  }
+
+  .heroImage {
+    position: absolute;
+    left: -16rem;
+    user-select: none;
+
+    @media screen and (min-width: vars.$md) {
+      left: auto;
+      right: calc(50vw - 32.5rem);
+    }
+
+    &::after {
+      content: '';
+      width: 90%;
+      height: 2px;
+      border-radius: 2px;
+      position: absolute;
+      left: 5%;
+      bottom: 4px;
+      background: vars.$color-primary;
+
+      @media screen and (min-width: vars.$md) {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  &__socialMedia {
+    display: none;
+
+    @media screen and (min-width: vars.$md) {
+      @include mixins.flex(space-between, center, column);
+      gap: 4.5rem;
+      z-index: 1;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { appRoutes } from 'config';
+
 import type { ILatestProject } from 'types';
 
 import styles from 'styles/components/projectSmallCard.module.scss';

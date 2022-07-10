@@ -2,6 +2,7 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .form {
+  max-width: 30rem;
   width: 100%;
   min-height: 38rem;
   padding: 2.5rem;
@@ -11,27 +12,11 @@
   border-radius: 1rem;
   background: vars.$color-black;
 
-  @media screen and (min-width: vars.$md) {
-    width: 30rem;
-  }
-
   &__heading {
     font-size: 1.625rem;
 
     @media screen and (min-width: vars.$xxs) {
       font-size: 1.875rem;
     }
-  }
-
-  &__input {
-    width: 100% !important;
-  }
-
-  &__textarea {
-    width: 100% !important;
-  }
-
-  &__submitButton {
-    width: 100% !important;
   }
 }
