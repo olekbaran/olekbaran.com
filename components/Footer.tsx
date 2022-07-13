@@ -18,7 +18,10 @@ export const Footer = () => {
         <div className={styles.copyright}>
           <Logo />
           <span className={styles.copyright__text}>
-            Copyright © {year} Aleksander Baran. {t.footer.license}
+            Copyright © {year} Aleksander Baran.{' '}
+            <span className={styles['copyright__text--license']}>
+              {t.footer.license}
+            </span>
           </span>
         </div>
         <div className={styles.content__socialMedia}>

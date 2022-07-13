@@ -2,24 +2,24 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .footer {
-  @include mixins.max-width;
   width: 100%;
-  padding: vars.$sections-spacing vars.$mobile-layout-paddings;
   border-top: 1px solid vars.$border-color;
   margin-top: vars.$sections-spacing;
   background: vars.$color-black;
   transition: 0.4s ease;
 
-  @media screen and (min-width: vars.$xl) {
-    padding: vars.$sections-spacing vars.$desktop-layout-paddings;
-  }
-
   .content {
+    @include mixins.max-width;
+    padding: vars.$sections-spacing vars.$mobile-layout-paddings;
     @include mixins.flex(center, center, column);
     gap: 2.75rem;
 
     @media screen and (min-width: vars.$md) {
       @include mixins.flex(space-between, center, row);
+    }
+
+    @media screen and (min-width: vars.$xl) {
+      padding: vars.$sections-spacing vars.$desktop-layout-paddings;
     }
 
     .copyright {
@@ -35,6 +35,15 @@
         font-size: 0.875rem;
         color: vars.$color-grey;
         text-align: center;
+
+        &--license {
+          display: block;
+          color: inherit;
+
+          @media screen and (min-width: vars.$xs) {
+            display: inline;
+          }
+        }
       }
     }
 
@@ -42,6 +51,14 @@
       @include mixins.flex(center, center, row);
       flex-wrap: wrap;
       gap: 2.75rem;
+
+      svg {
+        width: 2.25rem;
+
+        path {
+          color: vars.$color-grey;
+        }
+      }
 
       @media screen and (min-width: vars.$md) {
         gap: 4.5rem;

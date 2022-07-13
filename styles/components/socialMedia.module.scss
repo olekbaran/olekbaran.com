@@ -12,4 +12,8 @@
       transform: scale(1.2);
     }
   }
+
+  svg path {
+    color: vars.$color-white;
+  }
 }
