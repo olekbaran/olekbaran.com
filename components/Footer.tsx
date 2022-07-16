@@ -13,7 +13,6 @@ export const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <nav />
       <div className={styles.content}>
         <div className={styles.copyright}>
           <Logo />

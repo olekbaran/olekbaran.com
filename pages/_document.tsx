@@ -15,7 +15,7 @@ const Document = () => (
       <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700;800&display=swap"
         rel="stylesheet"
       />
 

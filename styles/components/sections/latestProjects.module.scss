@@ -73,6 +73,7 @@
   &__seeMore {
     width: 100%;
     @include mixins.flex(center, center, column);
+    text-decoration: none;
 
     @media screen and (min-width: vars.$md) {
       width: auto;

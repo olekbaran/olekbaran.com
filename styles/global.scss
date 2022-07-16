@@ -25,25 +25,37 @@
   height: 2px;
 }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 *::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background: vars.$color-primary;
 }
 
+*::-webkit-scrollbar-track {
+  background: vars.$color-black;
+}
+
 ::-webkit-scrollbar-corner {
-  background: transparent;
+  background: vars.$color-black;
 }
 
 body {
   background: vars.$color-black;
 }
 
+div {
+  background: vars.$color-black;
+}
+
 main {
   margin-top: vars.$header-height;
+}
+
+main,
+header,
+footer {
+  div {
+    background: initial;
+  }
 }
 
 section {
@@ -68,4 +80,8 @@ section {
       font-size: 3rem;
     }
   }
+}
+
+.next-error-h1 {
+  border-color: vars.$color-primary !important;
 }
