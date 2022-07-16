@@ -54,10 +54,6 @@
 
       svg {
         width: 2.25rem;
-
-        path {
-          color: vars.$color-grey;
-        }
       }
 
       @media screen and (min-width: vars.$md) {

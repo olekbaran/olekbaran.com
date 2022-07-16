@@ -22,7 +22,7 @@ export const LatestProjects: React.FunctionComponent<ILatestProject> = ({
   const t = locale === 'pl' ? pl : en;
 
   return (
-    <section id="latest-projects" className={styles.latestProjects}>
+    <section className={styles.latestProjects}>
       <h2 className="heading">{t.home.latestProjects.heading}</h2>
       <ul className={styles.projects}>
         {latestProjects.map((project) => {

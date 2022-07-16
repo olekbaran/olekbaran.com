@@ -4,6 +4,7 @@ import Image from 'next/image';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { en, pl } from 'locales';
+import { appRoutes } from 'config';
 import { images } from 'assets/images';
 import { ContactCard, SecondaryButton, ContactForm } from 'components';
 
@@ -23,6 +24,9 @@ export const Contact: React.FunctionComponent<IContact> = ({
   const t = locale === 'pl' ? pl : en;
   const tLinkkedIn = locale === 'pl' ? linkedInProfile[1] : linkedInProfile[0];
 
+  const sectionId = appRoutes.contact.slug.substring(
+    appRoutes.contact.slug.indexOf('#') + 1
+  );
   const email = process.env.NEXT_PUBLIC_EMAIL;
   const companyLogoAlt = tLinkkedIn.companyLogo.fileName.slice(
     0,
@@ -38,7 +42,7 @@ export const Contact: React.FunctionComponent<IContact> = ({
   };
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id={sectionId} className={styles.contact}>
       <h2 className="heading">{t.home.contact.heading}</h2>
       <div className={styles.contactCards}>
         <ContactCard

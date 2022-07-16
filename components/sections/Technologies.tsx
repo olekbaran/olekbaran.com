@@ -3,7 +3,7 @@ import { technologies } from 'config';
 import styles from 'styles/components/sections/technologies.module.scss';
 
 export const Technologies = () => (
-  <section id="technologies" className={styles.technologies}>
+  <section className={styles.technologies}>
     <ul className={styles.technologiesList}>
       {Object.entries(technologies).map((technology) => (
         <li key={technology[0]} className={styles.technology}>
