@@ -1,49 +1,40 @@
 import React from 'react';
 import { useField } from 'formik';
-import TextareaAutosize, {
-  TextareaAutosizeProps,
-} from 'react-textarea-autosize';
+import { TextareaAutosizeProps } from 'react-textarea-autosize';
 
-import styles from 'styles/components/formTextarea.module.scss';
+import { Textarea } from 'components';
 
 interface IFormTextarea extends TextareaAutosizeProps {
   name: string;
-  className?: string;
-  disabled?: boolean;
-  loading?: boolean;
-  error?: boolean;
+  isLoading?: boolean;
+  isError?: boolean;
   isOK?: boolean | null;
 }
 
 const defaultProps = {
-  className: '',
-  disabled: false,
-  loading: false,
-  error: false,
+  isLoading: false,
+  isError: false,
   isOK: null,
 };
 
 export const FormTextarea: React.FunctionComponent<IFormTextarea> = ({
-  name,
-  className,
-  disabled,
-  loading,
-  error,
+  isLoading,
+  isError,
   isOK,
+  name,
+  disabled,
   ...props
 }) => {
   const [field, meta] = useField(name);
 
   return (
-    <TextareaAutosize
+    <Textarea
+      disabled={disabled}
+      isLoading={isLoading}
+      isError={!!(isError || (meta.error && meta.touched))}
+      isOK={isOK}
       {...field}
       {...props}
-      className={`${styles.textarea} ${className} ${
-        loading ? styles['textarea--loading'] : ''
-      } ${isOK ? styles['textarea--ok'] : ''} ${
-        (meta.error && meta.touched) || error ? styles['textarea--error'] : ''
-      }`}
-      disabled={disabled}
     />
   );
 };

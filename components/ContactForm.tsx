@@ -11,7 +11,7 @@ import type { IContactForm } from 'types';
 
 import styles from 'styles/components/contactForm.module.scss';
 
-const Validation = object().shape({
+const validation = object().shape({
   name: string().required(),
   email: string()
     .required()
@@ -58,7 +58,7 @@ export const ContactForm = () => {
     <Formik
       initialValues={{ name: '', email: '', subject: '', message: '' }}
       onSubmit={handleSubmit}
-      validationSchema={Validation}
+      validationSchema={validation}
     >
       <Form className={styles.form}>
         <h3 className={styles.form__heading}>{t.contactForm.heading}</h3>
@@ -66,47 +66,42 @@ export const ContactForm = () => {
           type="text"
           name="name"
           placeholder={t.contactForm.placeholders.name}
-          className={`${styles.form__input}`}
           disabled={disableInputs}
-          loading={isLoading}
-          error={isError}
+          isLoading={isLoading}
+          isError={isError}
           isOK={isResponseOK}
         />
         <FormInputField
           type="text"
           name="email"
           placeholder={t.contactForm.placeholders.email}
-          className={styles.form__input}
           disabled={disableInputs}
-          loading={isLoading}
-          error={isError}
+          isLoading={isLoading}
+          isError={isError}
           isOK={isResponseOK}
         />
         <FormInputField
           type="text"
           name="subject"
           placeholder={t.contactForm.placeholders.subject}
-          className={styles.form__input}
           disabled={disableInputs}
-          loading={isLoading}
-          error={isError}
+          isLoading={isLoading}
+          isError={isError}
           isOK={isResponseOK}
         />
         <FormTextarea
           name="message"
           placeholder={t.contactForm.placeholders.message}
-          className={styles.form__textarea}
           disabled={disableInputs}
-          loading={isLoading}
-          error={isError}
+          isLoading={isLoading}
+          isError={isError}
           isOK={isResponseOK}
         />
         <PrimaryButton
           type="submit"
           text={t.contactForm.send}
-          className={styles.form__submitButton}
           disabled={disableInputs}
-          loading={isLoading}
+          isLoading={isLoading}
         />
       </Form>
     </Formik>

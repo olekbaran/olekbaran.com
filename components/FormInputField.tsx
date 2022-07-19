@@ -1,46 +1,39 @@
 import React from 'react';
 import { useField } from 'formik';
 
-import styles from 'styles/components/formInputField.module.scss';
+import { InputField } from 'components';
 
 interface IFormInputField extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  className?: string;
-  disabled?: boolean;
-  loading?: boolean;
-  error?: boolean;
+  isLoading?: boolean;
+  isError?: boolean;
   isOK?: boolean | null;
 }
 
 const defaultProps = {
-  className: '',
-  disabled: false,
-  loading: false,
-  error: false,
+  isLoading: false,
+  isError: false,
   isOK: null,
 };
 
 export const FormInputField: React.FunctionComponent<IFormInputField> = ({
-  name,
-  className,
-  disabled,
-  loading,
-  error,
+  isLoading,
+  isError,
   isOK,
+  name,
+  disabled,
   ...props
 }) => {
   const [field, meta] = useField(name);
 
   return (
-    <input
+    <InputField
+      disabled={disabled}
+      isLoading={isLoading}
+      isError={!!(isError || (meta.error && meta.touched))}
+      isOK={isOK}
       {...field}
       {...props}
-      className={`${styles.input} ${className} ${
-        loading ? styles['input--loading'] : ''
-      } ${isOK ? styles['input--ok'] : ''} ${
-        (meta.error && meta.touched) || error ? styles['input--error'] : ''
-      }`}
-      disabled={disabled}
     />
   );
 };

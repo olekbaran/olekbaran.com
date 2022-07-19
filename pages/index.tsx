@@ -14,10 +14,10 @@ import {
 import type { ILatestProjects, ILinkedInProfile } from 'types';
 
 export const getStaticProps = async () => {
-  const url = process.env.GRAPHCMS_URL!;
+  const url = process.env.HYGRAPH_URL!;
   const graphQLClient = new GraphQLClient(url, {
     headers: {
-      Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
+      Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
     },
   });
 

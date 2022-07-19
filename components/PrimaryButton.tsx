@@ -4,28 +4,24 @@ import styles from 'styles/components/primaryButton.module.scss';
 
 interface IPrimaryButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
-  className?: string;
-  disabled?: boolean;
-  loading?: boolean;
+  isLoading?: boolean;
 }
 
 const defaultProps = {
-  className: '',
-  disabled: false,
-  loading: false,
+  isLoading: false,
 };
 
 export const PrimaryButton: React.FunctionComponent<IPrimaryButton> = ({
   text,
+  isLoading,
   className,
   disabled,
-  loading,
   ...props
 }) => (
   <button
     type="button"
     className={`${styles.primaryButton} ${className}  ${
-      loading ? styles['primaryButton--loading'] : ''
+      isLoading ? styles['primaryButton--loading'] : ''
     } $`}
     disabled={disabled}
     {...props}

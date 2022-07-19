@@ -9,5 +9,7 @@ export { ContactCard } from './ContactCard';
 export { SecondaryButton } from './SecondaryButton';
 export { PrimaryButton } from './PrimaryButton';
 export { ContactForm } from './ContactForm';
+export { InputField } from './InputField';
 export { FormInputField } from './FormInputField';
+export { Textarea } from './Textarea';
 export { FormTextarea } from './FormTextarea';

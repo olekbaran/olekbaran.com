@@ -10,16 +10,16 @@ import styles from 'styles/components/projectSmallCard.module.scss';
 
 interface IProjectSmallCard {
   project: ILatestProject;
-  latestProjectsSection?: boolean;
+  isLatestProjectsSection?: boolean;
 }
 
 const defaultProps = {
-  latestProjectsSection: false,
+  isLatestProjectsSection: false,
 };
 
 export const ProjectSmallCard: React.FunctionComponent<IProjectSmallCard> = ({
   project,
-  latestProjectsSection,
+  isLatestProjectsSection,
 }) => {
   const langLogoAlt = project.langLogo.fileName.slice(
     0,
@@ -30,7 +30,9 @@ export const ProjectSmallCard: React.FunctionComponent<IProjectSmallCard> = ({
     <Link href={`${appRoutes.projects.slug}/${project.slug}`}>
       <a
         className={`${styles.project} ${
-          latestProjectsSection ? styles['project--latestProjectsSection'] : ''
+          isLatestProjectsSection
+            ? styles['project--latestProjectsSection']
+            : ''
         }`}
       >
         <div className={styles.content}>

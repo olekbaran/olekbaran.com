@@ -33,7 +33,7 @@ export const LatestProjects: React.FunctionComponent<ILatestProject> = ({
 
           return (
             <li key={tProject.slug} className={styles.projectWrapper}>
-              <ProjectSmallCard project={tProject} latestProjectsSection />
+              <ProjectSmallCard project={tProject} isLatestProjectsSection />
             </li>
           );
         })}
