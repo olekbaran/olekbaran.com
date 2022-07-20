@@ -1,0 +1,6 @@
+@use 'styles/abstracts/variables' as vars;
+@use 'styles/abstracts/mixins' as mixins;
+
+.projects {
+  @include mixins.flex(space-between, center, row);
+}

@@ -7,6 +7,10 @@ export interface IDictionary {
         photo: string;
       };
     };
+    projects: {
+      title: string;
+      description: string;
+    };
     components: {
       images: {
         avatar: string;

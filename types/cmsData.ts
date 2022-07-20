@@ -1,4 +1,5 @@
-export interface ILatestProject {
+export interface ILatestProjectCard {
+  id: string;
   name: string;
   slug: string;
   type: string;
@@ -9,7 +10,7 @@ export interface ILatestProject {
 }
 
 export interface ILatestProjects {
-  localizations: ILatestProject[];
+  localizations: ILatestProjectCard[];
 }
 
 export interface ILinkedInProfile {
@@ -20,4 +21,22 @@ export interface ILinkedInProfile {
     fileName: string;
   };
   companyUrl: string;
+}
+
+export interface IProjectCard {
+  id: string;
+  name: string;
+  slug: string;
+  type: string;
+  langLogo: {
+    url: string;
+    fileName: string;
+  };
+  langUrl: string;
+  demo: string | null;
+  gitHub: string;
+}
+
+export interface IProjects {
+  localizations: IProjectCard[];
 }

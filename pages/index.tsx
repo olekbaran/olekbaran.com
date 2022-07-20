@@ -25,6 +25,7 @@ export const getStaticProps = async () => {
     {
       projects(orderBy: endDate_DESC, first: 3) {
         localizations(includeCurrent: true) {
+          id
           name
           slug
           type
@@ -67,12 +68,12 @@ export const getStaticProps = async () => {
   };
 };
 
-interface IHome {
+interface IHomeProps {
   latestProjects: ILatestProjects[];
   linkedInProfile: ILinkedInProfile[];
 }
 
-const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
+const Home: NextPage<IHomeProps> = ({ latestProjects, linkedInProfile }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;

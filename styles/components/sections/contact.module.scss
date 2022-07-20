@@ -2,6 +2,7 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .contact {
+  margin-bottom: vars.$sections-spacing;
   @include mixins.background-image(
     '/images/backgrounds/line3.svg',
     '/images/backgrounds/line4.svg',
