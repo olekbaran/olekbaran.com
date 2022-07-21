@@ -79,7 +79,7 @@ const Projects: NextPage<IProjectsProps> = ({ projects }) => {
       <main>
         <section className={styles.projects}>
           <h2 className="heading">{t.projects.heading}</h2>
-          <ul className={styles.projectsCards}>
+          <ul className={styles.projects__cards}>
             {projects.map((project) => {
               const tProject =
                 locale === 'pl'

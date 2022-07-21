@@ -10,7 +10,7 @@
     radial-gradient(at 50% 50%, vars.$color-primary 0, transparent 38%)
   );
 
-  .projectsCards {
+  &__cards {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
