@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { GraphQLClient, gql } from 'graphql-request';
 
 import { en, pl } from 'locales';
+import { ProjectCard } from 'components';
 
 import type { IProjects } from 'types';
 
@@ -77,14 +78,21 @@ const Projects: NextPage<IProjectsProps> = ({ projects }) => {
       </Head>
       <main>
         <section className={styles.projects}>
-          {projects.map((project) => {
-            const tProject =
-              locale === 'pl'
-                ? project.localizations[1]
-                : project.localizations[0];
+          <h2 className="heading">{t.projects.heading}</h2>
+          <ul className={styles.projectsCards}>
+            {projects.map((project) => {
+              const tProject =
+                locale === 'pl'
+                  ? project.localizations[1]
+                  : project.localizations[0];
 
-            return <li key={tProject.id}>{tProject.name}</li>;
-          })}
+              return (
+                <li key={tProject.id}>
+                  <ProjectCard project={tProject} />
+                </li>
+              );
+            })}
+          </ul>
         </section>
       </main>
     </>

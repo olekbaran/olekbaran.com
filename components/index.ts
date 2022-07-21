@@ -4,6 +4,7 @@ export { Header } from './Header';
 export { Footer } from './Footer';
 export { ScrollDown } from './ScrollDown';
 export { SocialMedia } from './SocialMedia';
+export { ProjectCard } from './ProjectCard';
 export { ProjectSmallCard } from './ProjectSmallCard';
 export { ContactCard } from './ContactCard';
 export { SecondaryButton } from './SecondaryButton';

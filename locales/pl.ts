@@ -55,6 +55,9 @@ export const pl: IDictionary = {
       },
     },
   },
+  projects: {
+    heading: 'Moje projekty',
+  },
   contactForm: {
     heading: 'Wyślij wiadomość',
     placeholders: {

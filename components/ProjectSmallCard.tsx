@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 import { appRoutes } from 'config';
 
-import type { ILatestProjectCard } from 'types';
+import type { ISingleLatestProjectCard } from 'types';
 
 import styles from 'styles/components/projectSmallCard.module.scss';
 
 interface IProjectSmallCard {
-  project: ILatestProjectCard;
+  project: ISingleLatestProjectCard;
   isLatestProjectsSection?: boolean;
 }
 

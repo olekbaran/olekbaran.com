@@ -51,6 +51,9 @@ export interface IDictionary {
       };
     };
   };
+  projects: {
+    heading: string;
+  };
   contactForm: {
     heading: string;
     placeholders: {
