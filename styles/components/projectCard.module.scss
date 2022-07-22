@@ -9,10 +9,14 @@
     max-width: 22rem;
     height: 100%;
     min-height: 26rem;
-    padding: 1.5rem;
+    padding: 2rem;
     border: 1px solid vars.$border-color;
-    border-radius: 0.625rem;
+    border-radius: 0.75rem;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
     background: vars.$color-black;
     cursor: pointer;
 
@@ -21,6 +25,31 @@
 
       &:hover {
         border-color: vars.$color-primary;
+      }
+    }
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+
+      &__name {
+        font-size: 1.625rem;
+      }
+
+      &__type {
+        font-size: 0.875rem;
+        color: vars.$color-grey;
+      }
+    }
+
+    &__icon {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      svg rect {
+        color: vars.$color-primary;
       }
     }
   }

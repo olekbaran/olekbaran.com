@@ -32,9 +32,6 @@ export interface ISingleProjectCard {
     url: string;
     fileName: string;
   };
-  langUrl: string;
-  demo: string | null;
-  gitHub: string;
 }
 
 export interface IProjects {

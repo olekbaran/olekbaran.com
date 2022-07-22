@@ -36,7 +36,7 @@ export const ProjectSmallCard: React.FunctionComponent<IProjectSmallCard> = ({
         }`}
       >
         <div className={styles.content}>
-          <p className={styles.content__name}>{project.name}</p>
+          <h4 className={styles.content__name}>{project.name}</h4>
           <p className={styles.content__type}>{project.type}</p>
         </div>
         <div className={styles.technology}>

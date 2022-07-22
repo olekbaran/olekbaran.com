@@ -30,9 +30,6 @@ export const getStaticProps = async () => {
             url
             fileName
           }
-          langUrl
-          demo
-          gitHub
         }
       }
     }
