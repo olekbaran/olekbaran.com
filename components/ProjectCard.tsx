@@ -36,7 +36,7 @@ export const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
         }`}
       >
         <div className={styles.content}>
-          <h4 className={styles.content__name}>{project.name}</h4>
+          <p className={styles.content__name}>{project.name}</p>
           <p className={styles.content__type}>{project.type}</p>
         </div>
         <div className={styles.technology}>
