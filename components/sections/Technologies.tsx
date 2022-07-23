@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { technologies } from 'config';
 
 import styles from 'styles/components/sections/technologies.module.scss';

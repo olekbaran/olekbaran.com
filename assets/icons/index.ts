@@ -1,3 +1,4 @@
+export { Icon } from './Icon';
 export { GitHub } from './GitHub';
 export { Instagram } from './Instagram';
 export { LinkedIn } from './LinkedIn';

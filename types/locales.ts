@@ -7,6 +7,10 @@ export interface IDictionary {
         photo: string;
       };
     };
+    projects: {
+      title: string;
+      description: string;
+    };
     components: {
       images: {
         avatar: string;
@@ -46,6 +50,9 @@ export interface IDictionary {
         footer: string;
       };
     };
+  };
+  projects: {
+    heading: string;
   };
   contactForm: {
     heading: string;

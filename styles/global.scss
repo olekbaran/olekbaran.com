@@ -60,7 +60,6 @@ footer {
 
 section {
   @include mixins.max-width;
-  min-height: calc(889px + vars.$sections-spacing);
   padding: vars.$sections-spacing vars.$mobile-layout-paddings;
   @include mixins.flex(space-between, center, column);
   gap: vars.$components-spacing;

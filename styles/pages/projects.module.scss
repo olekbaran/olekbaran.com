@@ -1,0 +1,24 @@
+@use 'styles/abstracts/variables' as vars;
+@use 'styles/abstracts/mixins' as mixins;
+
+.projects {
+  margin-bottom: vars.$sections-spacing;
+  @include mixins.flex(flex-start, center, column);
+  @include mixins.background-image(
+    '/images/backgrounds/line1.svg',
+    '/images/backgrounds/line1.svg',
+    radial-gradient(at 50% 59%, vars.$color-primary 0, transparent 38%)
+  );
+
+  &__cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: vars.$components-spacing;
+    list-style-type: none;
+
+    @media screen and (min-width: vars.$md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

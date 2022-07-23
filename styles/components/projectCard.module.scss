@@ -2,10 +2,13 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .project {
+  max-width: 30rem;
   width: 100%;
-  height: 8rem;
+  min-height: 8rem;
+  height: 100%;
   border: 1px solid vars.$border-color;
   border-radius: 0.625rem;
+  margin: 0 auto;
   @include mixins.flex(flex-start, center, row);
   text-decoration: none;
   background: vars.$color-black;

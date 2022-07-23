@@ -1,4 +1,5 @@
-export interface ILatestProject {
+export interface IProjectCard {
+  id: string;
   name: string;
   slug: string;
   type: string;
@@ -8,8 +9,8 @@ export interface ILatestProject {
   };
 }
 
-export interface ILatestProjects {
-  localizations: ILatestProject[];
+export interface IProjects {
+  localizations: IProjectCard[];
 }
 
 export interface ILinkedInProfile {

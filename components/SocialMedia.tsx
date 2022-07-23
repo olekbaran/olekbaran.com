@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { socialMedia } from 'config';
 
 import styles from 'styles/components/socialMedia.module.scss';

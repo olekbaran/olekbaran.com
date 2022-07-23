@@ -2,8 +2,6 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .technologies {
-  min-height: auto;
-
   .technologiesList {
     max-width: 30rem;
     width: 100%;

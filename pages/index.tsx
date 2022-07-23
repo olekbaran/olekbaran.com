@@ -11,7 +11,7 @@ import {
   Contact,
 } from 'components/sections';
 
-import type { ILatestProjects, ILinkedInProfile } from 'types';
+import type { IProjects, ILinkedInProfile } from 'types';
 
 export const getStaticProps = async () => {
   const url = process.env.HYGRAPH_URL!;
@@ -25,6 +25,7 @@ export const getStaticProps = async () => {
     {
       projects(orderBy: endDate_DESC, first: 3) {
         localizations(includeCurrent: true) {
+          id
           name
           slug
           type
@@ -67,12 +68,12 @@ export const getStaticProps = async () => {
   };
 };
 
-interface IHome {
-  latestProjects: ILatestProjects[];
+interface IHomeProps {
+  latestProjects: IProjects[];
   linkedInProfile: ILinkedInProfile[];
 }
 
-const Home: NextPage<IHome> = ({ latestProjects, linkedInProfile }) => {
+const Home: NextPage<IHomeProps> = ({ latestProjects, linkedInProfile }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
