@@ -1,31 +1,52 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { appRoutes } from 'config';
-import { Icon } from 'assets/icons';
 
-import type { ISingleProjectCard } from 'types';
+import type { ISingleLatestProjectCard } from 'types';
 
 import styles from 'styles/components/projectCard.module.scss';
 
 interface IProjectCard {
-  project: ISingleProjectCard;
+  project: ISingleLatestProjectCard;
+  isLatestProjectsSection?: boolean;
 }
+
+const defaultProps = {
+  isLatestProjectsSection: false,
+};
 
 export const ProjectCard: React.FunctionComponent<IProjectCard> = ({
   project,
-}) => (
-  <Link href={`${appRoutes.projects.slug}/${project.slug}`}>
-    <a className={styles.project}>
-      <div className={styles.content}>
-        <div className={styles.heading}>
-          <h3 className={styles.heading__name}>{project.name}</h3>
-          <p className={styles.heading__type}>{project.type}</p>
+  isLatestProjectsSection,
+}) => {
+  const langLogoAlt = project.langLogo.fileName.slice(
+    0,
+    project.langLogo.fileName.indexOf('.')
+  );
+
+  return (
+    <Link href={`${appRoutes.projects.slug}/${project.slug}`}>
+      <a
+        className={`${styles.project} ${
+          isLatestProjectsSection
+            ? styles['project--latestProjectsSection']
+            : ''
+        }`}
+      >
+        <div className={styles.content}>
+          <h4 className={styles.content__name}>{project.name}</h4>
+          <p className={styles.content__type}>{project.type}</p>
         </div>
-        <div className={styles.content__icon}>
-          <Icon />
+        <div className={styles.technology}>
+          <div className={styles.technology__icon}>
+            <Image src={project.langLogo.url} layout="fill" alt={langLogoAlt} />
+          </div>
         </div>
-      </div>
-    </a>
-  </Link>
-);
+      </a>
+    </Link>
+  );
+};
+
+ProjectCard.defaultProps = defaultProps;

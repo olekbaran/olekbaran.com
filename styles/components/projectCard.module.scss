@@ -2,55 +2,78 @@
 @use 'styles/abstracts/mixins' as mixins;
 
 .project {
+  max-width: 30rem;
+  width: 100%;
+  min-height: 8rem;
   height: 100%;
+  border: 1px solid vars.$border-color;
+  border-radius: 0.625rem;
+  margin: 0 auto;
+  @include mixins.flex(flex-start, center, row);
   text-decoration: none;
+  background: vars.$color-black;
+  cursor: pointer;
+
+  @media screen and (min-width: vars.$md) {
+    transition: 0.2s ease;
+
+    &:hover {
+      border-color: vars.$color-primary;
+    }
+  }
+
+  &--latestProjectsSection {
+    &::before {
+      content: '';
+      width: 1.313rem;
+      height: 1.313rem;
+      border: 5px solid vars.$color-grey;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      background: vars.$color-black;
+      box-shadow: 0px 0px 90px 20px vars.$color-primary;
+      pointer-events: none;
+      z-index: 1;
+
+      @media screen and (min-width: vars.$md) {
+        left: calc(50% - 0.6565rem);
+      }
+    }
+  }
 
   .content {
-    max-width: 22rem;
+    width: 75%;
     height: 100%;
-    min-height: 26rem;
-    padding: 2rem;
-    border: 1px solid vars.$border-color;
-    border-radius: 0.75rem;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 2rem;
-    background: vars.$color-black;
-    cursor: pointer;
+    padding: 1.5rem;
+    @include mixins.flex(center, flex-start, column);
+    gap: 0.625rem;
 
-    @media screen and (min-width: vars.$md) {
-      transition: 0.2s ease;
-
-      &:hover {
-        border-color: vars.$color-primary;
-      }
+    &__name {
+      font-size: 1.125rem;
+      font-weight: 700;
     }
 
-    .heading {
-      display: flex;
-      flex-direction: column;
-      gap: 0.625rem;
-
-      &__name {
-        font-size: 1.625rem;
-      }
-
-      &__type {
-        font-size: 0.875rem;
-        color: vars.$color-grey;
-      }
+    &__type {
+      font-size: 0.875rem;
+      color: vars.$color-grey;
     }
+  }
+
+  .technology {
+    width: 25%;
+    height: 100%;
+    border-left: 1px solid vars.$border-color;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    @include mixins.flex(center, center, row);
+    box-sizing: content-box;
+    background: vars.$color-dark-grey;
 
     &__icon {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-
-      svg rect {
-        color: vars.$color-primary;
-      }
+      width: 55%;
+      height: 2.25rem;
+      position: relative;
     }
   }
 }

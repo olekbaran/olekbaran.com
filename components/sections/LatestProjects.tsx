@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { en, pl } from 'locales';
 import { appRoutes } from 'config';
-import { ProjectSmallCard, PrimaryButton } from 'components';
+import { ProjectCard, PrimaryButton } from 'components';
 
 import type { ILatestProjects } from 'types';
 
@@ -33,7 +33,7 @@ export const LatestProjects: React.FunctionComponent<ILatestProject> = ({
 
           return (
             <li key={tProject.id} className={styles.projectWrapper}>
-              <ProjectSmallCard project={tProject} isLatestProjectsSection />
+              <ProjectCard project={tProject} isLatestProjectsSection />
             </li>
           );
         })}

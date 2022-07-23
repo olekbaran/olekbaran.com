@@ -7,7 +7,7 @@
   @include mixins.background-image(
     '/images/backgrounds/line1.svg',
     '/images/backgrounds/line1.svg',
-    radial-gradient(at 50% 50%, vars.$color-primary 0, transparent 38%)
+    radial-gradient(at 50% 59%, vars.$color-primary 0, transparent 38%)
   );
 
   &__cards {
