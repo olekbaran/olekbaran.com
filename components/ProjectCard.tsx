@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 import { appRoutes } from 'config';
 
-import type { ISingleLatestProjectCard } from 'types';
+import type { IProjectCard } from 'types';
 
 import styles from 'styles/components/projectCard.module.scss';
 
-interface IProjectCard {
-  project: ISingleLatestProjectCard;
+interface IProjectCardProps {
+  project: IProjectCard;
   isLatestProjectsSection?: boolean;
 }
 
@@ -17,7 +17,7 @@ const defaultProps = {
   isLatestProjectsSection: false,
 };
 
-export const ProjectCard: React.FunctionComponent<IProjectCard> = ({
+export const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   project,
   isLatestProjectsSection,
 }) => {

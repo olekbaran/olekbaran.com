@@ -6,12 +6,12 @@ import { en, pl } from 'locales';
 import { appRoutes } from 'config';
 import { ProjectCard, PrimaryButton } from 'components';
 
-import type { ILatestProjects } from 'types';
+import type { IProjects } from 'types';
 
 import styles from 'styles/components/sections/latestProjects.module.scss';
 
 interface ILatestProject {
-  latestProjects: ILatestProjects[];
+  latestProjects: IProjects[];
 }
 
 export const LatestProjects: React.FunctionComponent<ILatestProject> = ({

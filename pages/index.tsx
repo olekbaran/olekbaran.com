@@ -11,7 +11,7 @@ import {
   Contact,
 } from 'components/sections';
 
-import type { ILatestProjects, ILinkedInProfile } from 'types';
+import type { IProjects, ILinkedInProfile } from 'types';
 
 export const getStaticProps = async () => {
   const url = process.env.HYGRAPH_URL!;
@@ -69,7 +69,7 @@ export const getStaticProps = async () => {
 };
 
 interface IHomeProps {
-  latestProjects: ILatestProjects[];
+  latestProjects: IProjects[];
   linkedInProfile: ILinkedInProfile[];
 }
 
