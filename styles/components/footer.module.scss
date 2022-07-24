@@ -51,8 +51,10 @@
       flex-wrap: wrap;
       gap: 2.75rem;
 
+      a,
       svg {
         width: 2.25rem;
+        height: 2.25rem;
       }
 
       @media screen and (min-width: vars.$md) {

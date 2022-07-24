@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  outline-color: vars.$color-primary;
   font-family: vars.$font-primary, vars.$fallback-font;
   color: vars.$color-white;
   scroll-behavior: smooth;
