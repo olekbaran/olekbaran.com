@@ -42,3 +42,19 @@
     }
   }
 }
+
+.secondaryButton {
+  font-size: 0.875rem;
+  color: vars.$color-grey;
+  text-decoration: underline;
+  background: none;
+  cursor: pointer;
+
+  @media screen and (min-width: vars.$md) {
+    transition: 0.2s ease;
+
+    &:hover {
+      color: vars.$color-white;
+    }
+  }
+}

@@ -1,4 +1,4 @@
 export { appRoutes } from './appRoutes';
-export { socialMedia } from './config';
-export { technologies } from './config';
+export { axios } from './axios';
+export { socialMedia, technologies } from './content';
 export { emailTemplate } from './emailTemplate';

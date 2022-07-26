@@ -1,2 +1,1 @@
-export { api } from './api';
-export { postEmail } from './postEmail';
+export { sendEmail } from './sendEmail';

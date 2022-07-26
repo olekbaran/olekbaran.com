@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import styles from 'styles/components/localeSwitcher.module.scss';
+import styles from 'styles/components/common/localeSwitcher.module.scss';
 
 export const LocaleSwitcher = () => {
   const router = useRouter();

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { socialMedia } from 'config';
 
-import styles from 'styles/components/socialMedia.module.scss';
+import styles from 'styles/components/common/socialMedia.module.scss';
 
 export const SocialMedia = () => (
   <>

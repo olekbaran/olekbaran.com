@@ -1,25 +1,20 @@
 import React from 'react';
 import { useField } from 'formik';
+import { TextareaAutosizeProps } from 'react-textarea-autosize';
 
-import { InputField } from 'components';
+import { Textarea } from 'components/inputs';
 
-interface IFormInputField extends React.InputHTMLAttributes<HTMLInputElement> {
+interface IFormTextarea extends TextareaAutosizeProps {
   name: string;
   isLoading?: boolean;
   isError?: boolean;
   isOK?: boolean | null;
 }
 
-const defaultProps = {
-  isLoading: false,
-  isError: false,
-  isOK: null,
-};
-
-export const FormInputField: React.FunctionComponent<IFormInputField> = ({
-  isLoading,
-  isError,
-  isOK,
+export const FormTextarea: React.FunctionComponent<IFormTextarea> = ({
+  isLoading = false,
+  isError = false,
+  isOK = null,
   name,
   disabled,
   ...props
@@ -27,7 +22,7 @@ export const FormInputField: React.FunctionComponent<IFormInputField> = ({
   const [field, meta] = useField(name);
 
   return (
-    <InputField
+    <Textarea
       disabled={disabled}
       isLoading={isLoading}
       isError={!!(isError || (meta.error && meta.touched))}
@@ -37,5 +32,3 @@ export const FormInputField: React.FunctionComponent<IFormInputField> = ({
     />
   );
 };
-
-FormInputField.defaultProps = defaultProps;

@@ -3,7 +3,7 @@ import TextareaAutosize, {
   TextareaAutosizeProps,
 } from 'react-textarea-autosize';
 
-import styles from 'styles/components/textarea.module.scss';
+import styles from 'styles/components/inputs/textarea.module.scss';
 
 interface ITextarea extends TextareaAutosizeProps {
   isLoading?: boolean;
@@ -11,16 +11,10 @@ interface ITextarea extends TextareaAutosizeProps {
   isOK?: boolean | null;
 }
 
-const defaultProps: ITextarea = {
-  isLoading: false,
-  isError: false,
-  isOK: null,
-};
-
 export const Textarea: React.FunctionComponent<ITextarea> = ({
-  isLoading,
-  isError,
-  isOK,
+  isLoading = false,
+  isError = false,
+  isOK = null,
   className,
   disabled,
   ...props
@@ -35,5 +29,3 @@ export const Textarea: React.FunctionComponent<ITextarea> = ({
     {...props}
   />
 );
-
-Textarea.defaultProps = defaultProps;

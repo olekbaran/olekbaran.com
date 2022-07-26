@@ -6,7 +6,9 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { en, pl } from 'locales';
 import { appRoutes } from 'config';
 import { images } from 'assets/images';
-import { ContactCard, SecondaryButton, ContactForm } from 'components';
+import { Button } from 'components/common';
+import { ContactCard } from 'components/cards';
+import { ContactForm } from 'components/forms';
 
 import type { ILinkedInProfile } from 'types';
 
@@ -100,7 +102,8 @@ export const Contact: React.FunctionComponent<IContact> = ({
             </address>
           </div>
           <CopyToClipboard text={email!} onCopy={onCopyText}>
-            <SecondaryButton
+            <Button
+              variant="secondary"
               text={`${
                 isCopied
                   ? t.home.contact.email.copied

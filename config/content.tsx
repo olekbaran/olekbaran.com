@@ -1,13 +1,5 @@
-import {
-  GitHub,
-  Instagram,
-  LinkedIn,
-  Email,
-  JavaScript,
-  TypeScript,
-  React,
-  Next,
-} from 'assets/icons';
+import { GitHub, Instagram, LinkedIn, Email } from 'assets/icons/contact';
+import { JavaScript, TypeScript, React, Next } from 'assets/icons/technologies';
 
 const emailUrl = `mailto:${process.env.NEXT_PUBLIC_EMAIL}`;
 

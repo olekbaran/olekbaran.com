@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 import { en, pl } from 'locales';
-import { ScrollDown, SocialMedia } from 'components';
+import { ScrollDown, SocialMedia } from 'components/common';
 import { images } from 'assets/images';
 
 import styles from 'styles/components/sections/hero.module.scss';

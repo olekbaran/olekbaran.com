@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { en, pl } from 'locales';
 
-import styles from 'styles/components/scrollDown.module.scss';
+import styles from 'styles/components/common/scrollDown.module.scss';
 
 export const ScrollDown = () => {
   const router = useRouter();

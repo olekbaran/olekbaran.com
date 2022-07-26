@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from 'styles/components/inputField.module.scss';
+import styles from 'styles/components/inputs/inputField.module.scss';
 
 interface IInputField extends React.InputHTMLAttributes<HTMLInputElement> {
   isLoading?: boolean;
@@ -8,16 +8,10 @@ interface IInputField extends React.InputHTMLAttributes<HTMLInputElement> {
   isOK?: boolean | null;
 }
 
-const defaultProps = {
-  isLoading: false,
-  isError: false,
-  isOK: null,
-};
-
 export const InputField: React.FunctionComponent<IInputField> = ({
-  isLoading,
-  isError,
-  isOK,
+  isLoading = false,
+  isError = false,
+  isOK = null,
   className,
   disabled,
   ...props
@@ -32,5 +26,3 @@ export const InputField: React.FunctionComponent<IInputField> = ({
     {...props}
   />
 );
-
-InputField.defaultProps = defaultProps;

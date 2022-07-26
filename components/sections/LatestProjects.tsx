@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 import { en, pl } from 'locales';
 import { appRoutes } from 'config';
-import { ProjectCard, PrimaryButton } from 'components';
+import { Button } from 'components/common';
+import { ProjectCard } from 'components/cards';
 
 import type { IProjects } from 'types';
 
@@ -40,7 +41,7 @@ export const LatestProjects: React.FunctionComponent<ILatestProject> = ({
       </ul>
       <Link href={appRoutes.projects.slug}>
         <a className={styles.latestProjects__seeMore}>
-          <PrimaryButton text={t.home.latestProjects.seeMore} />
+          <Button text={t.home.latestProjects.seeMore} />
         </a>
       </Link>
     </section>

@@ -7,7 +7,7 @@ import { appRoutes } from 'config';
 import { en, pl } from 'locales';
 import { images } from 'assets/images';
 
-import styles from 'styles/components/logo.module.scss';
+import styles from 'styles/components/common/logo.module.scss';
 
 export const Logo = () => {
   const router = useRouter();

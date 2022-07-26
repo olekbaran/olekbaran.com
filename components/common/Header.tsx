@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 import { appRoutes } from 'config';
 import { en, pl } from 'locales';
-import { Logo, LocaleSwitcher } from 'components';
+import { Logo, LocaleSwitcher } from 'components/common';
 
-import styles from 'styles/components/header.module.scss';
+import styles from 'styles/components/common/header.module.scss';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 export const Header = () => {

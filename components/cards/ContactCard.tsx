@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from 'styles/components/contactCard.module.scss';
+import styles from 'styles/components/cards/contactCard.module.scss';
 
 interface IContactCard {
   heading: string;

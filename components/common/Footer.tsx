@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { en, pl } from 'locales';
-import { Logo, SocialMedia } from 'components';
+import { Logo, SocialMedia } from 'components/common';
 
-import styles from 'styles/components/footer.module.scss';
+import styles from 'styles/components/common/footer.module.scss';
 
 export const Footer = () => {
   const router = useRouter();

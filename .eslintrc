@@ -22,10 +22,11 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
+    "react/require-default-props": "off",
     "import/prefer-default-export": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { GraphQLClient, gql } from 'graphql-request';
 
 import { en, pl } from 'locales';
-import { ProjectCard } from 'components';
+import { ProjectCard } from 'components/cards';
 
 import type { IProjects } from 'types';
 

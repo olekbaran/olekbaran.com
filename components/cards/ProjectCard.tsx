@@ -6,20 +6,16 @@ import { appRoutes } from 'config';
 
 import type { IProjectCard } from 'types';
 
-import styles from 'styles/components/projectCard.module.scss';
+import styles from 'styles/components/cards/projectCard.module.scss';
 
 interface IProjectCardProps {
   project: IProjectCard;
   isLatestProjectsSection?: boolean;
 }
 
-const defaultProps = {
-  isLatestProjectsSection: false,
-};
-
 export const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
   project,
-  isLatestProjectsSection,
+  isLatestProjectsSection = false,
 }) => {
   const langLogoAlt = project.langLogo.fileName.slice(
     0,
@@ -48,5 +44,3 @@ export const ProjectCard: React.FunctionComponent<IProjectCardProps> = ({
     </Link>
   );
 };
-
-ProjectCard.defaultProps = defaultProps;

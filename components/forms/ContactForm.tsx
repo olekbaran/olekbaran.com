@@ -4,12 +4,13 @@ import { Formik, FormikHelpers, Form } from 'formik';
 import { object, string } from 'yup';
 
 import { en, pl } from 'locales';
-import { FormInputField, FormTextarea, PrimaryButton } from 'components';
-import { postEmail } from 'services';
+import { FormInputField, FormTextarea } from 'components/forms';
+import { Button } from 'components/common';
+import { sendEmail } from 'services';
 
 import type { IContactForm } from 'types';
 
-import styles from 'styles/components/contactForm.module.scss';
+import styles from 'styles/components/forms/contactForm.module.scss';
 
 const validation = object().shape({
   name: string().required(),
@@ -37,7 +38,7 @@ export const ContactForm = () => {
     try {
       setDisableInputs(true);
       setIsLoading(true);
-      const res = await postEmail(values);
+      const res = await sendEmail(values);
       if (res.status === 200) {
         setIsResponseOK(true);
       }
@@ -97,7 +98,7 @@ export const ContactForm = () => {
           isError={isError}
           isOK={isResponseOK}
         />
-        <PrimaryButton
+        <Button
           type="submit"
           text={t.contactForm.send}
           disabled={disableInputs}
