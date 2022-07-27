@@ -27,6 +27,9 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "react/prop-types": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-nested-ternary": "off",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "warn"
   }
 }

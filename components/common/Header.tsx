@@ -71,7 +71,7 @@ export const Header = () => {
                 <Link href={route[1].slug}>
                   <a
                     className={`${styles.route__name} ${
-                      router.pathname === route[1].slug
+                      router.pathname.split('/[')[0] === route[1].slug
                         ? styles['route__name--active']
                         : ''
                     }`}

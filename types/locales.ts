@@ -11,6 +11,9 @@ export interface IDictionary {
       title: string;
       description: string;
     };
+    project: {
+      title: string;
+    };
     components: {
       images: {
         avatar: string;

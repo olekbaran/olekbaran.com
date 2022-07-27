@@ -22,3 +22,28 @@ export interface ILinkedInProfile {
   };
   companyUrl: string;
 }
+
+interface ISingleProject {
+  name: string;
+  slug: string;
+  startDate: Date;
+  endDate: Date;
+  type: string;
+  langLogo: {
+    url: string;
+    fileName: string;
+  };
+  langUrl: string;
+  demo: string;
+  gitHub: string;
+  image: {
+    url: string;
+    fileName: string;
+  };
+  description: string;
+  metaDescription: string;
+}
+
+export interface ISingleProjects {
+  localizations: ISingleProject[];
+}

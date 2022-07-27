@@ -15,6 +15,9 @@ export const pl: IDictionary = {
       description:
         'Jestem front-end web developerem. Na co dzień wykorzystuję narzędzia takie jak React oraz Next.js. Uwielbiam eksperymentować z Jamstackowymi technologiami i ciekawymi bibliotekami. Odwiedź tę stronę, aby sprawdzić informacje o mnie oraz zobaczyć projekty, które stworzyłem.',
     },
+    project: {
+      title: ' | Olek Baran',
+    },
     components: {
       images: {
         avatar: 'Olek Baran - Front-end web developer',
