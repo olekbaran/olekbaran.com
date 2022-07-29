@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { GraphQLClient, gql } from 'graphql-request';
 
+import { appRoutes } from 'config';
 import { en, pl } from 'locales';
 import { ProjectCard } from 'components/cards';
 
@@ -53,7 +54,7 @@ const Projects: NextPage<IProjectsProps> = ({ projects }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
-  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
+  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${appRoutes.projects.slug}`;
 
   return (
     <>
@@ -75,7 +76,7 @@ const Projects: NextPage<IProjectsProps> = ({ projects }) => {
       </Head>
       <main>
         <section className={styles.projects}>
-          <h2 className="heading">{t.projects.heading}</h2>
+          <h1 className="heading">{t.projects.heading}</h1>
           <ul className={styles.projects__cards}>
             {projects.map((project) => {
               const tProject =

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
+import { appRoutes } from 'config';
 import { en, pl } from 'locales';
 import type { ISingleProjects } from 'types';
 
@@ -88,9 +89,9 @@ const Project: NextPage<IProject> = ({ project }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
-  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
   const tProject =
     locale === 'pl' ? project.localizations[1] : project.localizations[0];
+  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${appRoutes.projects.slug}/${tProject.slug}`;
 
   return (
     <>
@@ -118,7 +119,7 @@ const Project: NextPage<IProject> = ({ project }) => {
       </Head>
       <main>
         <section>
-          <h2>{tProject.name}</h2>
+          <h1 className="heading">{tProject.name}</h1>
         </section>
       </main>
     </>

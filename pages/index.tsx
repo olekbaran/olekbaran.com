@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { GraphQLClient, gql } from 'graphql-request';
 
+import { appRoutes } from 'config';
 import { en, pl } from 'locales';
 import {
   Hero,
@@ -77,7 +78,7 @@ const Home: NextPage<IHomeProps> = ({ latestProjects, linkedInProfile }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
-  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${router.pathname}`;
+  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${appRoutes.home.slug}`;
 
   return (
     <>
