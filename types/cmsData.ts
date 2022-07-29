@@ -9,10 +9,6 @@ export interface IProjectCard {
   };
 }
 
-export interface IProjects {
-  localizations: IProjectCard[];
-}
-
 export interface ILinkedInProfile {
   name: string;
   workplace: string;
@@ -23,7 +19,11 @@ export interface ILinkedInProfile {
   companyUrl: string;
 }
 
-interface ISingleProject {
+export interface IProjectSlug {
+  slug: string;
+}
+
+export interface ISingleProject {
   name: string;
   slug: string;
   startDate: Date;
@@ -42,8 +42,4 @@ interface ISingleProject {
   };
   description: string;
   metaDescription: string;
-}
-
-export interface ISingleProjects {
-  localizations: ISingleProject[];
 }

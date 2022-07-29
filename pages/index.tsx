@@ -1,10 +1,11 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { GraphQLClient, gql } from 'graphql-request';
+import { GraphQLClient } from 'graphql-request';
 
 import { appRoutes } from 'config';
 import { en, pl } from 'locales';
+import { latestProjectsQuery, linkedInProfileQuery } from 'queries';
 import {
   Hero,
   LatestProjects,
@@ -12,9 +13,12 @@ import {
   Contact,
 } from 'components/sections';
 
-import type { IProjects, ILinkedInProfile } from 'types';
+import type { IProjectCard, ILinkedInProfile } from 'types';
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+  defaultLocale,
+}) => {
   const url = process.env.HYGRAPH_URL!;
   const graphQLClient = new GraphQLClient(url, {
     headers: {
@@ -22,44 +26,15 @@ export const getStaticProps = async () => {
     },
   });
 
-  const latestProjectsQuery = gql`
-    {
-      projects(orderBy: endDate_DESC, first: 3) {
-        localizations(includeCurrent: true) {
-          id
-          name
-          slug
-          type
-          langLogo {
-            url
-            fileName
-          }
-        }
-      }
-    }
-  `;
+  const latestProjectsData = await graphQLClient.request(
+    latestProjectsQuery(locale!, defaultLocale!)
+  );
+  const latestProjects: IProjectCard[] = latestProjectsData.projects;
 
-  const linkedInQuery = gql`
-    {
-      dev(where: { id: "cl1na8orstxm50bt76eqatskf" }) {
-        localizations(includeCurrent: true) {
-          name
-          workplace
-          companyLogo {
-            url
-            fileName
-          }
-          companyUrl
-        }
-      }
-    }
-  `;
-
-  const latestProjectsData = await graphQLClient.request(latestProjectsQuery);
-  const latestProjects = latestProjectsData.projects;
-
-  const linkedInData = await graphQLClient.request(linkedInQuery);
-  const linkedInProfile = linkedInData.dev.localizations;
+  const linkedInData = await graphQLClient.request(
+    linkedInProfileQuery(locale!, defaultLocale!)
+  );
+  const linkedInProfile: ILinkedInProfile = linkedInData.dev;
 
   return {
     props: {
@@ -70,8 +45,8 @@ export const getStaticProps = async () => {
 };
 
 interface IHomeProps {
-  latestProjects: IProjects[];
-  linkedInProfile: ILinkedInProfile[];
+  latestProjects: IProjectCard[];
+  linkedInProfile: ILinkedInProfile;
 }
 
 const Home: NextPage<IHomeProps> = ({ latestProjects, linkedInProfile }) => {

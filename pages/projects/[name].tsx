@@ -1,12 +1,12 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
-import { GraphQLClient, gql } from 'graphql-request';
+import { GraphQLClient } from 'graphql-request';
 
 import { appRoutes } from 'config';
 import { en, pl } from 'locales';
-import type { ISingleProjects } from 'types';
+import { projectsSlugsQuery, projectQuery } from 'queries';
+import type { IProjectSlug, ISingleProject } from 'types';
 
 export const getStaticPaths = async () => {
   const url = process.env.HYGRAPH_URL!;
@@ -16,17 +16,9 @@ export const getStaticPaths = async () => {
     },
   });
 
-  const slugsQuery = gql`
-    {
-      projects(orderBy: endDate_DESC) {
-        slug
-      }
-    }
-  `;
-
-  const projectsData = await graphQLClient.request(slugsQuery);
-  const { projects } = projectsData;
-  const paths = projects.map((project: any) => ({
+  const projectsData = await graphQLClient.request(projectsSlugsQuery);
+  const { projects }: { projects: IProjectSlug[] } = projectsData;
+  const paths = projects.map((project: IProjectSlug) => ({
     params: { name: project.slug },
   }));
 
@@ -36,7 +28,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  locale,
+  defaultLocale,
+}) => {
   const url = process.env.HYGRAPH_URL!;
   const graphQLClient = new GraphQLClient(url, {
     headers: {
@@ -44,35 +40,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  const projectQuery = gql`
-    {
-      project(where: {slug: "${params!.name}"}) {
-        localizations(includeCurrent: true) {
-          name
-          slug
-          startDate
-          endDate
-          type
-          langLogo {
-            url
-            fileName
-          }
-          langUrl
-          demo
-          gitHub
-          image {
-            url
-            fileName
-          }
-          description
-          metaDescription
-        }
-      }
-    }
-  `;
-
-  const projectData = await graphQLClient.request(projectQuery);
-  const { project } = projectData;
+  const projectData = await graphQLClient.request(
+    projectQuery(params!.name!, locale!, defaultLocale!)
+  );
+  const { project }: { project: ISingleProject } = projectData;
 
   return {
     props: {
@@ -82,44 +53,42 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 interface IProject {
-  project: ISingleProjects;
+  project: ISingleProject;
 }
 
 const Project: NextPage<IProject> = ({ project }) => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
-  const tProject =
-    locale === 'pl' ? project.localizations[1] : project.localizations[0];
-  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${appRoutes.projects.slug}/${tProject.slug}`;
+  const url = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}${appRoutes.projects.slug}/${project.slug}`;
 
   return (
     <>
       <Head>
-        <title>{tProject.name + t.seo.project.title}</title>
-        <meta name="description" content={tProject.metaDescription} />
+        <title>{project.name + t.seo.project.title}</title>
+        <meta name="description" content={project.metaDescription} />
         <meta name="language" content={locale} />
 
         <meta property="og:url" content={url} />
         <meta
           property="og:title"
-          content={tProject.name + t.seo.project.title}
+          content={project.name + t.seo.project.title}
         />
-        <meta property="og:description" content={tProject.metaDescription} />
+        <meta property="og:description" content={project.metaDescription} />
 
         <meta property="twitter:url" content={url} />
         <meta
           property="twitter:title"
-          content={tProject.name + t.seo.project.title}
+          content={project.name + t.seo.project.title}
         />
         <meta
           property="twitter:description"
-          content={tProject.metaDescription}
+          content={project.metaDescription}
         />
       </Head>
       <main>
         <section>
-          <h1 className="heading">{tProject.name}</h1>
+          <h1 className="heading">{project.name}</h1>
         </section>
       </main>
     </>

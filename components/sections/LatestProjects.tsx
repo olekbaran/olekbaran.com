@@ -7,12 +7,12 @@ import { appRoutes } from 'config';
 import { Button } from 'components/common';
 import { ProjectCard } from 'components/cards';
 
-import type { IProjects } from 'types';
+import type { IProjectCard } from 'types';
 
 import styles from 'styles/components/sections/latestProjects.module.scss';
 
 interface ILatestProject {
-  latestProjects: IProjects[];
+  latestProjects: IProjectCard[];
 }
 
 export const LatestProjects: React.FunctionComponent<ILatestProject> = ({
@@ -26,18 +26,11 @@ export const LatestProjects: React.FunctionComponent<ILatestProject> = ({
     <section className={styles.latestProjects}>
       <h2 className="heading">{t.home.latestProjects.heading}</h2>
       <ul className={styles.projects}>
-        {latestProjects.map((project) => {
-          const tProject =
-            locale === 'pl'
-              ? project.localizations[1]
-              : project.localizations[0];
-
-          return (
-            <li key={tProject.id} className={styles.projectWrapper}>
-              <ProjectCard project={tProject} isLatestProjectsSection />
-            </li>
-          );
-        })}
+        {latestProjects.map((project) => (
+          <li key={project.id} className={styles.projectWrapper}>
+            <ProjectCard project={project} isLatestProjectsSection />
+          </li>
+        ))}
       </ul>
       <Link href={appRoutes.projects.slug}>
         <a className={styles.latestProjects__seeMore}>

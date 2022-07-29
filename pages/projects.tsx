@@ -1,17 +1,21 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { GraphQLClient, gql } from 'graphql-request';
+import { GraphQLClient } from 'graphql-request';
 
 import { appRoutes } from 'config';
 import { en, pl } from 'locales';
+import { projectsQuery } from 'queries';
 import { ProjectCard } from 'components/cards';
 
-import type { IProjects } from 'types';
+import type { IProjectCard } from 'types';
 
 import styles from 'styles/pages/projects.module.scss';
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+  defaultLocale,
+}) => {
   const url = process.env.HYGRAPH_URL!;
   const graphQLClient = new GraphQLClient(url, {
     headers: {
@@ -19,25 +23,10 @@ export const getStaticProps = async () => {
     },
   });
 
-  const projectsQuery = gql`
-    {
-      projects(orderBy: endDate_DESC) {
-        localizations(includeCurrent: true) {
-          id
-          name
-          slug
-          type
-          langLogo {
-            url
-            fileName
-          }
-        }
-      }
-    }
-  `;
-
-  const projectsData = await graphQLClient.request(projectsQuery);
-  const { projects } = projectsData;
+  const projectsData = await graphQLClient.request(
+    projectsQuery(locale!, defaultLocale!)
+  );
+  const { projects }: { projects: IProjectCard[] } = projectsData;
 
   return {
     props: {
@@ -47,7 +36,7 @@ export const getStaticProps = async () => {
 };
 
 interface IProjectsProps {
-  projects: IProjects[];
+  projects: IProjectCard[];
 }
 
 const Projects: NextPage<IProjectsProps> = ({ projects }) => {
@@ -78,18 +67,11 @@ const Projects: NextPage<IProjectsProps> = ({ projects }) => {
         <section className={styles.projects}>
           <h1 className="heading">{t.projects.heading}</h1>
           <ul className={styles.projects__cards}>
-            {projects.map((project) => {
-              const tProject =
-                locale === 'pl'
-                  ? project.localizations[1]
-                  : project.localizations[0];
-
-              return (
-                <li key={tProject.id}>
-                  <ProjectCard project={tProject} />
-                </li>
-              );
-            })}
+            {projects.map((project) => (
+              <li key={project.id}>
+                <ProjectCard project={project} />
+              </li>
+            ))}
           </ul>
         </section>
       </main>

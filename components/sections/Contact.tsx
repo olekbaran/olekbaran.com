@@ -15,7 +15,7 @@ import type { ILinkedInProfile } from 'types';
 import styles from 'styles/components/sections/contact.module.scss';
 
 interface IContact {
-  linkedInProfile: ILinkedInProfile[];
+  linkedInProfile: ILinkedInProfile;
 }
 
 export const Contact: React.FunctionComponent<IContact> = ({
@@ -24,15 +24,14 @@ export const Contact: React.FunctionComponent<IContact> = ({
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'pl' ? pl : en;
-  const tLinkkedIn = locale === 'pl' ? linkedInProfile[1] : linkedInProfile[0];
 
   const sectionId = appRoutes.contact.slug.substring(
     appRoutes.contact.slug.indexOf('#') + 1
   );
   const email = process.env.NEXT_PUBLIC_EMAIL;
-  const companyLogoAlt = tLinkkedIn.companyLogo.fileName.slice(
+  const companyLogoAlt = linkedInProfile.companyLogo.fileName.slice(
     0,
-    tLinkkedIn.companyLogo.fileName.indexOf('.')
+    linkedInProfile.companyLogo.fileName.indexOf('.')
   );
 
   const [isCopied, setIsCopied] = useState(false);
@@ -63,24 +62,26 @@ export const Contact: React.FunctionComponent<IContact> = ({
                   height={88}
                 />
               </div>
-              <span className={styles.profile__name}>{tLinkkedIn.name}</span>
+              <span className={styles.profile__name}>
+                {linkedInProfile.name}
+              </span>
             </div>
             <div className={styles.workplace}>
               <a
-                href={tLinkkedIn.companyUrl}
+                href={linkedInProfile.companyUrl}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={companyLogoAlt}
                 className={styles.workplace__logo}
               >
                 <Image
-                  src={tLinkkedIn.companyLogo.url}
+                  src={linkedInProfile.companyLogo.url}
                   layout="fill"
                   alt={companyLogoAlt}
                 />
               </a>
               <span className={styles.workplace__name}>
-                {tLinkkedIn.workplace}
+                {linkedInProfile.workplace}
               </span>
             </div>
           </div>
