@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+pnpm commitlint --edit $1 --verbose
+
+echo '\n'
+
+pnpm type-check
+
+echo '\n'
+
+pnpm lint-staged
+
+echo '\n'

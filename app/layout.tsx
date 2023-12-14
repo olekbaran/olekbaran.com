@@ -1,10 +1,11 @@
-import { type ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import "@/styles/globals.css";
+import { type ReactNode } from "react"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+import "@/styles/globals.css"
 
 interface RootLayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -16,5 +17,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <SpeedInsights />
       </body>
     </html>
-  );
+  )
 }
