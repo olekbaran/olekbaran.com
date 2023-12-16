@@ -1,3 +1,5 @@
+import { Typography } from "@/components/typography"
+
 export default function IndexPage() {
-  return <div className="text-2xl">IndexPage</div>
+  return <Typography>Index Page</Typography>
 }

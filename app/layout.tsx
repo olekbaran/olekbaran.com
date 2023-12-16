@@ -8,7 +8,7 @@ import { metadataBase, viewportBase } from "@/config/metadata"
 
 import "@/styles/globals.css"
 
-const syne = Syne({ subsets: ["latin"] })
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne" })
 
 interface RootLayoutProps {
   children: ReactNode
@@ -20,8 +20,8 @@ export const metadata: Metadata = metadataBase
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={syne.className} suppressHydrationWarning>
+    <html lang="en" className={syne.variable} suppressHydrationWarning>
+      <body className="container max-w-7xl" suppressHydrationWarning>
         {children}
         <Analytics />
         <SpeedInsights />
