@@ -3,12 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  *::selection {
+    @apply bg-blue text-white;
+  }
+
   html {
     @apply h-full;
   }
 
   body {
-    @apply h-full;
+    @apply h-full bg-black text-white antialiased;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
