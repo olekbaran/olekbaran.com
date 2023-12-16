@@ -20,6 +20,7 @@ const prettierConfig = {
     "^@/styles/(.*)$",
     "^@/app/(.*)$",
     "",
+    "^[../]",
     "^[./]",
   ],
   importOrderTypeScriptVersion: "5.0.0",
