@@ -48,14 +48,19 @@ const defaultVariantMapping = {
   logo: "p",
 }
 
-export function Typography({ variant, children, ...props }: TypographyProps) {
+export function Typography({
+  variant,
+  className,
+  children,
+  ...props
+}: TypographyProps) {
   const type = variant
     ? defaultVariantMapping[variant]
     : defaultVariantMapping.body1
 
   return createElement(
     type,
-    { className: cn(typographyVariants({ variant })), ...props },
+    { className: cn(typographyVariants({ variant }), className), ...props },
     children
   )
 }
