@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation"
 
 import { routes } from "@/config/routes"
-import { cn } from "@/lib/utils"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
@@ -19,10 +18,7 @@ export function Nav() {
             <Link href={route.path}>
               <Typography
                 variant="body1"
-                className={cn(
-                  "text-gray",
-                  route.path === pathname && "text-white"
-                )}
+                className={route.path === pathname ? "text-white" : "text-gray"}
               >
                 {route.title}
               </Typography>
