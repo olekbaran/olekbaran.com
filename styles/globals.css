@@ -8,11 +8,11 @@
   }
 
   html {
-    @apply h-full;
+    @apply h-full scroll-smooth;
   }
 
   body {
-    @apply h-full bg-black text-white antialiased;
+    @apply min-h-full bg-black text-white antialiased;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
