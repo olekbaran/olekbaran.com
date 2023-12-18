@@ -7,7 +7,7 @@ interface LinkProps extends NextLinkProps {
 
 export function Link({ children, ...props }: LinkProps) {
   return (
-    <NextLink className="h-8 overflow-hidden" {...props}>
+    <NextLink className="block h-8 overflow-hidden" {...props}>
       <div className="transition-transform duration-500 ease-in-out hover:-translate-y-1/2">
         <div>{children}</div>
         <div aria-hidden>{children}</div>

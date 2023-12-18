@@ -2,6 +2,7 @@ import { routes } from "@/config/routes"
 
 import { Link } from "./link"
 import { Logo } from "./logo"
+import { Nav } from "./nav"
 
 export function Header() {
   return (
@@ -10,6 +11,7 @@ export function Header() {
         <Link href={routes.home.path}>
           <Logo />
         </Link>
+        <Nav />
       </div>
     </header>
   )
