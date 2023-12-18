@@ -11,6 +11,9 @@ const config: Config = {
     container: {
       center: true,
       padding: "1.5rem",
+      screens: {
+        "2xl": "1280px",
+      },
     },
     colors: {
       transparent: "transparent",

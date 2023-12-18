@@ -18,7 +18,7 @@ const typographyVariants = cva("block", {
       body2: "text-sm leading-3",
       button: "text-base leading-5 capitalize",
       caption: "text-xs leading-3",
-      logo: "text-base font-bold leading-4 capitalize",
+      logo: "text-base font-bold leading-5 capitalize",
     },
   },
   defaultVariants: {
@@ -45,7 +45,7 @@ const defaultVariantMapping = {
   body2: "p",
   button: "span",
   caption: "span",
-  logo: "span",
+  logo: "p",
 }
 
 export function Typography({ variant, children, ...props }: TypographyProps) {
