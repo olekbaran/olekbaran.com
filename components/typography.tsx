@@ -1,4 +1,4 @@
-import { createElement, type ReactNode } from "react"
+import { createElement, type HTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -28,9 +28,7 @@ const typographyVariants = cva("block", {
 
 interface TypographyProps
   extends VariantProps<typeof typographyVariants>,
-    React.HTMLAttributes<HTMLElement> {
-  children: ReactNode
-}
+    HTMLAttributes<HTMLElement> {}
 
 const defaultVariantMapping = {
   h1: "h1",
