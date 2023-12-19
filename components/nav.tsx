@@ -1,18 +1,18 @@
-"use client"
-
-import { usePathname } from "next/navigation"
+import { type HTMLAttributes } from "react"
 
 import { routes } from "@/config/routes"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
 
-export function Nav() {
-  const pathname = usePathname()
+interface NavProps extends HTMLAttributes<HTMLElement> {
+  pathname: string
+}
 
+export function Nav({ pathname, ...props }: NavProps) {
   return (
-    <nav>
-      <ul className="hidden items-center justify-end gap-10 md:flex">
+    <nav {...props}>
+      <ul className="flex items-center justify-end gap-10">
         {Object.values(routes).map((route) => (
           <li key={route.path}>
             <Link href={route.path}>

@@ -8,8 +8,7 @@
   ],
   "plugins": ["tailwindcss"],
   "rules": {
-    "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/no-arbitrary-value": "warn"
+    "tailwindcss/no-custom-classname": "off"
   },
   "settings": {
     "tailwindcss": {
