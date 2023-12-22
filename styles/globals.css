@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply outline-offset-4 outline-blue;
+  }
+
   *::selection {
     @apply bg-blue text-white;
   }
