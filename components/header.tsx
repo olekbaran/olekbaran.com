@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 import { IconButton } from "./icon-button"
 import { Link } from "./link"
 import { Logo } from "./logo"
+import { Menu } from "./menu"
 import { Nav } from "./nav"
 
 export function Header() {
@@ -21,8 +22,8 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 border-b border-gray/10 bg-black py-5">
-      <div className="container flex w-full items-center justify-between gap-10">
+    <header className="sticky top-0 flex h-16 w-full flex-col justify-center border-b border-gray/10 bg-black">
+      <div className="container z-10 flex h-full w-full items-center justify-between gap-10 bg-black">
         <Link href={routes.home.path}>
           <Logo />
         </Link>
@@ -45,6 +46,7 @@ export function Header() {
           </div>
         </IconButton>
       </div>
+      <Menu pathname={pathname} isOpen={isMenuOpen} />
     </header>
   )
 }
