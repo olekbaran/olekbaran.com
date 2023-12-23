@@ -46,7 +46,7 @@ export function Header() {
           </div>
         </IconButton>
       </div>
-      <Menu pathname={pathname} isOpen={isMenuOpen} />
+      <Menu pathname={pathname} isOpen={isMenuOpen} onLinkClick={toggleMenu} />
     </header>
   )
 }
