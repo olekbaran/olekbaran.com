@@ -1,5 +1,11 @@
 import { Typography } from "@/components/typography"
 
 export default function IndexPage() {
-  return <Typography>Index Page</Typography>
+  return (
+    <>
+      <section className="container">
+        <Typography>Index Page</Typography>
+      </section>
+    </>
+  )
 }

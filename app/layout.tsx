@@ -23,8 +23,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={syne.variable} suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <Header />
-        <main className="container">{children}</main>
+        <div>
+          <Header />
+          <main className="min-h-[calc(100vh-4rem)]">{children}</main>
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>

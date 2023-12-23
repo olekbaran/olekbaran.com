@@ -11,12 +11,8 @@
     @apply bg-blue text-white;
   }
 
-  html {
-    @apply h-full scroll-smooth;
-  }
-
   body {
-    @apply min-h-full bg-black text-white antialiased;
+    @apply bg-black text-white antialiased;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
