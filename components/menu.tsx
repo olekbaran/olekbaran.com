@@ -9,9 +9,10 @@ import { Typography } from "./typography"
 interface MenuProps {
   pathname: string
   isOpen: boolean
+  onLinkClick?: () => void
 }
 
-export function Menu({ pathname, isOpen }: MenuProps) {
+export function Menu({ pathname, isOpen, onLinkClick }: MenuProps) {
   return (
     <nav
       className={cn(
@@ -22,7 +23,7 @@ export function Menu({ pathname, isOpen }: MenuProps) {
       <ul className="flex flex-col gap-10">
         {Object.values(routes).map((route) => (
           <li key={route.path} className="border-b border-gray px-5 pb-10">
-            <Link href={route.path} className="h-10">
+            <Link href={route.path} className="h-10" onClick={onLinkClick}>
               <div className="flex items-center gap-5">
                 <Typography
                   variant="h6"
