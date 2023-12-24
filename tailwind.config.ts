@@ -39,6 +39,7 @@ const config: Config = {
       "9xl": "10rem",
     },
     lineHeight: {
+      none: "1",
       3: "1.25rem",
       4: "1.5rem",
       5: "2rem",
@@ -46,7 +47,6 @@ const config: Config = {
       7: "2.625rem",
       8: "3.875rem",
       9: "4.5rem",
-      10: "5.375rem",
     },
     extend: {
       fontFamily: {

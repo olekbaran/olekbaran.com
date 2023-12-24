@@ -11,6 +11,10 @@
     @apply bg-blue text-white;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-black text-white antialiased;
     font-feature-settings:

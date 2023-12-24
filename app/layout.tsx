@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { metadataBase, viewportBase } from "@/config/metadata"
+import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
 import "@/styles/globals.css"
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <div>
           <Header />
           <main className="min-h-[calc(100vh-4rem)]">{children}</main>
+          <Footer />
         </div>
         <Analytics />
         <SpeedInsights />

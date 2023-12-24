@@ -13,6 +13,6 @@ export const routes = {
   },
   contact: {
     title: "Contact",
-    path: "/contact",
+    path: "/#contact",
   },
 }
