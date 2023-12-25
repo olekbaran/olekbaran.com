@@ -8,6 +8,7 @@ import { routes } from "@/config/routes"
 import { Link } from "./link"
 import { Logo } from "./logo"
 import { MainNav } from "./main-nav"
+import { SocialLinks } from "./social-links"
 import { Typography } from "./typography"
 
 export function Footer() {
@@ -34,12 +35,13 @@ export function Footer() {
             <Link href={routes.home.path}>
               <Logo />
             </Link>
-            <Typography variant="body2" className="text-gray">
+            <Typography variant="body2" className="text-center text-gray">
               &copy; {year} Aleksander Baran
             </Typography>
           </div>
-          <div className="flex flex-col items-end gap-10">
+          <div className="flex flex-col items-center gap-10 md:items-end">
             <MainNav pathname={pathname} />
+            <SocialLinks />
           </div>
         </div>
       </div>

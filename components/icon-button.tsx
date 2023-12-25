@@ -6,10 +6,12 @@ import { TouchTarget } from "./touch-target"
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string
+  variant?: "outline" | "ghost"
 }
 
 export function IconButton({
   label,
+  variant = "outline",
   className,
   children,
   ...props
@@ -18,7 +20,11 @@ export function IconButton({
     <button
       type="button"
       aria-label={label}
-      className={cn("relative", className)}
+      className={cn(
+        "relative",
+        variant === "outline" && "rounded-xl border border-gray",
+        className
+      )}
       {...props}
     >
       <TouchTarget>{children}</TouchTarget>
