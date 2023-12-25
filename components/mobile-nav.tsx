@@ -2,28 +2,35 @@ import { ArrowUpRightIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 import { cn } from "@/lib/utils"
+import { useLockBody } from "@/hooks/use-lock-body"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
 
-interface MenuProps {
+interface MobileNavProps {
   pathname: string
   isOpen: boolean
   onLinkClick?: () => void
 }
 
-export function Menu({ pathname, isOpen, onLinkClick }: MenuProps) {
+export function MobileNav({ pathname, isOpen, onLinkClick }: MobileNavProps) {
+  useLockBody(isOpen)
+
   return (
     <nav
       className={cn(
-        "container fixed inset-y-0 -translate-y-full overflow-y-auto border-b border-gray/10 bg-black py-16 transition-transform duration-500 ease-in-out md:hidden",
+        "fixed inset-y-0 w-full -translate-y-full overflow-y-auto border-b border-gray/10 bg-black py-16 transition-transform duration-500 ease-in-out md:hidden",
         isOpen && "top-16 translate-y-0"
       )}
     >
-      <ul className="flex flex-col gap-10">
+      <ul className="container flex flex-col gap-10">
         {Object.values(routes).map((route) => (
           <li key={route.path} className="border-b border-gray px-5 pb-10">
-            <Link href={route.path} className="h-10" onClick={onLinkClick}>
+            <Link
+              href={route.path}
+              className="h-10 w-full"
+              onClick={onLinkClick}
+            >
               <div className="flex items-center gap-5">
                 <Typography
                   variant="h6"

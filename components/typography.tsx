@@ -8,7 +8,7 @@ const typographyVariants = cva("block", {
     variant: {
       h1: "text-7xl font-extrabold leading-none uppercase",
       h2: "text-lg md:text-6xl font-bold leading-6 md:leading-none uppercase",
-      h3: "text-lg md:text-5xl font-bold leading-6 md:leading-10 uppercase",
+      h3: "text-lg md:text-5xl font-bold leading-6 md:leading-none uppercase",
       h4: "text-lg md:text-4xl font-bold leading-6 md:leading-9 uppercase",
       h5: "text-lg md:text-3xl font-bold leading-6 md:leading-8 uppercase",
       h6: "text-lg md:text-2xl font-bold leading-6 md:leading-7 uppercase",
