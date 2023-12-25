@@ -5,14 +5,14 @@ import { routes } from "@/config/routes"
 import { Link } from "./link"
 import { Typography } from "./typography"
 
-interface NavProps extends HTMLAttributes<HTMLElement> {
+interface MainNavProps extends HTMLAttributes<HTMLElement> {
   pathname: string
 }
 
-export function Nav({ pathname, ...props }: NavProps) {
+export function MainNav({ pathname, ...props }: MainNavProps) {
   return (
     <nav {...props}>
-      <ul className="flex items-center justify-end gap-10">
+      <ul className="flex flex-col items-center justify-end gap-5 md:flex-row md:gap-10">
         {Object.values(routes).map((route) => (
           <li key={route.path}>
             <Link href={route.path}>

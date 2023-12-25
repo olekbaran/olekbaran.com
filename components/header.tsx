@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils"
 import { IconButton } from "./icon-button"
 import { Link } from "./link"
 import { Logo } from "./logo"
-import { Menu } from "./menu"
-import { Nav } from "./nav"
+import { MainNav } from "./main-nav"
+import { MobileNav } from "./mobile-nav"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,7 +27,7 @@ export function Header() {
         <Link href={routes.home.path}>
           <Logo />
         </Link>
-        <Nav className="hidden md:block" pathname={pathname} />
+        <MainNav className="hidden md:block" pathname={pathname} />
         <IconButton
           label={`${isMenuOpen ? "Close" : "Open"} navigation menu`}
           className="md:hidden"
@@ -46,7 +46,11 @@ export function Header() {
           </div>
         </IconButton>
       </div>
-      <Menu pathname={pathname} isOpen={isMenuOpen} onLinkClick={toggleMenu} />
+      <MobileNav
+        pathname={pathname}
+        isOpen={isMenuOpen}
+        onLinkClick={toggleMenu}
+      />
     </header>
   )
 }
