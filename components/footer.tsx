@@ -1,18 +1,13 @@
-"use client"
-
-import { usePathname } from "next/navigation"
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 
 import { Link } from "./link"
 import { Logo } from "./logo"
-import { MainNav } from "./main-nav"
 import { SocialLinks } from "./social-links"
 import { Typography } from "./typography"
 
 export function Footer() {
-  const pathname = usePathname()
   const year = new Date().getFullYear()
 
   return (
@@ -39,10 +34,7 @@ export function Footer() {
               &copy; {year} Aleksander Baran
             </Typography>
           </div>
-          <div className="flex flex-col items-center gap-10 md:items-end">
-            <MainNav pathname={pathname} />
-            <SocialLinks />
-          </div>
+          <SocialLinks />
         </div>
       </div>
     </footer>
