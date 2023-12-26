@@ -18,11 +18,11 @@ export function Footer() {
           className="h-14 w-full rounded-2xl border border-gray px-5 md:h-24 md:rounded-3xl lg:px-10"
         >
           <div className="flex items-center justify-center gap-10 py-2 lg:justify-between">
-            <ArrowRightIcon className="hidden h-16 w-16 lg:block" />
+            <ArrowRightIcon className="hidden h-16 w-16 stroke-1 lg:block" />
             <Typography variant="h3" className="truncate">
               Get in touch
             </Typography>
-            <ArrowLeftIcon className="hidden h-16 w-16 lg:block" />
+            <ArrowLeftIcon className="hidden h-16 w-16 stroke-1 lg:block" />
           </div>
         </Link>
         <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
