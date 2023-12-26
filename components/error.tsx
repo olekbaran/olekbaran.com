@@ -5,17 +5,17 @@ import { cn } from "@/lib/utils"
 import { Typography } from "./typography"
 
 interface ErrorProps extends HTMLAttributes<HTMLElement> {
-  code: number
+  name: string
   message: string
 }
 
-export function Error({ code, message, className, ...props }: ErrorProps) {
+export function Error({ name, message, className, ...props }: ErrorProps) {
   return (
     <div
       className={cn("flex flex-col items-center gap-5", className)}
       {...props}
     >
-      <Typography variant="h4">{code}</Typography>
+      <Typography variant="h4">{name}</Typography>
       <Typography variant="subtitle2" className="text-gray">
         {message}
       </Typography>
