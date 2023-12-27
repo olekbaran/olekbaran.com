@@ -18,7 +18,7 @@ export function ProjectCard({ title, slug, image }: ProjectCardProps) {
           src={image}
           alt={title}
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
           quality={100}
           priority
           className="rounded-3xl object-cover"
