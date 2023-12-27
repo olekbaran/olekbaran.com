@@ -1,17 +1,31 @@
 import { type ButtonHTMLAttributes } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
 import { TouchTarget } from "./touch-target"
 
-interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+const iconButtonVariants = cva("relative p-2", {
+  variants: {
+    variant: {
+      outline: "rounded-xl border border-gray/10",
+      ghost: "",
+    },
+  },
+  defaultVariants: {
+    variant: "outline",
+  },
+})
+
+interface IconButtonProps
+  extends VariantProps<typeof iconButtonVariants>,
+    ButtonHTMLAttributes<HTMLButtonElement> {
   label: string
-  variant?: "outline" | "ghost"
 }
 
-export function IconButton({
+function IconButton({
   label,
-  variant = "outline",
+  variant,
   className,
   children,
   ...props
@@ -20,14 +34,12 @@ export function IconButton({
     <button
       type="button"
       aria-label={label}
-      className={cn(
-        "relative",
-        variant === "outline" && "rounded-xl border border-gray",
-        className
-      )}
+      className={cn(iconButtonVariants({ variant }), className)}
       {...props}
     >
       <TouchTarget>{children}</TouchTarget>
     </button>
   )
 }
+
+export { IconButton, iconButtonVariants }

@@ -14,11 +14,11 @@ export function MainNav({ pathname, ...props }: MainNavProps) {
     <nav {...props}>
       <ul className="flex flex-col items-center justify-end gap-5 md:flex-row md:gap-10">
         {Object.values(routes).map((route) => (
-          <li key={route.path}>
-            <Link href={route.path}>
+          <li key={route.slug}>
+            <Link href={route.slug}>
               <Typography
                 variant="body1"
-                className={route.path === pathname ? "text-white" : "text-gray"}
+                className={route.slug === pathname ? "text-white" : "text-gray"}
               >
                 {route.title}
               </Typography>

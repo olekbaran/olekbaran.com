@@ -20,7 +20,7 @@ export const metadataBase: Metadata = {
   keywords: ["Front-end Developer", "React Developer", "React", "Next.js"],
   category: "personal page",
   alternates: {
-    canonical: routes.home.path,
+    canonical: routes.home.slug,
   },
   authors: {
     name: "Olek Baran",
