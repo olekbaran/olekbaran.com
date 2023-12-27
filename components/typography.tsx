@@ -46,7 +46,7 @@ const defaultVariantMapping = {
   logo: "p",
 }
 
-export function Typography({
+function Typography({
   variant,
   className,
   children,
@@ -62,3 +62,5 @@ export function Typography({
     children
   )
 }
+
+export { Typography, typographyVariants }

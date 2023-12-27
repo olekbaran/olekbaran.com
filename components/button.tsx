@@ -1,20 +1,37 @@
 import { type ButtonHTMLAttributes } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+const buttonVariants = cva(
+  "relative flex w-fit items-center justify-center gap-2 rounded-2xl px-14 py-3.5 text-center",
+  {
+    variants: {
+      variant: {
+        primary: "bg-white text-black",
+        secondary: "bg-black text-white border border-gray",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+    },
+  }
+)
 
-export function Button({ children, className, ...props }: ButtonProps) {
+interface ButtonProps
+  extends VariantProps<typeof buttonVariants>,
+    ButtonHTMLAttributes<HTMLButtonElement> {}
+
+function Button({ variant, className, children, ...props }: ButtonProps) {
   return (
     <button
       type="button"
-      className={cn(
-        "flex w-fit items-center justify-center gap-2 rounded-2xl bg-white px-14 py-3.5 text-center text-black",
-        className
-      )}
+      className={cn(buttonVariants({ variant }), className)}
       {...props}
     >
       {children}
     </button>
   )
 }
+
+export { Button, buttonVariants }

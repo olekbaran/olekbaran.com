@@ -33,7 +33,7 @@ export function SocialLinks() {
     <ul className="flex flex-wrap items-center justify-center gap-5 md:gap-10">
       {socialLinks.map((link) => (
         <li key={link.label} className="flex">
-          <IconButton label={link.label}>
+          <IconButton label={link.label} className="p-0">
             <Link
               href={link.href}
               target="_blank"
