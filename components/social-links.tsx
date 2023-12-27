@@ -1,8 +1,9 @@
 import { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 
-import { IconButton } from "./icon-button"
+import { iconButtonVariants } from "./icon-button"
 import { Link } from "./link"
 
 const socialLinks = [
@@ -32,17 +33,19 @@ export function SocialLinks() {
   return (
     <ul className="flex flex-wrap items-center justify-center gap-5 md:gap-10">
       {socialLinks.map((link) => (
-        <li key={link.label} className="flex">
-          <IconButton label={link.label} className="p-0">
-            <Link
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="h-10"
-            >
-              <div className="p-2">{link.icon}</div>
-            </Link>
-          </IconButton>
+        <li key={link.label} className="rounded-xl border border-gray/10">
+          <Link
+            href={link.href}
+            aria-label={link.label}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(
+              iconButtonVariants({ variant: "outline" }),
+              "h-10 border-0 p-0"
+            )}
+          >
+            <div className="p-2">{link.icon}</div>
+          </Link>
         </li>
       ))}
     </ul>

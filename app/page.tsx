@@ -1,5 +1,6 @@
 import { routes } from "@/config/routes"
-import { Button } from "@/components/button"
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/button"
 import { Heading } from "@/components/heading"
 import { Link } from "@/components/link"
 import { Typography } from "@/components/typography"
@@ -23,13 +24,17 @@ export default function IndexPage() {
           I&apos;m a front-end developer passionate about building dynamic and
           user-friendly web applications.
         </Typography>
-        <Button className="p-0">
-          <Link href={routes.contact.path} className="h-14">
-            <Typography variant="button" className="truncate px-14 py-3">
-              Let&apos;s talk
-            </Typography>
-          </Link>
-        </Button>
+        <Link
+          href={routes.contact.path}
+          className={cn(
+            buttonVariants({ variant: "primary" }),
+            "block h-14 p-0"
+          )}
+        >
+          <Typography variant="button" className="truncate px-14 py-3">
+            Let&apos;s talk
+          </Typography>
+        </Link>
       </div>
     </section>
   )
