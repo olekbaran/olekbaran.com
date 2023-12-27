@@ -25,7 +25,7 @@ export default function IndexPage() {
         </Typography>
         <Button className="p-0">
           <Link href={routes.contact.path} className="h-14">
-            <Typography variant="button" className="px-14 py-3">
+            <Typography variant="button" className="truncate px-14 py-3">
               Let&apos;s talk
             </Typography>
           </Link>
