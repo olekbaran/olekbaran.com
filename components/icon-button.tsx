@@ -22,7 +22,7 @@ export function IconButton({
       aria-label={label}
       className={cn(
         "relative",
-        variant === "outline" && "rounded-xl border border-gray",
+        variant === "outline" && "rounded-xl border border-gray/10",
         className
       )}
       {...props}
