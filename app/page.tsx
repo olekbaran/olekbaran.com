@@ -25,7 +25,7 @@ export default function IndexPage() {
           user-friendly web applications.
         </Typography>
         <Link
-          href={routes.contact.path}
+          href={routes.contact.slug}
           className={cn(
             buttonVariants({ variant: "primary" }),
             "block h-14 p-0"

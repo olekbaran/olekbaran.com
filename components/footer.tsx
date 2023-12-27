@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="w-full border-t border-gray/10 bg-black py-10 md:pt-20">
       <div className="container flex flex-col gap-10 md:gap-20">
         <Link
-          href={routes.contact.path}
+          href={routes.contact.slug}
           className="h-14 w-full rounded-2xl border border-gray px-5 md:h-24 md:rounded-3xl lg:px-10"
         >
           <div className="flex items-center justify-center gap-10 py-2 lg:justify-between">
@@ -27,7 +27,7 @@ export function Footer() {
         </Link>
         <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
           <div className="flex flex-col items-center gap-5 md:items-start">
-            <Link href={routes.home.path}>
+            <Link href={routes.home.slug}>
               <Logo />
             </Link>
             <Typography variant="body2" className="text-center text-gray">
