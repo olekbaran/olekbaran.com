@@ -20,8 +20,8 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 w-full flex-col justify-center border-b border-gray/10 bg-black">
-      <div className="container z-10 flex h-full w-full items-center justify-between gap-10 bg-black">
+    <header className="sticky top-0 z-50 flex h-16 w-full flex-col justify-center border-b border-gray/10 bg-black">
+      <div className="container z-50 flex h-full w-full items-center justify-between gap-10 bg-black">
         <Logo />
         <MainNav className="hidden md:block" pathname={pathname} />
         <IconButton

@@ -37,7 +37,7 @@ const mockedProjects = [
 export default function IndexPage() {
   return (
     <>
-      <section className="flex flex-col gap-40 py-16 md:py-32">
+      <section className="sticky top-16 flex flex-col gap-40 py-16 md:py-32">
         <div className="inline-flex flex-nowrap overflow-hidden">
           <div className="animate-infinite-scroll">
             <HeroHeading className="mx-10" />
@@ -67,36 +67,35 @@ export default function IndexPage() {
           </Link>
         </div>
       </section>
-      <section
-        id="latest-projects"
-        className="container flex flex-col gap-16 py-16 md:py-32"
-      >
-        <Heading
-          title="Latest projects"
-          subtitle="Check out the awesome stuff I've been up to lately. I’ve been working on some exciting projects that I think you’ll enjoy."
-        />
-        <ul className="grid gap-10 md:grid-cols-2">
-          {mockedProjects.map((project) => (
-            <li key={project.slug}>
-              <ProjectCard
-                title={project.title}
-                slug={project.slug}
-                image={project.image}
-              />
-            </li>
-          ))}
-        </ul>
-        <Link
-          href={routes.projects.slug}
-          className={cn(
-            buttonVariants({ variant: "primary" }),
-            "mx-auto block h-14 shrink-0 p-0"
-          )}
-        >
-          <Typography variant="button" className="truncate px-14 py-3">
-            Browse all projects
-          </Typography>
-        </Link>
+      <section id="latest-projects" className="z-10 bg-black py-16 md:py-32">
+        <div className="container flex flex-col gap-16">
+          <Heading
+            title="Latest projects"
+            subtitle="Check out the awesome stuff I've been up to lately. I’ve been working on some exciting projects that I think you’ll enjoy."
+          />
+          <ul className="grid gap-10 md:grid-cols-2">
+            {mockedProjects.map((project) => (
+              <li key={project.slug}>
+                <ProjectCard
+                  title={project.title}
+                  slug={project.slug}
+                  image={project.image}
+                />
+              </li>
+            ))}
+          </ul>
+          <Link
+            href={routes.projects.slug}
+            className={cn(
+              buttonVariants({ variant: "primary" }),
+              "mx-auto block h-14 shrink-0 p-0"
+            )}
+          >
+            <Typography variant="button" className="truncate px-14 py-3">
+              Browse all projects
+            </Typography>
+          </Link>
+        </div>
       </section>
     </>
   )
