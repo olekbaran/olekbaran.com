@@ -30,7 +30,7 @@ export default function IndexPage() {
             href={routes.contact.slug}
             className={cn(
               buttonVariants({ variant: "primary" }),
-              "block h-14 p-0"
+              "block h-14 shrink-0 p-0"
             )}
           >
             <Typography variant="button" className="truncate px-14 py-3">
