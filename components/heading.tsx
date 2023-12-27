@@ -1,22 +1,16 @@
-import { type HTMLAttributes } from "react"
-import { SparkleIcon } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-
 import { Typography } from "./typography"
 
-interface HeadingProps extends HTMLAttributes<HTMLElement> {}
+interface HeadingProps {
+  title: string
+  subtitle: string
+}
 
-export function Heading({ className, ...props }: HeadingProps) {
+export function Heading({ title, subtitle }: HeadingProps) {
   return (
-    <div className={cn("flex items-center gap-20", className)} {...props}>
-      <SparkleIcon className="h-16 w-16 shrink-0 stroke-1" />
-      <Typography variant="h1" className="whitespace-nowrap">
-        Olek Baran
-      </Typography>
-      <SparkleIcon className="h-16 w-16 shrink-0 stroke-1" />
-      <Typography variant="h1" className="whitespace-nowrap">
-        Front-end Developer
+    <div className="flex max-w-4xl flex-col gap-5">
+      <Typography variant="h4">{title}</Typography>
+      <Typography variant="subtitle2" className="text-gray">
+        {subtitle}
       </Typography>
     </div>
   )
