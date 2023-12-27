@@ -27,9 +27,7 @@ export function Footer() {
         </Link>
         <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
           <div className="flex flex-col items-center gap-5 md:items-start">
-            <Link href={routes.home.slug}>
-              <Logo />
-            </Link>
+            <Logo />
             <Typography variant="body2" className="text-center text-gray">
               &copy; {year} Aleksander Baran
             </Typography>
