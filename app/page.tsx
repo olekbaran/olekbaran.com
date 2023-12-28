@@ -84,7 +84,7 @@ export default function IndexPage() {
       >
         <Heading
           title="Latest projects"
-          subtitle="Check out the awesome stuff I've been up to lately. I’ve been working on some exciting projects that I think you’ll enjoy."
+          subtitle="Check out the awesome stuff I've been up to lately. I've been working on some exciting projects that I think you'll enjoy."
         />
         <ul className="grid gap-10 md:grid-cols-2">
           {mockedProjects.map((project) => (
