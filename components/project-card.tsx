@@ -13,7 +13,7 @@ interface ProjectCardProps {
 export function ProjectCard({ title, slug, image }: ProjectCardProps) {
   return (
     <Link href={slug} className="rounded-3xl">
-      <div className="relative aspect-square rounded-3xl border border-gray/10">
+      <div className="relative aspect-square overflow-hidden rounded-3xl border border-gray/10">
         <Image
           src={image}
           alt={title}
@@ -21,12 +21,20 @@ export function ProjectCard({ title, slug, image }: ProjectCardProps) {
           sizes="(max-width: 768px) 100vw, 50vw"
           quality={100}
           priority
-          className="rounded-3xl object-cover"
+          className="rounded-3xl object-cover transition-transform duration-500 ease-in-out hover:scale-110"
         />
         <div className="absolute bottom-2 max-w-full overflow-hidden px-2">
-          <div className="flex items-center gap-2 rounded-full bg-black/50 px-8 py-2 backdrop-blur">
-            <Typography className="truncate">{title}</Typography>
-            <ArrowUpRight className="shrink-0 stroke-[1.5px]" />
+          <div className="h-12 rounded-full bg-black/50 backdrop-blur">
+            <div className="transition-transform duration-500 ease-in-out hover:-translate-y-1/2">
+              <div className="flex items-center gap-2 px-8 py-2">
+                <Typography className="truncate">{title}</Typography>
+                <ArrowUpRight className="shrink-0 stroke-[1.5px]" />
+              </div>
+              <div className="flex items-center gap-2 px-8 py-2" aria-hidden>
+                <Typography className="truncate">{title}</Typography>
+                <ArrowUpRight className="shrink-0 stroke-[1.5px]" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
