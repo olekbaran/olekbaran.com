@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="w-full border-t border-gray/10 bg-black py-10 md:pt-20">
       <div className="container flex flex-col gap-10 md:gap-20">
         <Link
-          href={routes.contact.slug}
+          href={routes.contact.pathname}
           className="h-14 w-full rounded-2xl border border-gray px-5 md:h-24 md:rounded-3xl lg:px-10"
         >
           <div className="flex items-center justify-center gap-10 py-2 lg:justify-between">
