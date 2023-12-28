@@ -39,7 +39,7 @@ const mockedProjects = [
 export default function IndexPage() {
   return (
     <>
-      <section className="sticky top-16 flex flex-col gap-40 bg-black py-16 md:py-32">
+      <section className="sticky top-0 flex flex-col gap-40 bg-black py-16 md:py-32">
         <div className="inline-flex flex-nowrap overflow-hidden">
           <div className="animate-infinite-scroll">
             <HeroHeading className="mx-10" />
