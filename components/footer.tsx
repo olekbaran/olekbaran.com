@@ -15,9 +15,9 @@ export function Footer() {
       <div className="container flex flex-col gap-10 md:gap-20">
         <Link
           href={routes.contact.pathname}
-          className="h-14 w-full rounded-2xl border border-gray px-5 md:h-24 md:rounded-3xl lg:px-10"
+          className="h-14 w-full rounded-2xl border border-gray md:h-24 md:rounded-3xl"
         >
-          <div className="flex items-center justify-center gap-10 py-2 lg:justify-between">
+          <div className="flex items-center justify-center gap-10 px-5 py-2 lg:justify-between lg:px-10">
             <ArrowRightIcon className="hidden h-16 w-16 stroke-1 lg:block" />
             <Typography variant="h3" className="truncate">
               Get in touch
