@@ -10,7 +10,7 @@ interface LinkProps
 export function Link({ children, className, ...props }: LinkProps) {
   return (
     <NextLink
-      className={cn("block h-8 w-fit overflow-hidden", className)}
+      className={cn("block h-8 w-fit max-w-full overflow-hidden", className)}
       {...props}
     >
       <div className="transition-transform duration-500 ease-in-out hover:-translate-y-1/2">

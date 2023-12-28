@@ -44,9 +44,8 @@ const config: Config = {
       4: "1.5rem",
       5: "2rem",
       6: "2.5rem",
-      7: "2.625rem",
-      8: "3.875rem",
-      9: "4.5rem",
+      7: "3.875rem",
+      8: "4.5rem",
     },
     extend: {
       fontFamily: {

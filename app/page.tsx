@@ -2,8 +2,10 @@ import NextLink from "next/link"
 import { SparkleIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
+import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/button"
+import { ContactCard } from "@/components/contact-card"
 import { Heading } from "@/components/heading"
 import { HeroHeading } from "@/components/hero-heading"
 import { Link } from "@/components/link"
@@ -124,6 +126,23 @@ export default function IndexPage() {
               <SparkleIcon className="h-10 w-10 shrink-0 stroke-1 md:h-14 md:w-14" />
             </li>
           ))}
+        </ul>
+      </section>
+      <section
+        id="contact"
+        className="container flex flex-col gap-16 py-16 md:py-32"
+      >
+        <Heading
+          title="Contact"
+          subtitle="Let's create something amazing together. You can get in touch with me using the options below."
+        />
+        <ul className="flex flex-col items-center gap-10 md:flex-row">
+          <li className="w-full">
+            <ContactCard label="LinkedIn" link={siteConfig.links.linkedIn} />
+          </li>
+          <li className="w-full">
+            <ContactCard label="Email" link={`mailto:${siteConfig.email}`} />
+          </li>
         </ul>
       </section>
     </>
