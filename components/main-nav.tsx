@@ -1,6 +1,7 @@
 import { type HTMLAttributes } from "react"
 
 import { routes } from "@/config/routes"
+import { isSubpath } from "@/lib/utils"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
@@ -19,7 +20,9 @@ export function MainNav({ pathname, ...props }: MainNavProps) {
               <Typography
                 variant="body1"
                 className={
-                  route.pathname === pathname ? "text-white" : "text-gray"
+                  isSubpath(route.pathname, pathname)
+                    ? "text-white"
+                    : "text-gray"
                 }
               >
                 {route.title}

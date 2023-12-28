@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowUpRight, GitPullRequestArrowIcon } from "lucide-react"
+import { ArrowUpRightIcon, GitPullRequestArrowIcon } from "lucide-react"
 
 import { Badge } from "./badge"
 import { Typography } from "./typography"
@@ -29,7 +29,7 @@ export function ProjectCard({
       {isOpenSourceContribution && (
         <div className="absolute right-0 top-0 max-w-full p-2">
           <div className="overflow-hidden">
-            <Badge size="small" withHoverAnimation className="h-9">
+            <Badge withHoverAnimation className="h-9">
               <GitPullRequestArrowIcon className="h-5 w-5 shrink-0 stroke-[1.5px]" />
               <Typography variant="body2" className="truncate">
                 Open Source Contribution
@@ -40,11 +40,11 @@ export function ProjectCard({
       )}
       <div className="absolute bottom-0 left-0 max-w-full p-2">
         <div className="overflow-hidden">
-          <Badge withHoverAnimation>
+          <Badge size="large" withHoverAnimation className="h-12">
             <Typography variant="body1" className="truncate">
               {title}
             </Typography>
-            <ArrowUpRight className="shrink-0 stroke-[1.5px]" />
+            <ArrowUpRightIcon className="shrink-0 stroke-[1.5px]" />
           </Badge>
         </div>
       </div>

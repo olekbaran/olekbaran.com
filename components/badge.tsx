@@ -11,7 +11,7 @@ const badgeVariants = cva("flex items-center gap-2", {
     },
   },
   defaultVariants: {
-    size: "large",
+    size: "small",
   },
 })
 
@@ -21,7 +21,7 @@ interface BadgeProps
   withHoverAnimation?: boolean
 }
 
-export function Badge({
+function Badge({
   size,
   withHoverAnimation,
   className,
@@ -30,7 +30,10 @@ export function Badge({
 }: BadgeProps) {
   return (
     <div
-      className={cn("h-12 rounded-full bg-black/50 backdrop-blur", className)}
+      className={cn(
+        "w-fit max-w-full rounded-full bg-black/50 backdrop-blur",
+        className
+      )}
       {...props}
     >
       <div
@@ -49,3 +52,5 @@ export function Badge({
     </div>
   )
 }
+
+export { Badge, badgeVariants }

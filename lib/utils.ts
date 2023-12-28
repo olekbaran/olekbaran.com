@@ -1,10 +1,17 @@
 import { ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-import { env } from "@/env"
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
+}
+
+export function isSubpath(parentPath: string, childPath: string) {
+  const parentSegments = parentPath.split("/")
+  const childSegments = childPath.split("/")
+
+  return parentSegments.every(
+    (segment, index) => childSegments[index] === segment
+  )
 }
 
 export function formatDate(input: string | number): string {
@@ -13,8 +20,4 @@ export function formatDate(input: string | number): string {
     month: "short",
     year: "numeric",
   })
-}
-
-export function absoluteUrl(path: string) {
-  return `${env.NEXT_PUBLIC_APP_URL}${path}`
 }
