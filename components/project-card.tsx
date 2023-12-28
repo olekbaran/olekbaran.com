@@ -27,11 +27,15 @@ export function ProjectCard({ title, slug, image }: ProjectCardProps) {
           <div className="h-12 rounded-full bg-black/50 backdrop-blur">
             <div className="transition-transform duration-500 ease-in-out hover:-translate-y-1/2">
               <div className="flex items-center gap-2 px-8 py-2">
-                <Typography className="truncate">{title}</Typography>
+                <Typography variant="body1" className="truncate">
+                  {title}
+                </Typography>
                 <ArrowUpRight className="shrink-0 stroke-[1.5px]" />
               </div>
               <div className="flex items-center gap-2 px-8 py-2" aria-hidden>
-                <Typography className="truncate">{title}</Typography>
+                <Typography variant="body1" className="truncate">
+                  {title}
+                </Typography>
                 <ArrowUpRight className="shrink-0 stroke-[1.5px]" />
               </div>
             </div>
