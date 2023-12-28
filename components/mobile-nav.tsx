@@ -25,9 +25,9 @@ export function MobileNav({ pathname, isOpen, onLinkClick }: MobileNavProps) {
     >
       <ul className="container flex flex-col gap-10">
         {Object.values(routes).map((route) => (
-          <li key={route.slug} className="border-b border-gray px-5 pb-10">
+          <li key={route.pathname} className="border-b border-gray px-5 pb-10">
             <Link
-              href={route.slug}
+              href={route.pathname}
               className="h-10 w-full"
               onClick={onLinkClick}
             >
@@ -36,7 +36,7 @@ export function MobileNav({ pathname, isOpen, onLinkClick }: MobileNavProps) {
                   variant="h6"
                   className={cn(
                     "truncate",
-                    route.slug === pathname ? "text-white" : "text-gray"
+                    route.pathname === pathname ? "text-white" : "text-gray"
                   )}
                 >
                   {route.title}

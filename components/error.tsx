@@ -16,7 +16,10 @@ export function Error({ name, message, className, ...props }: ErrorProps) {
       {...props}
     >
       <Typography variant="h4">{name}</Typography>
-      <Typography variant="subtitle2" className="text-center text-gray">
+      <Typography
+        variant="subtitle2"
+        className="hyphens-auto break-all text-center text-gray"
+      >
         {message}
       </Typography>
     </div>

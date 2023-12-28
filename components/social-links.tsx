@@ -9,22 +9,22 @@ import { Link } from "./link"
 const socialLinks = [
   {
     label: "GitHub",
-    icon: <GithubIcon />,
+    icon: <GithubIcon className="stroke-1" />,
     href: siteConfig.links.github,
   },
   {
     label: "LinkedIn",
-    icon: <LinkedinIcon />,
+    icon: <LinkedinIcon className="stroke-1" />,
     href: siteConfig.links.linkedIn,
   },
   {
     label: "Instagram",
-    icon: <InstagramIcon />,
+    icon: <InstagramIcon className="stroke-1" />,
     href: siteConfig.links.instagram,
   },
   {
     label: "Email",
-    icon: <MailIcon />,
+    icon: <MailIcon className="stroke-1" />,
     href: `mailto:${siteConfig.email}`,
   },
 ]
