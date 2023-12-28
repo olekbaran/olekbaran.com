@@ -1,4 +1,5 @@
 import NextLink from "next/link"
+import { SparkleIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 import { cn } from "@/lib/utils"
@@ -35,6 +36,8 @@ const mockedProjects = [
       "https://s3-alpha-sig.figma.com/img/0f63/7ea1/448b1ebb7851ef275a876c1962e99096?Expires=1704672000&Signature=d0zNl-V~YFYKLVtq2fQVS4bWx2gaN54aDD80KEYF5x4FxKwK0lYMRHb7xIcv8cT54efUt1lgoMY1yphSmFHuPgo9D8cSw2UY8DfUAnCd7lKJ1y92ZCB8nPbHfb5P5E4kl4hCAFnw5rlMr9385db7B8gPdrEofj1Z4-fZpNnvHl~6eNob0G5dpW~NylwP5X68MYC44Sp~nCe1UN5hjV8mxak9jkM0U9hNg-xSPcVhne2pIm4kR7UvTDdHGle0sUzwjCy5M3YyQmf65Eliz~c36pmb9INzHFFuR-NJmFCsNkby0Q7~edD4tbtskaLfuCsY3qUZJaFpn45jEd6MYWkkjg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   },
 ]
+
+const mockedTechStack = ["JavaScript", "TypeScript", "React", "Next.js"]
 
 export default function IndexPage() {
   return (
@@ -100,6 +103,28 @@ export default function IndexPage() {
             Browse all projects
           </Typography>
         </Link>
+      </section>
+      <section
+        id="tech-stack"
+        className="container flex flex-col gap-16 py-16 md:py-32"
+      >
+        <Heading
+          title="Tech stack"
+          subtitle="Explore the cutting-edge tools powering my projects. My go-to tech stack that I use to create top-notch web applications."
+        />
+        <ul className="flex flex-col gap-10">
+          {mockedTechStack.map((technology) => (
+            <li
+              key={technology}
+              className="flex items-center justify-between gap-5 border-b border-gray px-5 py-10"
+            >
+              <Typography variant="h5" className="truncate">
+                {technology}
+              </Typography>
+              <SparkleIcon className="h-10 w-10 shrink-0 stroke-1 md:h-14 md:w-14" />
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   )
