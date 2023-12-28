@@ -69,7 +69,7 @@ export default function IndexPage() {
           </Link>
         </div>
       </section>
-      <section id="latest-projects" className="z-10 bg-black py-16 md:py-32">
+      <section id="latest-projects" className="z-20 bg-black py-16 md:py-32">
         <div className="container flex flex-col gap-16">
           <Heading
             title="Latest projects"
