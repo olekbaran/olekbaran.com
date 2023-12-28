@@ -24,11 +24,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={syne.variable} suppressHydrationWarning>
-        <div>
+        <div className="relative flex min-h-screen flex-col">
           <Header />
-          <main className="flex min-h-[calc(100vh-4rem)] flex-col justify-center">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
         <Analytics />
