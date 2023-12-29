@@ -10,6 +10,7 @@ import { Heading } from "@/components/heading"
 import { HeroHeading } from "@/components/hero-heading"
 import { Link } from "@/components/link"
 import { ProjectCard } from "@/components/project-card"
+import { TechnologyCard } from "@/components/technology-card"
 import { Typography } from "@/components/typography"
 
 const mockedProjects = [
@@ -124,14 +125,8 @@ export default function IndexPage() {
         />
         <ul className="flex flex-col gap-10">
           {mockedTechStack.map((technology) => (
-            <li
-              key={technology}
-              className="flex items-center justify-between gap-5 border-b border-gray px-5 py-10"
-            >
-              <Typography variant="h5" className="truncate">
-                {technology}
-              </Typography>
-              <SparkleIcon className="h-10 w-10 shrink-0 stroke-1 md:h-14 md:w-14" />
+            <li key={technology}>
+              <TechnologyCard name={technology} size="large" />
             </li>
           ))}
         </ul>

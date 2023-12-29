@@ -7,6 +7,7 @@ import { Badge } from "@/components/badge"
 import { GoBack } from "@/components/go-back"
 import { Link } from "@/components/link"
 import { ProjectThumbnail } from "@/components/project-thumbnail"
+import { TechnologyCard } from "@/components/technology-card"
 import { Typography } from "@/components/typography"
 
 const mockedProject = {
@@ -112,6 +113,13 @@ export default function ProjectPage() {
           image={mockedProject.images[0]}
         />
       )}
+      <ul className="grid gap-10 md:grid-cols-2">
+        {mockedProject.technologies.map((technology) => (
+          <li key={technology} className="overflow-hidden">
+            <TechnologyCard name={technology} />
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
