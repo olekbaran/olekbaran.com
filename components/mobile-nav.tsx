@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
-import { cn } from "@/lib/utils"
+import { cn, isSubpath } from "@/lib/utils"
 import { useLockBody } from "@/hooks/use-lock-body"
 
 import { Link } from "./link"
@@ -36,7 +36,9 @@ export function MobileNav({ pathname, isOpen, onLinkClick }: MobileNavProps) {
                   variant="h6"
                   className={cn(
                     "truncate",
-                    route.pathname === pathname ? "text-white" : "text-gray"
+                    isSubpath(route.pathname, pathname)
+                      ? "text-white"
+                      : "text-gray"
                   )}
                 >
                   {route.title}

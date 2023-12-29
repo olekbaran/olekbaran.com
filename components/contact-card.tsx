@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRightIcon } from "lucide-react"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
@@ -21,7 +21,7 @@ export function ContactCard({ label, link }: ContactCardProps) {
           <Typography variant="h6" className="truncate">
             {label}
           </Typography>
-          <ArrowUpRight className="h-10 w-10 shrink-0" />
+          <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
         </div>
       </Link>
     </div>
