@@ -1,3 +1,4 @@
+import { type Metadata } from "next"
 import NextLink from "next/link"
 import { ArrowUpRightIcon, GitPullRequestArrowIcon } from "lucide-react"
 
@@ -41,6 +42,27 @@ const mockedProject = {
   images: [
     "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1704672000&Signature=dGgw2vmKiAvKwxPem~hEkptH0Zwn06aoZ-OG169ex~pxY4qbRI1QIEQzTCygQeeEyj788P47Q3L5C3xiP7MxzgkITyWHQtlwW6YTHlu1s1wez8r6bCZNx5z63yT91O3ThPd5w00DsqNcwACCEmWMLjsjegCpLlXnvRHmhbIZZ5wFpgYMp7iNvlVHvdi8NOS2vatYje5h3I4LwI1YaAkYtq7gl~d4Lq8HHradBYfXRY4wnYufAHdJrAMTbz9WTpQh374oOOfBq6NeaoN4c0NIl-xLjgBHr~TcNlKtAB6Mk-vCCLzR9IW8vxVV6Y1KKQwVedxVjGYRc50bGWN9LAFGxQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   ],
+  description: [
+    {
+      heading: "Overview",
+      content:
+        "In today's world, communication is everything, and CallerSmart is the next big thing in Caller ID lookup technology. It gives you all the info you need to make smart decisions about incoming calls. This app goes beyond the basics, providing a complete and reliable solution to make your communication experience better. With CallerSmart, you can be sure that you have the right information at your fingertips to stay connected and informed.",
+    },
+    {
+      heading: "Problems",
+      content:
+        "As we become more connected, we're getting more and more unknown calls and spam. It's super annoying and sometimes even dangerous. The problem is that traditional Caller ID systems don't always work well, so we're left frustrated and vulnerable to scams or unwanted interruptions. The reason behind this is that existing Caller ID apps rely on databases that aren't always updated in real-time. So, we might get outdated or inaccurate information about the caller. Plus, current solutions don't let us help keep the database up-to-date, which is something we'd love to do.",
+    },
+    {
+      heading: "Solution",
+      content:
+        "With CallerSmart, you can now easily identify incoming calls in real-time. Our technology is top-notch, so you can be sure that you always have the most up-to-date information about the caller. No more guessing or uncertainty! Our spam detection algorithms are also pretty advanced, so you don't have to worry about unwanted calls. We keep up with the ever-changing landscape of telemarketers and scammers, so you don't have to. Plus, you can join our community of users who are dedicated to maintaining the most reliable Caller ID database. You can contribute by verifying and updating information, making CallerSmart a dynamic and user-driven platform.",
+    },
+  ],
+}
+
+export const metadata: Metadata = {
+  title: mockedProject.title,
 }
 
 export default function ProjectPage() {
@@ -113,13 +135,21 @@ export default function ProjectPage() {
           image={mockedProject.images[0]}
         />
       )}
-      <ul className="grid gap-10 md:grid-cols-2">
+      <ul className="mb-10 grid gap-10 md:grid-cols-2">
         {mockedProject.technologies.map((technology) => (
           <li key={technology} className="overflow-hidden">
             <TechnologyCard name={technology} />
           </li>
         ))}
       </ul>
+      {mockedProject.description.map((block) => (
+        <div key={block.heading} className="flex flex-col gap-5">
+          <Typography variant="h6">{block.heading}</Typography>
+          <Typography variant="body1" className="text-gray">
+            {block.content}
+          </Typography>
+        </div>
+      ))}
     </section>
   )
 }
