@@ -12,7 +12,7 @@ const prettierConfig = {
     "",
     "^types$",
     "^@/env(.*)$",
-    "^@/types/(.*)$",
+    "^@/types(.*)$",
     "^@/config/(.*)$",
     "^@/lib/(.*)$",
     "^@/hooks/(.*)$",
