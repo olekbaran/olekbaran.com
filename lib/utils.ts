@@ -16,7 +16,7 @@ export function isSubpath(parentPath: string, childPath: string) {
   )
 }
 
-export function formatDate(input: string | number): string {
+export function formatDate(input: string | number | Date): string {
   const date = new Date(input)
   return date.toLocaleDateString("en-US", {
     month: "short",
@@ -56,4 +56,22 @@ export function calculateYearsOfExperience(workExperience: WorkExperience[]) {
   const totalExperienceInYears = Math.floor(totalExperienceInMonths / 12)
 
   return totalExperienceInYears
+}
+
+export function calculateMonthsDifference(
+  start: string | number | Date,
+  end?: string | number | Date
+) {
+  const currentDate = new Date()
+
+  const startDate = new Date(start)
+  const endDate = end ? new Date(end) : currentDate
+
+  const monthsDifference =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    endDate.getMonth() -
+    startDate.getMonth() +
+    (endDate.getDate() >= startDate.getDate() ? 1 : 0)
+
+  return monthsDifference
 }
