@@ -2,10 +2,10 @@ import { type Metadata } from "next"
 
 import { routes } from "@/config/routes"
 import { calculateYearsOfExperience, sortByDate } from "@/lib/utils"
+import { ExperienceCard } from "@/components/experience-card"
 import { Heading } from "@/components/heading"
 import { InfoCard } from "@/components/info-card"
 import { Memoji } from "@/components/memoji"
-import { PositionCard } from "@/components/position-card"
 import { Typography } from "@/components/typography"
 
 const mockedWorkExperience = [
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <ul className="flex flex-col gap-16">
           {mockedWorkExperience.map((job) => (
             <li key={`${job.position}-${job.company}-${job.startDate}`}>
-              <PositionCard
+              <ExperienceCard
                 company={job.company}
                 position={job.position}
                 startDate={job.startDate}
