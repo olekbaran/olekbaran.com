@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "lucide-react"
+import { ArrowUpRightIcon, SparkleIcon } from "lucide-react"
 
 import { calculateMonthsDifference, formatDate } from "@/lib/utils"
 
@@ -21,11 +21,27 @@ export function ExperienceCard({
   companyWebsiteUrl,
 }: ExperienceCardProps) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-5 border-b border-gray px-5 py-10">
+    <div className="flex items-center justify-between gap-10 border-b border-gray px-5 py-10">
       <div className="flex flex-col gap-5 overflow-hidden">
-        <Typography variant="h6" className="max-w-full truncate">
-          {company}
-        </Typography>
+        {companyWebsiteUrl ? (
+          <Link
+            href={companyWebsiteUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="h-10"
+          >
+            <div className="flex items-center gap-5">
+              <Typography variant="h6" className="truncate">
+                {company}
+              </Typography>
+              <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
+            </div>
+          </Link>
+        ) : (
+          <Typography variant="h6" className="truncate">
+            {company}
+          </Typography>
+        )}
         <div className="flex flex-col gap-1">
           <Typography variant="subtitle2">{position}</Typography>
           <Typography variant="subtitle2" className="text-gray">
@@ -35,17 +51,7 @@ export function ExperienceCard({
           </Typography>
         </div>
       </div>
-      {companyWebsiteUrl && (
-        <Link
-          href={companyWebsiteUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Company website"
-          className="h-9 md:h-32"
-        >
-          <ArrowUpRightIcon className="h-9 w-9 stroke-[1.5px] md:h-32 md:w-32 md:stroke-[0.5px]" />
-        </Link>
-      )}
+      <SparkleIcon className="hidden h-10 w-10 shrink-0 stroke-1 sm:block md:h-14 md:w-14" />
     </div>
   )
 }
