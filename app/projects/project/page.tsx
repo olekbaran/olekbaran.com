@@ -3,7 +3,7 @@ import NextLink from "next/link"
 import { ArrowUpRightIcon, GitPullRequestArrowIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
-import { formatDate } from "@/lib/utils"
+import { absoluteUrl, formatDate } from "@/lib/utils"
 import { Badge } from "@/components/badge"
 import { Gallery } from "@/components/gallery"
 import { GoBack } from "@/components/go-back"
@@ -14,6 +14,8 @@ import { Typography } from "@/components/typography"
 
 const mockedProject = {
   title: "CallerSmart",
+  slug: "callersmart",
+  description: "The next big thing in Caller ID lookup technology.",
   isOpenSourceContribution: true,
   info: [
     {
@@ -47,7 +49,7 @@ const mockedProject = {
     "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1704672000&Signature=dGgw2vmKiAvKwxPem~hEkptH0Zwn06aoZ-OG169ex~pxY4qbRI1QIEQzTCygQeeEyj788P47Q3L5C3xiP7MxzgkITyWHQtlwW6YTHlu1s1wez8r6bCZNx5z63yT91O3ThPd5w00DsqNcwACCEmWMLjsjegCpLlXnvRHmhbIZZ5wFpgYMp7iNvlVHvdi8NOS2vatYje5h3I4LwI1YaAkYtq7gl~d4Lq8HHradBYfXRY4wnYufAHdJrAMTbz9WTpQh374oOOfBq6NeaoN4c0NIl-xLjgBHr~TcNlKtAB6Mk-vCCLzR9IW8vxVV6Y1KKQwVedxVjGYRc50bGWN9LAFGxQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
     "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1704672000&Signature=dGgw2vmKiAvKwxPem~hEkptH0Zwn06aoZ-OG169ex~pxY4qbRI1QIEQzTCygQeeEyj788P47Q3L5C3xiP7MxzgkITyWHQtlwW6YTHlu1s1wez8r6bCZNx5z63yT91O3ThPd5w00DsqNcwACCEmWMLjsjegCpLlXnvRHmhbIZZ5wFpgYMp7iNvlVHvdi8NOS2vatYje5h3I4LwI1YaAkYtq7gl~d4Lq8HHradBYfXRY4wnYufAHdJrAMTbz9WTpQh374oOOfBq6NeaoN4c0NIl-xLjgBHr~TcNlKtAB6Mk-vCCLzR9IW8vxVV6Y1KKQwVedxVjGYRc50bGWN9LAFGxQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   ],
-  description: [
+  overview: [
     {
       heading: "Overview",
       content:
@@ -68,6 +70,16 @@ const mockedProject = {
 
 export const metadata: Metadata = {
   title: mockedProject.title,
+  description: mockedProject.description,
+  alternates: {
+    canonical: `${routes.projects.pathname}/${mockedProject.slug}`,
+  },
+  openGraph: {
+    title: mockedProject.title,
+    description: mockedProject.description,
+    type: "article",
+    url: absoluteUrl(`${routes.projects.pathname}/${mockedProject.slug}`),
+  },
 }
 
 export default function ProjectPage() {
@@ -147,7 +159,7 @@ export default function ProjectPage() {
           </li>
         ))}
       </ul>
-      {mockedProject.description.map((block) => (
+      {mockedProject.overview.map((block) => (
         <div key={block.heading} className="flex flex-col gap-5">
           <Typography variant="h6">{block.heading}</Typography>
           <Typography variant="body1" className="text-gray">

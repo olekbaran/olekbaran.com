@@ -1,7 +1,11 @@
 import { type Metadata } from "next"
 
 import { routes } from "@/config/routes"
-import { calculateYearsOfExperience, sortByDate } from "@/lib/utils"
+import {
+  absoluteUrl,
+  calculateYearsOfExperience,
+  sortByDate,
+} from "@/lib/utils"
 import { ExperienceCard } from "@/components/experience-card"
 import { Heading } from "@/components/heading"
 import { InfoCard } from "@/components/info-card"
@@ -41,6 +45,13 @@ const mockedWorkExperience = [
 
 export const metadata: Metadata = {
   title: routes.about.title,
+  alternates: {
+    canonical: routes.about.pathname,
+  },
+  openGraph: {
+    title: routes.about.title,
+    url: absoluteUrl(routes.about.pathname),
+  },
 }
 
 export default function AboutPage() {
