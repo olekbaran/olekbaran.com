@@ -2,9 +2,14 @@ import { ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 import { type WorkExperience } from "@/types"
+import { siteConfig } from "@/config/site"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
+}
+
+export function absoluteUrl(pathname: string) {
+  return `${siteConfig.url}${pathname}`
 }
 
 export function isSubpath(parentPath: string, childPath: string) {

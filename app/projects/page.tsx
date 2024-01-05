@@ -2,6 +2,7 @@ import { type Metadata } from "next"
 import Link from "next/link"
 
 import { routes } from "@/config/routes"
+import { absoluteUrl } from "@/lib/utils"
 import { Heading } from "@/components/heading"
 import { ProjectCard } from "@/components/project-card"
 
@@ -38,6 +39,17 @@ const mockedProjects = [
 
 export const metadata: Metadata = {
   title: routes.projects.title,
+  description:
+    "Explore what I've been cooking up lately! From techy experiments to creative vibes, this is where all of the projects hang out.",
+  alternates: {
+    canonical: routes.projects.pathname,
+  },
+  openGraph: {
+    title: routes.projects.title,
+    description:
+      "Explore what I've been cooking up lately! From techy experiments to creative vibes, this is where all of the projects hang out.",
+    url: absoluteUrl(routes.projects.pathname),
+  },
 }
 
 export default function ProjectsPage() {
