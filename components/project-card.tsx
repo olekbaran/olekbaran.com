@@ -19,7 +19,7 @@ export function ProjectCard({
     <div className="relative aspect-square overflow-hidden rounded-3xl border border-gray/10">
       <Image
         src={image}
-        alt={title}
+        alt=""
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
         quality={100}
