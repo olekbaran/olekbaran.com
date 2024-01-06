@@ -28,8 +28,12 @@ interface TechnologyCardProps
 function TechnologyCard({ name, size }: TechnologyCardProps) {
   return (
     <div className={cn(technologyCardVariants({ size }))}>
-      <Typography variant={size === "large" ? "h5" : "h6"} className="truncate">
-        {name}
+      <Typography
+        variant={size === "large" ? "h5" : "h6"}
+        className="truncate"
+        asChild
+      >
+        <span>{name}</span>
       </Typography>
       <SparkleIcon
         className={cn(
