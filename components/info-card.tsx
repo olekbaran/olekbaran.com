@@ -23,8 +23,8 @@ export function InfoCard({
       )}
       {...props}
     >
-      <Typography variant="h6" className="max-w-full truncate">
-        {title}
+      <Typography variant="h6" className="max-w-full truncate" asChild>
+        <p>{title}</p>
       </Typography>
       <Typography
         variant="body1"
