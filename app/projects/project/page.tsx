@@ -101,8 +101,8 @@ export default function ProjectPage() {
               </Typography>
             </Badge>
           )}
-          <Typography variant="h2" className="truncate">
-            {mockedProject.title}
+          <Typography variant="h2" className="truncate" asChild>
+            <h1>{mockedProject.title}</h1>
           </Typography>
         </div>
       </div>
@@ -113,11 +113,13 @@ export default function ProjectPage() {
 
             return (
               <li key={info.type} className="flex flex-col gap-2">
-                <Typography variant="subtitle1" className="text-gray">
-                  {info.label}:
+                <Typography variant="subtitle1" className="text-gray" asChild>
+                  <span>{info.label}:</span>
                 </Typography>
-                <Typography variant="subtitle2">
-                  {isValueDate ? formatDate(info.value) : info.value}
+                <Typography variant="subtitle2" asChild>
+                  <span>
+                    {isValueDate ? formatDate(info.value) : info.value}
+                  </span>
                 </Typography>
               </li>
             )
@@ -128,8 +130,8 @@ export default function ProjectPage() {
             <li key={link.type}>
               <Link href={link.url} className="h-10">
                 <div className="flex items-center gap-2">
-                  <Typography variant="h6" className="truncate">
-                    {link.label}
+                  <Typography variant="h6" className="truncate" asChild>
+                    <span>{link.label}</span>
                   </Typography>
                   <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
                 </div>
@@ -161,7 +163,9 @@ export default function ProjectPage() {
       </ul>
       {mockedProject.overview.map((block) => (
         <div key={block.heading} className="flex flex-col gap-5">
-          <Typography variant="h6">{block.heading}</Typography>
+          <Typography variant="h6" asChild>
+            <h2>{block.heading}</h2>
+          </Typography>
           <Typography variant="body1" className="text-gray">
             {block.content}
           </Typography>

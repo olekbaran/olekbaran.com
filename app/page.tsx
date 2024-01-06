@@ -62,9 +62,15 @@ export default function IndexPage() {
           </div>
         </div>
         <div className="container flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-20">
-          <Typography variant="subtitle1" className="max-w-4xl text-gray">
-            I&apos;m a front-end developer passionate about building dynamic and
-            user-friendly web applications.
+          <Typography
+            variant="subtitle1"
+            className="max-w-4xl text-gray"
+            asChild
+          >
+            <h2>
+              I&apos;m a front-end developer passionate about building dynamic
+              and user-friendly web applications.
+            </h2>
           </Typography>
           <Link
             href={routes.contact.pathname}

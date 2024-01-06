@@ -1,4 +1,5 @@
 import { createElement, type HTMLAttributes } from "react"
+import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -28,7 +29,9 @@ const typographyVariants = cva("block", {
 
 interface TypographyProps
   extends VariantProps<typeof typographyVariants>,
-    HTMLAttributes<HTMLElement> {}
+    HTMLAttributes<HTMLElement> {
+  asChild?: boolean
+}
 
 const defaultVariantMapping = {
   h1: "h1",
@@ -47,6 +50,7 @@ const defaultVariantMapping = {
 }
 
 function Typography({
+  asChild,
   variant,
   className,
   children,
@@ -56,8 +60,10 @@ function Typography({
     ? defaultVariantMapping[variant]
     : defaultVariantMapping.body1
 
+  const Comp = asChild ? Slot : type
+
   return createElement(
-    type,
+    Comp,
     { className: cn(typographyVariants({ variant }), className), ...props },
     children
   )

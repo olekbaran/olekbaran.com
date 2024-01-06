@@ -79,15 +79,18 @@ export default function AboutPage() {
           />
         </div>
         <div className="flex flex-col gap-5 md:items-center">
-          <Typography variant="h2" className="md:text-center">
-            Olek Baran
+          <Typography variant="h2" className="md:text-center" asChild>
+            <h1>Olek Baran</h1>
           </Typography>
           <Typography
             variant="subtitle2"
             className="max-w-2xl text-gray md:text-center"
+            asChild
           >
-            I&apos;m a front-end developer passionate about building dynamic and
-            user-friendly web applications.
+            <h2>
+              I&apos;m a front-end developer passionate about building dynamic
+              and user-friendly web applications.
+            </h2>
           </Typography>
         </div>
       </section>

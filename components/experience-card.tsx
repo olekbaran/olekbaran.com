@@ -31,23 +31,27 @@ export function ExperienceCard({
             className="h-10"
           >
             <div className="flex items-center gap-5">
-              <Typography variant="h6" className="truncate">
-                {company}
+              <Typography variant="h6" className="truncate" asChild>
+                <span>{company}</span>
               </Typography>
               <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
             </div>
           </Link>
         ) : (
-          <Typography variant="h6" className="truncate">
-            {company}
+          <Typography variant="h6" className="truncate" asChild>
+            <p>{company}</p>
           </Typography>
         )}
         <div className="flex flex-col gap-1">
-          <Typography variant="subtitle2">{position}</Typography>
-          <Typography variant="subtitle2" className="text-gray">
-            {formatDate(startDate)} -{" "}
-            {endDate ? formatDate(endDate) : "Present"} (
-            {calculateMonthsDifference(startDate, endDate)} mos)
+          <Typography variant="subtitle2" asChild>
+            <p>{position}</p>
+          </Typography>
+          <Typography variant="subtitle2" className="text-gray" asChild>
+            <p>
+              {formatDate(startDate)} -{" "}
+              {endDate ? formatDate(endDate) : "Present"} (
+              {calculateMonthsDifference(startDate, endDate)} mos)
+            </p>
           </Typography>
         </div>
       </div>
