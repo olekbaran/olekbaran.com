@@ -1,7 +1,7 @@
 import { ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-import { type WorkExperience } from "@/types"
+import { type GroupedWorkExperience, type WorkExperience } from "@/types"
 import { siteConfig } from "@/config/site"
 
 export function cn(...inputs: ClassValue[]) {
@@ -79,4 +79,49 @@ export function calculateMonthsDifference(
     (endDate.getDate() >= startDate.getDate() ? 1 : 0)
 
   return monthsDifference
+}
+
+export function groupWorkExperience(workExperience: WorkExperience[]) {
+  const groupedWorkExperience = workExperience.reduce(
+    (acc: GroupedWorkExperience[], job) => {
+      const lastIndex = acc.length - 1
+
+      if (lastIndex >= 0 && acc[lastIndex].company === job.company) {
+        acc = [
+          ...acc.slice(0, lastIndex),
+          {
+            ...acc[lastIndex],
+            positions: [
+              ...acc[lastIndex].positions,
+              {
+                position: job.position,
+                startDate: job.startDate,
+                endDate: job.endDate,
+              },
+            ],
+          },
+        ]
+      } else {
+        acc = [
+          ...acc,
+          {
+            company: job.company,
+            companyWebsiteUrl: job.companyWebsiteUrl,
+            positions: [
+              {
+                position: job.position,
+                startDate: job.startDate,
+                endDate: job.endDate,
+              },
+            ],
+          },
+        ]
+      }
+
+      return acc
+    },
+    []
+  )
+
+  return groupedWorkExperience
 }

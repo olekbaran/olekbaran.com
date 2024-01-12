@@ -4,6 +4,7 @@ import { routes } from "@/config/routes"
 import {
   absoluteUrl,
   calculateYearsOfExperience,
+  groupWorkExperience,
   sortByDate,
 } from "@/lib/utils"
 import { ExperienceCard } from "@/components/experience-card"
@@ -58,7 +59,7 @@ export default function AboutPage() {
   const workExperience = mockedWorkExperience.sort((a, b) =>
     sortByDate(a.startDate, b.startDate)
   )
-
+  const groupedWorkExperience = groupWorkExperience(workExperience)
   const yearsOfExperience = calculateYearsOfExperience(workExperience)
 
   return (
@@ -100,13 +101,11 @@ export default function AboutPage() {
       >
         <Heading title="Work experience" />
         <ul className="flex flex-col gap-16">
-          {mockedWorkExperience.map((job) => (
-            <li key={`${job.position}-${job.company}-${job.startDate}`}>
+          {groupedWorkExperience.map((job, index) => (
+            <li key={`${job.company}-${index}`}>
               <ExperienceCard
                 company={job.company}
-                position={job.position}
-                startDate={job.startDate}
-                endDate={job.endDate}
+                positions={job.positions}
                 companyWebsiteUrl={job.companyWebsiteUrl}
               />
             </li>
