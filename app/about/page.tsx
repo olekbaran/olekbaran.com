@@ -4,6 +4,7 @@ import { routes } from "@/config/routes"
 import {
   absoluteUrl,
   calculateYearsOfExperience,
+  groupWorkExperience,
   sortByDate,
 } from "@/lib/utils"
 import { ExperienceCard } from "@/components/experience-card"
@@ -58,7 +59,7 @@ export default function AboutPage() {
   const workExperience = mockedWorkExperience.sort((a, b) =>
     sortByDate(a.startDate, b.startDate)
   )
-
+  const groupedWorkExperience = groupWorkExperience(workExperience)
   const yearsOfExperience = calculateYearsOfExperience(workExperience)
 
   return (
