@@ -8,7 +8,7 @@
     "url": "https://olekbaran.com"
   },
   "scripts": {
-    "dev": "next dev --turbo --experimental-https",
+    "dev": "next dev --experimental-https",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",

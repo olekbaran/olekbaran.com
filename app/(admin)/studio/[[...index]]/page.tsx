@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: baseMetadata.metadataBase,
   title: `Studio | ${siteConfig.name}`,
-  description: `${siteConfig.name} content studio.`,
+  description: `${siteConfig.name} Content Studio`,
   authors: baseMetadata.authors,
   creator: baseMetadata.creator,
   generator: baseMetadata.generator,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: baseMetadata.openGraph?.locale,
     url: absoluteUrl("/studio"),
     title: `Studio | ${siteConfig.name}`,
-    description: `${siteConfig.name} content studio.`,
+    description: `${siteConfig.name} Content Studio`,
     siteName: baseMetadata.openGraph?.siteName,
     images: baseMetadata.openGraph?.images,
   },

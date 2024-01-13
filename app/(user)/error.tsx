@@ -10,7 +10,11 @@ interface ErrorProps {
 export default function Error({ error }: ErrorProps) {
   return (
     <section className="container flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center">
-      <ErrorComponent name={error.name} message={error.message} />
+      <ErrorComponent
+        name={error.name}
+        message={error.message}
+        className="mb-16"
+      />
     </section>
   )
 }
