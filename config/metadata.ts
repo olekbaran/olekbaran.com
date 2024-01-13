@@ -5,12 +5,12 @@ import { env } from "@/env"
 import { routes } from "./routes"
 import { siteConfig } from "./site"
 
-export const viewportBase: Viewport = {
+export const baseViewport: Viewport = {
   themeColor: "#000000",
   colorScheme: "dark",
 }
 
-export const metadataBase: Metadata = {
+export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
