@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
+    "@sanity/image-url": "1",
+    "@sanity/vision": "3",
     "@t3-oss/env-nextjs": "^0.7.1",
     "@typescript-eslint/parser": "^6.14.0",
     "@vercel/analytics": "^1.1.1",
@@ -33,9 +35,12 @@
     "clsx": "^2.0.0",
     "lucide-react": "^0.298.0",
     "next": "14.0.4",
+    "next-sanity": "7",
     "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "sanity": "3",
+    "styled-components": "6",
     "tailwind-merge": "^2.1.0",
     "zod": "^3.22.4"
   },
