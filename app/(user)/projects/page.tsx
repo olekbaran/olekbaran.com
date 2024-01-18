@@ -11,28 +11,28 @@ const mockedProjects = [
     title: "Genemod 1",
     slug: "genemod-1",
     thumbnail:
-      "https://s3-alpha-sig.figma.com/img/0f63/7ea1/448b1ebb7851ef275a876c1962e99096?Expires=1704672000&Signature=d0zNl-V~YFYKLVtq2fQVS4bWx2gaN54aDD80KEYF5x4FxKwK0lYMRHb7xIcv8cT54efUt1lgoMY1yphSmFHuPgo9D8cSw2UY8DfUAnCd7lKJ1y92ZCB8nPbHfb5P5E4kl4hCAFnw5rlMr9385db7B8gPdrEofj1Z4-fZpNnvHl~6eNob0G5dpW~NylwP5X68MYC44Sp~nCe1UN5hjV8mxak9jkM0U9hNg-xSPcVhne2pIm4kR7UvTDdHGle0sUzwjCy5M3YyQmf65Eliz~c36pmb9INzHFFuR-NJmFCsNkby0Q7~edD4tbtskaLfuCsY3qUZJaFpn45jEd6MYWkkjg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      "https://s3-alpha-sig.figma.com/img/0f63/7ea1/448b1ebb7851ef275a876c1962e99096?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z00OGNj9p39vl2P2KWQXlHJ3dyRljqIKg8ou5A30wmw8A0ZYlSBqn8YFZvoLpR6qtN58JPUmybkoR~7TxjyK0VClwTEDOyK3jG-LU4PRbJTiJ54-cYxQGlkAD4BknJOcebxSKF4kUqMFvKoNRWJc6Kk-S4DJdB9lnfeH0UJRfOs9Js0MdPH2LztcbUbmKjYpaalFdQDn0EzgTYaTOMZ02efQ~ppG3psnA1lV08xiFidYhTe9qk-DViVioKfF4DoJafQXDMF4bA7nj7tNR7JydsPQKxHCDAbBHwszAaibKBmeqTs3ocLU~KlL1ShnxZ0A3PmJlb0wyTndGild7rOx~g__",
     isOpenSourceContribution: false,
   },
   {
     title: "CallerSmart 1",
     slug: "callersmart-1",
     thumbnail:
-      "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1704672000&Signature=dGgw2vmKiAvKwxPem~hEkptH0Zwn06aoZ-OG169ex~pxY4qbRI1QIEQzTCygQeeEyj788P47Q3L5C3xiP7MxzgkITyWHQtlwW6YTHlu1s1wez8r6bCZNx5z63yT91O3ThPd5w00DsqNcwACCEmWMLjsjegCpLlXnvRHmhbIZZ5wFpgYMp7iNvlVHvdi8NOS2vatYje5h3I4LwI1YaAkYtq7gl~d4Lq8HHradBYfXRY4wnYufAHdJrAMTbz9WTpQh374oOOfBq6NeaoN4c0NIl-xLjgBHr~TcNlKtAB6Mk-vCCLzR9IW8vxVV6Y1KKQwVedxVjGYRc50bGWN9LAFGxQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ENF63fcbplW3uBuv5c6xXY1-KsPs-YSynKQiCOUESwPSmcxuanK488KsReJ-PPlHRIBWHe4iqYBUv567vd3QRo0TKzmemgoqkEoXDEJ8bDBQC8o~d8wPe~qLLIThHgWVXyfF2-tO8kLk-Xt5PnLK3xw5evzfvYHaxs5k47a6MLWTQHr3csOSBMTVupBCexbzOneNXdVTeAZDqPVVQlOi2zbFc9wJd56WbeW5kf49maJnyy3yo5QCClHpUjlyPUGCSfevogZAlCM3pe6e2v87yNdag59kpNkSi6mbjsXQDLVsA0cGXhVEZe8b4cwwT3TqGzsMImjkROBQ-fd-2NraRQ__",
     isOpenSourceContribution: false,
   },
   {
     title: "CallerSmart 2",
     slug: "callersmart-2",
     thumbnail:
-      "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1704672000&Signature=dGgw2vmKiAvKwxPem~hEkptH0Zwn06aoZ-OG169ex~pxY4qbRI1QIEQzTCygQeeEyj788P47Q3L5C3xiP7MxzgkITyWHQtlwW6YTHlu1s1wez8r6bCZNx5z63yT91O3ThPd5w00DsqNcwACCEmWMLjsjegCpLlXnvRHmhbIZZ5wFpgYMp7iNvlVHvdi8NOS2vatYje5h3I4LwI1YaAkYtq7gl~d4Lq8HHradBYfXRY4wnYufAHdJrAMTbz9WTpQh374oOOfBq6NeaoN4c0NIl-xLjgBHr~TcNlKtAB6Mk-vCCLzR9IW8vxVV6Y1KKQwVedxVjGYRc50bGWN9LAFGxQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ENF63fcbplW3uBuv5c6xXY1-KsPs-YSynKQiCOUESwPSmcxuanK488KsReJ-PPlHRIBWHe4iqYBUv567vd3QRo0TKzmemgoqkEoXDEJ8bDBQC8o~d8wPe~qLLIThHgWVXyfF2-tO8kLk-Xt5PnLK3xw5evzfvYHaxs5k47a6MLWTQHr3csOSBMTVupBCexbzOneNXdVTeAZDqPVVQlOi2zbFc9wJd56WbeW5kf49maJnyy3yo5QCClHpUjlyPUGCSfevogZAlCM3pe6e2v87yNdag59kpNkSi6mbjsXQDLVsA0cGXhVEZe8b4cwwT3TqGzsMImjkROBQ-fd-2NraRQ__",
     isOpenSourceContribution: true,
   },
   {
     title: "Genemod 2",
     slug: "genemod-2",
     thumbnail:
-      "https://s3-alpha-sig.figma.com/img/0f63/7ea1/448b1ebb7851ef275a876c1962e99096?Expires=1704672000&Signature=d0zNl-V~YFYKLVtq2fQVS4bWx2gaN54aDD80KEYF5x4FxKwK0lYMRHb7xIcv8cT54efUt1lgoMY1yphSmFHuPgo9D8cSw2UY8DfUAnCd7lKJ1y92ZCB8nPbHfb5P5E4kl4hCAFnw5rlMr9385db7B8gPdrEofj1Z4-fZpNnvHl~6eNob0G5dpW~NylwP5X68MYC44Sp~nCe1UN5hjV8mxak9jkM0U9hNg-xSPcVhne2pIm4kR7UvTDdHGle0sUzwjCy5M3YyQmf65Eliz~c36pmb9INzHFFuR-NJmFCsNkby0Q7~edD4tbtskaLfuCsY3qUZJaFpn45jEd6MYWkkjg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      "https://s3-alpha-sig.figma.com/img/0f63/7ea1/448b1ebb7851ef275a876c1962e99096?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z00OGNj9p39vl2P2KWQXlHJ3dyRljqIKg8ou5A30wmw8A0ZYlSBqn8YFZvoLpR6qtN58JPUmybkoR~7TxjyK0VClwTEDOyK3jG-LU4PRbJTiJ54-cYxQGlkAD4BknJOcebxSKF4kUqMFvKoNRWJc6Kk-S4DJdB9lnfeH0UJRfOs9Js0MdPH2LztcbUbmKjYpaalFdQDn0EzgTYaTOMZ02efQ~ppG3psnA1lV08xiFidYhTe9qk-DViVioKfF4DoJafQXDMF4bA7nj7tNR7JydsPQKxHCDAbBHwszAaibKBmeqTs3ocLU~KlL1ShnxZ0A3PmJlb0wyTndGild7rOx~g__",
     isOpenSourceContribution: false,
   },
 ]
