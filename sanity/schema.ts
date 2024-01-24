@@ -1,14 +1,15 @@
 import { type SchemaTypeDefinition } from "sanity"
 
-import { author } from "./schemas/author"
-import { blockContent } from "./schemas/blockContent"
-import { category } from "./schemas/category"
-import { post } from "./schemas/post"
+import { blockContent } from "./schemas/block-content"
+import { company } from "./schemas/company"
+import { project } from "./schemas/project"
+import { technology } from "./schemas/technology"
+import { workExperience } from "./schemas/work-experience"
 
 interface Schema {
   types: SchemaTypeDefinition[]
 }
 
 export const schema: Schema = {
-  types: [post, author, category, blockContent],
+  types: [company, project, technology, workExperience, blockContent],
 }
