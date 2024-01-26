@@ -141,7 +141,6 @@ export const project = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "description",
       media: "mainImage",
     },
   },
