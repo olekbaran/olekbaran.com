@@ -19,7 +19,6 @@ export const company = defineType({
   preview: {
     select: {
       title: "name",
-      subtitle: "website",
     },
   },
 })
