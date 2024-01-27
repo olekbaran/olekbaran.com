@@ -1,13 +1,14 @@
 import { type Metadata } from "next"
 import NextLink from "next/link"
-import { ArrowUpRightIcon, GitPullRequestArrowIcon } from "lucide-react"
+import { GitPullRequestArrowIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
-import { absoluteUrl, formatDate } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/utils"
 import { Badge } from "@/components/badge"
 import { Gallery } from "@/components/gallery"
 import { GoBack } from "@/components/go-back"
-import { Link } from "@/components/link"
+import { ProjectInfo } from "@/components/project-info"
+import { ProjectLink } from "@/components/project-link"
 import { ProjectThumbnail } from "@/components/project-thumbnail"
 import { TechnologyCard } from "@/components/technology-card"
 import { Typography } from "@/components/typography"
@@ -16,31 +17,11 @@ const mockedProject = {
   title: "CallerSmart",
   slug: "callersmart",
   description: "The next big thing in Caller ID lookup technology.",
+  industry: "Telecom",
+  date: "2023-06-01",
   isOpenSourceContribution: true,
-  info: [
-    {
-      type: "industry",
-      label: "Industry",
-      value: "Telecom",
-    },
-    {
-      type: "date",
-      label: "Date",
-      value: "2023-06-01",
-    },
-  ],
-  links: [
-    {
-      type: "repository",
-      label: "Code",
-      url: "",
-    },
-    {
-      type: "demo",
-      label: "Demo",
-      url: "",
-    },
-  ],
+  repository: "https://github.com/olekbaran/callersmart",
+  demo: "https://callersmart.com",
   technologies: ["React", "Next.js", "Tailwind CSS", "shadcn/ui"],
   thumbnail:
     "https://s3-alpha-sig.figma.com/img/4ece/87d8/43acb64cac6383c6ee8299c5319b2cf3?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ENF63fcbplW3uBuv5c6xXY1-KsPs-YSynKQiCOUESwPSmcxuanK488KsReJ-PPlHRIBWHe4iqYBUv567vd3QRo0TKzmemgoqkEoXDEJ8bDBQC8o~d8wPe~qLLIThHgWVXyfF2-tO8kLk-Xt5PnLK3xw5evzfvYHaxs5k47a6MLWTQHr3csOSBMTVupBCexbzOneNXdVTeAZDqPVVQlOi2zbFc9wJd56WbeW5kf49maJnyy3yo5QCClHpUjlyPUGCSfevogZAlCM3pe6e2v87yNdag59kpNkSi6mbjsXQDLVsA0cGXhVEZe8b4cwwT3TqGzsMImjkROBQ-fd-2NraRQ__",
@@ -83,8 +64,6 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectPage() {
-  const demoLink = mockedProject.links.find((link) => link.type === "demo")
-
   return (
     <section className="container flex flex-col gap-16 py-16 md:pb-32">
       <div className="flex flex-col gap-10">
@@ -108,40 +87,29 @@ export default function ProjectPage() {
       </div>
       <div className="flex flex-wrap-reverse items-center justify-between gap-10 border-t border-gray pt-10">
         <ul className="flex flex-wrap items-center gap-10">
-          {Object.values(mockedProject.info).map((info) => {
-            const isValueDate = Boolean(Date.parse(info.value))
-
-            return (
-              <li key={info.type} className="flex flex-col gap-2">
-                <Typography variant="subtitle1" className="text-gray" asChild>
-                  <span>{info.label}:</span>
-                </Typography>
-                <Typography variant="subtitle2" asChild>
-                  <span>
-                    {isValueDate ? formatDate(info.value) : info.value}
-                  </span>
-                </Typography>
-              </li>
-            )
-          })}
+          <li>
+            <ProjectInfo label="Industry" value={mockedProject.industry} />
+          </li>
+          <li>
+            <ProjectInfo label="Date" value={mockedProject.date} />
+          </li>
         </ul>
         <ul className="flex flex-wrap items-center gap-10">
-          {Object.values(mockedProject.links).map((link) => (
-            <li key={link.type}>
-              <Link href={link.url} className="h-10">
-                <div className="flex items-center gap-2">
-                  <Typography variant="h6" className="truncate" asChild>
-                    <span>{link.label}</span>
-                  </Typography>
-                  <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
-                </div>
-              </Link>
-            </li>
-          ))}
+          <li>
+            <ProjectLink label="Code" url={mockedProject.repository} />
+          </li>
+          <li>
+            <ProjectLink label="Demo" url={mockedProject.demo} />
+          </li>
         </ul>
       </div>
-      {demoLink ? (
-        <NextLink href={demoLink.url} target="_blank" rel="noreferrer">
+      {mockedProject.demo ? (
+        <NextLink
+          href={mockedProject.demo}
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-3xl"
+        >
           <ProjectThumbnail
             title={mockedProject.title}
             image={mockedProject.thumbnail}

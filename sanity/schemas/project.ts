@@ -25,63 +25,30 @@ export const project = defineType({
       type: "string",
     }),
     defineField({
+      name: "industry",
+      title: "Industry",
+      type: "string",
+    }),
+    defineField({
+      name: "date",
+      title: "Date",
+      type: "date",
+    }),
+    defineField({
       name: "isOpenSourceContribution",
       title: "Open Source Contribution",
       type: "boolean",
       initialValue: false,
     }),
     defineField({
-      name: "info",
-      title: "Info",
-      type: "array",
-      of: [
-        {
-          name: "infoItem",
-          title: "Info item",
-          type: "object",
-          fields: [
-            {
-              name: "label",
-              title: "Label",
-              type: "string",
-            },
-            {
-              name: "value",
-              title: "Value",
-              type: "string",
-            },
-          ],
-        },
-      ],
+      name: "repository",
+      title: "Repository",
+      type: "url",
     }),
     defineField({
-      name: "links",
-      title: "Links",
-      type: "array",
-      of: [
-        {
-          name: "link",
-          title: "Link",
-          type: "object",
-          fields: [
-            {
-              name: "type",
-              title: "Type",
-              type: "string",
-            },
-            {
-              name: "label",
-              title: "Label",
-              type: "string",
-            },
-            {
-              name: "url",
-              title: "URL",
-              type: "url",
-            },
-          ],
-        },
-      ],
+      name: "demo",
+      title: "Demo",
+      type: "url",
     }),
     defineField({
       name: "technologies",
