@@ -93,7 +93,7 @@ export default function IndexPage() {
           subtitle="Check out the awesome stuff I've been up to lately. I've been working on some exciting projects that I think you'll enjoy."
         />
         <ul className="grid gap-10 md:grid-cols-2">
-          {mockedProjects.map((project) => (
+          {mockedProjects.map((project, index) => (
             <li key={project.slug}>
               <NextLink
                 href={`${routes.projects.pathname}/${project.slug}`}
@@ -103,6 +103,7 @@ export default function IndexPage() {
                   title={project.title}
                   image={project.thumbnail}
                   isOpenSourceContribution={project.isOpenSourceContribution}
+                  isRecentlyAdded={index === 0}
                 />
               </NextLink>
             </li>
