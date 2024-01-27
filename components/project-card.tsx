@@ -33,7 +33,7 @@ export function ProjectCard({
         className="rounded-3xl object-cover transition-transform duration-500 ease-in-out hover:scale-110"
       />
       {(isOpenSourceContribution || isRecentlyAdded) && (
-        <div className="absolute right-0 top-0 flex max-w-full items-center gap-2 p-2">
+        <div className="absolute right-0 top-0 flex max-w-full flex-wrap items-center justify-end gap-2 p-2">
           {isRecentlyAdded && (
             <div className="overflow-hidden">
               <Badge withHoverAnimation className="h-9">
