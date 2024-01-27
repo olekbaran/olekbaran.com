@@ -60,7 +60,7 @@ export default function ProjectsPage() {
         subtitle="Explore what I've been cooking up lately! From techy experiments to creative vibes, this is where all of the projects hang out."
       />
       <ul className="grid gap-10 md:grid-cols-2">
-        {mockedProjects.map((project) => (
+        {mockedProjects.map((project, index) => (
           <li key={project.slug}>
             <Link
               href={`${routes.projects.pathname}/${project.slug}`}
@@ -70,6 +70,7 @@ export default function ProjectsPage() {
                 title={project.title}
                 image={project.thumbnail}
                 isOpenSourceContribution={project.isOpenSourceContribution}
+                isRecentlyAdded={index === 0}
               />
             </Link>
           </li>
