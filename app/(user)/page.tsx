@@ -1,5 +1,4 @@
 import NextLink from "next/link"
-import { SparkleIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
