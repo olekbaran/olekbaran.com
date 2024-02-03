@@ -2,7 +2,7 @@ import { draftMode } from "next/headers"
 
 import { routes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
-import { getSlicedProjects } from "@/sanity/lib/services"
+import { getSlicedProjects, getTechnologies } from "@/sanity/lib/services"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/button"
 import { ContactCard } from "@/components/contact-card"
@@ -11,13 +11,13 @@ import { HeroHeading } from "@/components/hero-heading"
 import { Link } from "@/components/link"
 import { Projects } from "@/components/projects"
 import { ProjectsPreview } from "@/components/projects-preview"
-import { TechnologyCard } from "@/components/technology-card"
+import { TechStack } from "@/components/tech-stack"
+import { TechStackPreview } from "@/components/tech-stack-preview"
 import { Typography } from "@/components/typography"
-
-const mockedTechStack = ["JavaScript", "TypeScript", "React", "Next.js"]
 
 export default async function IndexPage() {
   const initialProjects = await getSlicedProjects(2)
+  const initialTechnologies = await getTechnologies()
 
   return (
     <>
@@ -90,13 +90,11 @@ export default async function IndexPage() {
           title="Tech stack"
           subtitle="Explore the cutting-edge tools powering my projects. My go-to tech stack that I use to create top-notch web applications."
         />
-        <ul className="flex flex-col gap-10">
-          {mockedTechStack.map((technology) => (
-            <li key={technology}>
-              <TechnologyCard name={technology} size="large" />
-            </li>
-          ))}
-        </ul>
+        {draftMode().isEnabled ? (
+          <TechStackPreview initial={initialTechnologies} />
+        ) : (
+          <TechStack technologies={initialTechnologies.data} />
+        )}
       </section>
       <section
         id="contact"
