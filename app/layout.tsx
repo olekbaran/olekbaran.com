@@ -1,5 +1,8 @@
 import { type ReactNode } from "react"
 import { Syne } from "next/font/google"
+import { draftMode } from "next/headers"
+
+import { VisualEditing } from "@/components/visual-editing"
 
 import "@/styles/globals.css"
 
@@ -13,7 +16,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={syne.variable} suppressHydrationWarning>
-        <div className="relative flex min-h-[100dvh] flex-col">{children}</div>
+        <div className="relative flex min-h-[100dvh] flex-col">
+          {children}
+          {draftMode().isEnabled && <VisualEditing />}
+        </div>
       </body>
     </html>
   )

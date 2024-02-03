@@ -16,3 +16,12 @@ export const routes = {
     pathname: "/#contact",
   },
 }
+
+export const adminRoutes = {
+  studio: "/studio",
+}
+
+export const apiRoutes = {
+  draft: "/api/draft",
+  disableDraft: "/api/disable-draft",
+}

@@ -3,6 +3,7 @@ import { metadata as studioMetadata } from "next-sanity/studio/metadata"
 import { viewport as studioViewport } from "next-sanity/studio/viewport"
 
 import { baseMetadata, baseViewport } from "@/config/metadata"
+import { adminRoutes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
 import { absoluteUrl } from "@/lib/utils"
 import { Studio } from "@/components/studio"
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: baseMetadata.openGraph?.locale,
-    url: absoluteUrl("/studio"),
+    url: absoluteUrl(adminRoutes.studio),
     title: `Studio | ${siteConfig.name}`,
     description: `${siteConfig.name} Content Studio`,
     siteName: baseMetadata.openGraph?.siteName,

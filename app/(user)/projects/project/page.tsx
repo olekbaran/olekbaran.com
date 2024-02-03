@@ -122,13 +122,15 @@ export default function ProjectPage() {
           image={mockedProject.thumbnail}
         />
       )}
-      <ul className="mb-10 grid gap-10 md:grid-cols-2">
-        {mockedProject.technologies.map((technology) => (
-          <li key={technology} className="overflow-hidden">
-            <TechnologyCard name={technology} />
-          </li>
-        ))}
-      </ul>
+      {mockedProject.technologies.length > 0 && (
+        <ul className="mb-10 grid gap-10 md:grid-cols-2">
+          {mockedProject.technologies.map((technology) => (
+            <li key={technology} className="overflow-hidden">
+              <TechnologyCard name={technology} />
+            </li>
+          ))}
+        </ul>
+      )}
       {mockedProject.overview.map((block) => (
         <div key={block.heading} className="flex flex-col gap-5">
           <Typography variant="h6" asChild>

@@ -84,59 +84,63 @@ export default function IndexPage() {
           </Link>
         </div>
       </section>
-      <section
-        id="latest-projects"
-        className="container flex flex-col gap-16 py-16 md:py-32"
-      >
-        <Heading
-          title="Latest projects"
-          subtitle="Check out the awesome stuff I've been up to lately. I've been working on some exciting projects that I think you'll enjoy."
-        />
-        <ul className="grid gap-10 md:grid-cols-2">
-          {mockedProjects.map((project, index) => (
-            <li key={project.slug}>
-              <NextLink
-                href={`${routes.projects.pathname}/${project.slug}`}
-                className="rounded-3xl"
-              >
-                <ProjectCard
-                  title={project.title}
-                  image={project.thumbnail}
-                  isOpenSourceContribution={project.isOpenSourceContribution}
-                  isRecentlyAdded={index === 0}
-                />
-              </NextLink>
-            </li>
-          ))}
-        </ul>
-        <Link
-          href={routes.projects.pathname}
-          className={cn(
-            buttonVariants({ variant: "primary" }),
-            "mx-auto block h-14 shrink-0 p-0"
-          )}
+      {mockedProjects.length > 0 && (
+        <section
+          id="latest-projects"
+          className="container flex flex-col gap-16 py-16 md:py-32"
         >
-          <Typography variant="button" className="truncate px-14 py-3">
-            Browse all projects
-          </Typography>
-        </Link>
-      </section>
-      <section
-        id="tech-stack"
-        className="container flex flex-col gap-16 py-16 md:py-32"
-      >
-        <Heading
-          title="Tech stack"
-          subtitle="Explore the cutting-edge tools powering my projects. My go-to tech stack that I use to create top-notch web applications."
-        />
-        <ul className="flex flex-col gap-10">
-          {mockedTechStack.map((technology) => (
-            <li key={technology}>
-              <TechnologyCard name={technology} size="large" />
-            </li>
-          ))}
-        </ul>
-      </section>
+          <Heading
+            title="Latest projects"
+            subtitle="Check out the awesome stuff I've been up to lately. I've been working on some exciting projects that I think you'll enjoy."
+          />
+          <ul className="grid gap-10 md:grid-cols-2">
+            {mockedProjects.map((project, index) => (
+              <li key={project.slug}>
+                <NextLink
+                  href={`${routes.projects.pathname}/${project.slug}`}
+                  className="rounded-3xl"
+                >
+                  <ProjectCard
+                    title={project.title}
+                    image={project.thumbnail}
+                    isOpenSourceContribution={project.isOpenSourceContribution}
+                    isRecentlyAdded={index === 0}
+                  />
+                </NextLink>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href={routes.projects.pathname}
+            className={cn(
+              buttonVariants({ variant: "primary" }),
+              "mx-auto block h-14 shrink-0 p-0"
+            )}
+          >
+            <Typography variant="button" className="truncate px-14 py-3">
+              Browse all projects
+            </Typography>
+          </Link>
+        </section>
+      )}
+      {mockedTechStack.length > 0 && (
+        <section
+          id="tech-stack"
+          className="container flex flex-col gap-16 py-16 md:py-32"
+        >
+          <Heading
+            title="Tech stack"
+            subtitle="Explore the cutting-edge tools powering my projects. My go-to tech stack that I use to create top-notch web applications."
+          />
+          <ul className="flex flex-col gap-10">
+            {mockedTechStack.map((technology) => (
+              <li key={technology}>
+                <TechnologyCard name={technology} size="large" />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <section
         id="contact"
         className="container flex flex-col gap-16 py-16 md:py-32"
