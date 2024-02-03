@@ -95,25 +95,23 @@ export default function AboutPage() {
           </Typography>
         </div>
       </section>
-      {groupedWorkExperience.length > 0 && (
-        <section
-          id="work-experience"
-          className="container flex flex-col gap-16 py-16 md:py-32"
-        >
-          <Heading title="Work experience" />
-          <ul className="flex flex-col gap-16">
-            {groupedWorkExperience.map((job, index) => (
-              <li key={`${job.company}-${index}`}>
-                <ExperienceCard
-                  company={job.company}
-                  positions={job.positions}
-                  companyWebsiteUrl={job.companyWebsiteUrl}
-                />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <section
+        id="work-experience"
+        className="container flex flex-col gap-16 py-16 md:py-32"
+      >
+        <Heading title="Work experience" />
+        <ul className="flex flex-col gap-16">
+          {groupedWorkExperience.map((job, index) => (
+            <li key={`${job.company}-${index}`}>
+              <ExperienceCard
+                company={job.company}
+                positions={job.positions}
+                companyWebsiteUrl={job.companyWebsiteUrl}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   )
 }
