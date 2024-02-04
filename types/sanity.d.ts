@@ -6,37 +6,6 @@ type Base = {
   _updatedAt: string
 }
 
-export interface Company extends Base {
-  name: string
-  website?: string
-}
-
-export interface Project extends Base {
-  title: string
-  slug: Slug
-  description: string
-  industry: string
-  date: string
-  isOpenSourceContribution: boolean
-  repository?: string
-  demo?: string
-  technologies: string[]
-  mainImage: Image
-  images: Image[]
-  overview: Block[]
-}
-
-export interface Technology extends Base {
-  name: string
-}
-
-export interface WorkExperience extends Base {
-  company: Company
-  position: string
-  startDate: string
-  endDate?: string
-}
-
 interface Image {
   _type: "image"
   asset: Reference

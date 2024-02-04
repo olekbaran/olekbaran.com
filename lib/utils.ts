@@ -1,7 +1,6 @@
 import { ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-import { type GroupedWorkExperience, type WorkExperience } from "@/types"
 import { siteConfig } from "@/config/site"
 
 export function cn(...inputs: ClassValue[]) {
@@ -27,19 +26,6 @@ export function formatDate(input: string | number | Date): string {
     month: "short",
     year: "numeric",
   })
-}
-
-export function sortByDate(
-  a: string | number | Date,
-  b: string | number | Date
-) {
-  const aStartDate = new Date(a)
-  const bStartDate = new Date(b)
-
-  if (aStartDate < bStartDate) return 1
-  if (aStartDate > bStartDate) return -1
-
-  return 0
 }
 
 export function calculateYearsOfExperience(workExperience: WorkExperience[]) {
@@ -86,7 +72,7 @@ export function groupWorkExperience(workExperience: WorkExperience[]) {
     (acc: GroupedWorkExperience[], job) => {
       const lastIndex = acc.length - 1
 
-      if (lastIndex >= 0 && acc[lastIndex].company === job.company) {
+      if (lastIndex >= 0 && acc[lastIndex].company.name === job.company.name) {
         acc = [
           ...acc.slice(0, lastIndex),
           {
@@ -97,6 +83,11 @@ export function groupWorkExperience(workExperience: WorkExperience[]) {
                 position: job.position,
                 startDate: job.startDate,
                 endDate: job.endDate,
+                _createdAt: job._createdAt,
+                _id: job._id,
+                _rev: job._rev,
+                _type: job._type,
+                _updatedAt: job._updatedAt,
               },
             ],
           },
@@ -106,12 +97,16 @@ export function groupWorkExperience(workExperience: WorkExperience[]) {
           ...acc,
           {
             company: job.company,
-            companyWebsiteUrl: job.companyWebsiteUrl,
             positions: [
               {
                 position: job.position,
                 startDate: job.startDate,
                 endDate: job.endDate,
+                _createdAt: job._createdAt,
+                _id: job._id,
+                _rev: job._rev,
+                _type: job._type,
+                _updatedAt: job._updatedAt,
               },
             ],
           },

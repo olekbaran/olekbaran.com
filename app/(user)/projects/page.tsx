@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default async function ProjectsPage() {
-  const initial = await getAllProjects()
+  const initialProjects = await getAllProjects()
 
   return (
     <section className="container flex flex-col gap-16 py-16 md:pb-32">
@@ -33,9 +33,9 @@ export default async function ProjectsPage() {
         subtitle="Explore what I've been cooking up lately! From techy experiments to creative vibes, this is where all of the projects hang out."
       />
       {draftMode().isEnabled ? (
-        <ProjectsPreview initial={initial} />
+        <ProjectsPreview initial={initialProjects} />
       ) : (
-        <Projects projects={initial.data} />
+        <Projects projects={initialProjects.data} />
       )}
     </section>
   )

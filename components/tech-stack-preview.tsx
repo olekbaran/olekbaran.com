@@ -1,8 +1,7 @@
 "use client"
 
-import { QueryResponseInitial, useQuery } from "@sanity/react-loader"
+import { useQuery, type QueryResponseInitial } from "@sanity/react-loader"
 
-import { type Technology } from "@/types/sanity"
 import { TECHNOLOGIES_QUERY } from "@/sanity/lib/queries"
 
 import { TechStack } from "./tech-stack"

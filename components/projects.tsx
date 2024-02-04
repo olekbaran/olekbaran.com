@@ -1,6 +1,5 @@
 import Link from "next/link"
 
-import { type Project } from "@/types/sanity"
 import { routes } from "@/config/routes"
 import { urlFor } from "@/sanity/lib/url-for"
 

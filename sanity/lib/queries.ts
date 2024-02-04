@@ -17,3 +17,10 @@ export const TECHNOLOGIES_QUERY = groq`
     ...
   } | order(_createdAt asc)
 `
+
+export const WORK_EXPERIENCE_QUERY = groq`
+  *[_type == "workExperience"] {
+    ...,
+    company->
+  } | order(startDate desc)
+`

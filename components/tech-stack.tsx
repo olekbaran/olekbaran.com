@@ -1,5 +1,3 @@
-import { type Technology } from "@/types/sanity"
-
 import { TechnologyCard } from "./technology-card"
 
 interface TechStackProps {
