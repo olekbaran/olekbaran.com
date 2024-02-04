@@ -31,7 +31,7 @@ export interface Technology extends Base {
 }
 
 export interface WorkExperience extends Base {
-  company: Reference
+  company: Company
   position: string
   startDate: string
   endDate?: string
