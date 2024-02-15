@@ -1,48 +1,15 @@
 import { type Metadata } from "next"
+import { draftMode } from "next/headers"
 
 import { routes } from "@/config/routes"
-import {
-  absoluteUrl,
-  calculateYearsOfExperience,
-  groupWorkExperience,
-  sortByDate,
-} from "@/lib/utils"
-import { ExperienceCard } from "@/components/experience-card"
+import { getWorkExperience } from "@/sanity/lib/services"
+import { absoluteUrl } from "@/lib/utils"
+import { AboutHero } from "@/components/about-hero"
+import { AboutHeroPreview } from "@/components/about-hero-preview"
 import { Heading } from "@/components/heading"
-import { InfoCard } from "@/components/info-card"
-import { Memoji } from "@/components/memoji"
 import { Typography } from "@/components/typography"
-
-const mockedWorkExperience = [
-  {
-    company: "mobitouch",
-    position: "Intern",
-    startDate: "2022-04-01",
-    endDate: "2022-05-01",
-    companyWebsiteUrl: "https://mobitouch.net/",
-  },
-  {
-    company: "mobitouch",
-    position: "Intern",
-    startDate: "2022-07-01",
-    endDate: "2022-09-01",
-    companyWebsiteUrl: "https://mobitouch.net/",
-  },
-  {
-    company: "mobitouch",
-    position: "Intern",
-    startDate: "2023-05-01",
-    endDate: "2023-06-01",
-    companyWebsiteUrl: "https://mobitouch.net/",
-  },
-  {
-    company: "mobitouch",
-    position: "Front-end Developer",
-    startDate: "2023-06-01",
-    endDate: undefined,
-    companyWebsiteUrl: "https://mobitouch.net/",
-  },
-]
+import { WorkExperience } from "@/components/work-experience"
+import { WorkExperiencePreview } from "@/components/work-experience-preview"
 
 export const metadata: Metadata = {
   title: routes.about.title,
@@ -55,30 +22,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function AboutPage() {
-  const workExperience = mockedWorkExperience.sort((a, b) =>
-    sortByDate(a.startDate, b.startDate)
-  )
-  const groupedWorkExperience = groupWorkExperience(workExperience)
-  const yearsOfExperience = calculateYearsOfExperience(workExperience)
+export default async function AboutPage() {
+  const initialWorkExperience = await getWorkExperience()
 
   return (
     <>
       <section className="container flex flex-col gap-16 py-16 md:pb-32">
-        <div className="grid items-center gap-10 md:grid-cols-3 lg:gap-20">
-          <InfoCard
-            title={workExperience[0].company}
-            subtitle={workExperience[0].position}
-            className="md:items-end"
-          />
-          <div className="order-first flex justify-center md:order-none">
-            <Memoji />
-          </div>
-          <InfoCard
-            title={`${yearsOfExperience}+ years`}
-            subtitle="Work experience"
-          />
-        </div>
+        {draftMode().isEnabled ? (
+          <AboutHeroPreview initial={initialWorkExperience} />
+        ) : (
+          <AboutHero workExperience={initialWorkExperience.data} />
+        )}
         <div className="flex flex-col gap-5 md:items-center">
           <Typography variant="h2" className="md:text-center" asChild>
             <h1>Olek Baran</h1>
@@ -100,17 +54,11 @@ export default function AboutPage() {
         className="container flex flex-col gap-16 py-16 md:py-32"
       >
         <Heading title="Work experience" />
-        <ul className="flex flex-col gap-16">
-          {groupedWorkExperience.map((job, index) => (
-            <li key={`${job.company}-${index}`}>
-              <ExperienceCard
-                company={job.company}
-                positions={job.positions}
-                companyWebsiteUrl={job.companyWebsiteUrl}
-              />
-            </li>
-          ))}
-        </ul>
+        {draftMode().isEnabled ? (
+          <WorkExperiencePreview initial={initialWorkExperience} />
+        ) : (
+          <WorkExperience workExperience={initialWorkExperience.data} />
+        )}
       </section>
     </>
   )

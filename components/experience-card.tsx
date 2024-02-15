@@ -1,47 +1,38 @@
 import { ArrowUpRightIcon, SparkleIcon } from "lucide-react"
 
-import { type WorkExperience } from "@/types"
 import { calculateMonthsDifference, formatDate } from "@/lib/utils"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
 
-interface ExperienceCardProps {
-  company: string
-  positions: Omit<WorkExperience, "company" | "companyWebsiteUrl">[]
-  companyWebsiteUrl?: string
-}
+interface ExperienceCardProps extends GroupedWorkExperience {}
 
-export function ExperienceCard({
-  company,
-  positions,
-  companyWebsiteUrl,
-}: ExperienceCardProps) {
+export function ExperienceCard({ company, positions }: ExperienceCardProps) {
   return (
     <div className="flex flex-col gap-10 overflow-hidden border-b border-gray px-5 py-10">
-      {companyWebsiteUrl ? (
+      {company.website ? (
         <Link
-          href={companyWebsiteUrl}
+          href={company.website}
           target="_blank"
           rel="noreferrer"
           className="h-10"
         >
           <div className="flex items-center gap-5">
             <Typography variant="h6" className="truncate" asChild>
-              <span>{company}</span>
+              <span>{company.name}</span>
             </Typography>
             <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
           </div>
         </Link>
       ) : (
         <Typography variant="h6" className="truncate" asChild>
-          <p>{company}</p>
+          <p>{company.name}</p>
         </Typography>
       )}
       <ul className="flex flex-col gap-10 sm:px-5">
         {positions.map((position) => (
           <li
-            key={`${position.position}-${position.startDate}`}
+            key={position._id}
             className="flex items-center justify-between gap-10"
           >
             <div className="flex flex-col gap-1">

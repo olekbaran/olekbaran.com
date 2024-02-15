@@ -1,3 +1,4 @@
+import typography from "@tailwindcss/typography"
 import { type Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
@@ -65,7 +66,7 @@ const config: Config = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [],
+  plugins: [typography],
 }
 
 export default config

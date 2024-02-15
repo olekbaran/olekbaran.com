@@ -1,13 +1,35 @@
-export type WorkExperience = {
-  company: string
+interface Company extends Base {
+  name: string
+  website?: string
+}
+
+interface Project extends Base {
+  title: string
+  slug: Slug
+  description: string
+  industry: string
+  date: string
+  isOpenSourceContribution: boolean
+  repository?: string
+  demo?: string
+  technologies: string[]
+  mainImage: Image
+  images: Image[]
+  overview: Block[]
+}
+
+interface Technology extends Base {
+  name: string
+}
+
+interface WorkExperience extends Base {
+  company: Company
   position: string
   startDate: string
   endDate?: string
-  companyWebsiteUrl?: string
 }
 
-export type GroupedWorkExperience = {
-  company: string
-  companyWebsiteUrl?: string
-  positions: Omit<WorkExperience, "company" | "companyWebsiteUrl">[]
+interface GroupedWorkExperience {
+  company: Company
+  positions: Omit<WorkExperience, "company">[]
 }
