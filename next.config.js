@@ -8,10 +8,6 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
-      {
-        protocol: "https",
-        hostname: "s3-alpha-sig.figma.com",
-      },
     ],
   },
   experimental: {
