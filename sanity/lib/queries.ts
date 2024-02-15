@@ -12,6 +12,12 @@ export const SLICED_PROJECTS_QUERY = groq`
   } | order(date desc) [0...$limit]
 `
 
+export const PROJECT_QUERY = groq`
+  *[_type == "project" && slug.current == $slug] {
+    ...
+  } [0]
+`
+
 export const TECHNOLOGIES_QUERY = groq`
   *[_type == "technology"] {
     ...

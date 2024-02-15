@@ -2,6 +2,7 @@ import { draftMode } from "next/headers"
 
 import {
   ALL_PROJECTS_QUERY,
+  PROJECT_QUERY,
   SLICED_PROJECTS_QUERY,
   TECHNOLOGIES_QUERY,
   WORK_EXPERIENCE_QUERY,
@@ -25,6 +26,20 @@ export async function getSlicedProjects(limit: number) {
     SLICED_PROJECTS_QUERY,
     {
       limit,
+    },
+    {
+      perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+    }
+  )
+
+  return initial
+}
+
+export async function getProject(slug: string) {
+  const initial = await loadQuery<Project>(
+    PROJECT_QUERY,
+    {
+      slug,
     },
     {
       perspective: draftMode().isEnabled ? "previewDrafts" : "published",
