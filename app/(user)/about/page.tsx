@@ -2,14 +2,14 @@ import { type Metadata } from "next"
 import { draftMode } from "next/headers"
 
 import { routes } from "@/config/routes"
+import { WORK_EXPERIENCE_QUERY } from "@/sanity/lib/queries"
 import { getWorkExperience } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
 import { AboutHero } from "@/components/about-hero"
-import { AboutHeroPreview } from "@/components/about-hero-preview"
 import { Heading } from "@/components/heading"
+import { LiveQueryWrapper } from "@/components/live-query-wrapper"
 import { Typography } from "@/components/typography"
 import { WorkExperience } from "@/components/work-experience"
-import { WorkExperiencePreview } from "@/components/work-experience-preview"
 
 export const metadata: Metadata = {
   title: routes.about.title,
@@ -23,16 +23,19 @@ export const metadata: Metadata = {
 }
 
 export default async function AboutPage() {
+  const { isEnabled } = draftMode()
   const initialWorkExperience = await getWorkExperience()
 
   return (
     <>
       <section className="container flex flex-col gap-16 py-16 md:pb-32">
-        {draftMode().isEnabled ? (
-          <AboutHeroPreview initial={initialWorkExperience} />
-        ) : (
+        <LiveQueryWrapper<WorkExperience[]>
+          initial={initialWorkExperience}
+          isEnabled={isEnabled}
+          query={isEnabled ? WORK_EXPERIENCE_QUERY : undefined}
+        >
           <AboutHero workExperience={initialWorkExperience.data} />
-        )}
+        </LiveQueryWrapper>
         <div className="flex flex-col gap-5 md:items-center">
           <Typography variant="h2" className="md:text-center" asChild>
             <h1>Olek Baran</h1>
@@ -54,11 +57,13 @@ export default async function AboutPage() {
         className="container flex flex-col gap-16 py-16 md:py-32"
       >
         <Heading title="Work experience" />
-        {draftMode().isEnabled ? (
-          <WorkExperiencePreview initial={initialWorkExperience} />
-        ) : (
+        <LiveQueryWrapper<WorkExperience[]>
+          initial={initialWorkExperience}
+          isEnabled={isEnabled}
+          query={isEnabled ? WORK_EXPERIENCE_QUERY : undefined}
+        >
           <WorkExperience workExperience={initialWorkExperience.data} />
-        )}
+        </LiveQueryWrapper>
       </section>
     </>
   )

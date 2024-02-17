@@ -2,6 +2,7 @@ import { draftMode } from "next/headers"
 
 import { routes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
+import { SLICED_PROJECTS_QUERY, TECHNOLOGIES_QUERY } from "@/sanity/lib/queries"
 import { getSlicedProjects, getTechnologies } from "@/sanity/lib/services"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/button"
@@ -9,14 +10,16 @@ import { ContactCard } from "@/components/contact-card"
 import { Heading } from "@/components/heading"
 import { HeroHeading } from "@/components/hero-heading"
 import { Link } from "@/components/link"
+import { LiveQueryWrapper } from "@/components/live-query-wrapper"
 import { Projects } from "@/components/projects"
-import { ProjectsPreview } from "@/components/projects-preview"
 import { TechStack } from "@/components/tech-stack"
-import { TechStackPreview } from "@/components/tech-stack-preview"
 import { Typography } from "@/components/typography"
 
 export default async function IndexPage() {
-  const initialProjects = await getSlicedProjects(2)
+  const { isEnabled } = draftMode()
+
+  const projectsLimit = 2
+  const initialProjects = await getSlicedProjects(projectsLimit)
   const initialTechnologies = await getTechnologies()
 
   return (
@@ -65,11 +68,14 @@ export default async function IndexPage() {
           title="Latest projects"
           subtitle="Check out the awesome stuff I've been up to lately. I've been working on some exciting projects that I think you'll enjoy."
         />
-        {draftMode().isEnabled ? (
-          <ProjectsPreview initial={initialProjects} />
-        ) : (
+        <LiveQueryWrapper<Project[]>
+          initial={initialProjects}
+          isEnabled={isEnabled}
+          params={{ limit: projectsLimit }}
+          query={isEnabled ? SLICED_PROJECTS_QUERY : undefined}
+        >
           <Projects projects={initialProjects.data} />
-        )}
+        </LiveQueryWrapper>
         <Link
           href={routes.projects.pathname}
           className={cn(
@@ -90,11 +96,13 @@ export default async function IndexPage() {
           title="Tech stack"
           subtitle="Explore the cutting-edge tools powering my projects. My go-to tech stack that I use to create top-notch web applications."
         />
-        {draftMode().isEnabled ? (
-          <TechStackPreview initial={initialTechnologies} />
-        ) : (
+        <LiveQueryWrapper<Technology[]>
+          initial={initialTechnologies}
+          isEnabled={isEnabled}
+          query={isEnabled ? TECHNOLOGIES_QUERY : undefined}
+        >
           <TechStack technologies={initialTechnologies.data} />
-        )}
+        </LiveQueryWrapper>
       </section>
       <section
         id="contact"
