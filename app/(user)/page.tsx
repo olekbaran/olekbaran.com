@@ -71,7 +71,7 @@ export default async function IndexPage() {
         <LiveQueryWrapper<Project[]>
           initial={initialProjects}
           isEnabled={isEnabled}
-          params={{ limit: projectsLimit }}
+          params={isEnabled ? { limit: projectsLimit } : undefined}
           query={isEnabled ? SLICED_PROJECTS_QUERY : undefined}
         >
           <Projects projects={initialProjects.data} />
