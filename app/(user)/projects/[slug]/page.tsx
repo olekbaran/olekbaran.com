@@ -8,8 +8,8 @@ import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY, PROJECT_QUERY } from "@/sanity/lib/queries"
 import { getProject } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
+import { LiveQueryWrapper } from "@/components/live-query-wrapper"
 import { Project } from "@/components/project"
-import { ProjectPreview } from "@/components/project-preview"
 
 interface ProjectPageProps {
   params: QueryParams
@@ -44,6 +44,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { isEnabled } = draftMode()
   const initialProject = await getProject(params.slug)
 
   if (!initialProject.data) {
@@ -52,9 +53,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <section className="container flex flex-col gap-16 py-16 md:pb-32">
-      {draftMode().isEnabled ? (
-        <ProjectPreview initial={initialProject} params={params} />
-      ) : (
+      <LiveQueryWrapper<Project>
+        initial={initialProject}
+        isEnabled={isEnabled}
+        params={isEnabled ? params : undefined}
+        query={isEnabled ? PROJECT_QUERY : undefined}
+      >
         <Project
           title={initialProject.data.title}
           industry={initialProject.data.industry}
@@ -69,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           images={initialProject.data.images}
           overview={initialProject.data.overview}
         />
-      )}
+      </LiveQueryWrapper>
     </section>
   )
 }
