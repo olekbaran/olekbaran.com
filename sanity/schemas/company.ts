@@ -9,6 +9,7 @@ export const company = defineType({
       name: "name",
       title: "Name",
       type: "string",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "website",
