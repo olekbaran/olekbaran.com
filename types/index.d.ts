@@ -12,9 +12,9 @@ interface Project extends Base {
   isOpenSourceContribution: boolean
   repository?: string
   demo?: string
-  technologies: string[]
+  technologies?: string[]
   mainImage: Image
-  images: Image[]
+  images?: Image[]
   overview: Block[]
 }
 
