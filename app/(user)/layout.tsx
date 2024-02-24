@@ -1,4 +1,3 @@
-import { type ReactNode } from "react"
 import { type Metadata, type Viewport } from "next"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -8,7 +7,7 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
 interface UserLayoutProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export const viewport: Viewport = baseViewport

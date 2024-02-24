@@ -1,7 +1,5 @@
-import { type ReactNode } from "react"
-
 interface TouchTargetProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export function TouchTarget({ children }: TouchTargetProps) {

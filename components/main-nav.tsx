@@ -1,12 +1,10 @@
-import { type HTMLAttributes } from "react"
-
 import { routes } from "@/config/routes"
 import { isSubpath } from "@/lib/utils"
 
 import { Link } from "./link"
 import { Typography } from "./typography"
 
-interface MainNavProps extends HTMLAttributes<HTMLElement> {
+interface MainNavProps extends React.HTMLAttributes<HTMLElement> {
   pathname: string
 }
 

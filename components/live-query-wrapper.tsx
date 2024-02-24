@@ -1,4 +1,3 @@
-import { type ReactNode } from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { type QueryParams } from "@sanity/client"
 import { type QueryResponseInitial } from "@sanity/react-loader"
@@ -10,7 +9,7 @@ interface LiveQueryWrapperProps<T> {
   isEnabled?: boolean
   query?: string
   params?: QueryParams
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export function LiveQueryWrapper<T>({

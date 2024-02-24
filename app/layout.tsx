@@ -1,4 +1,3 @@
-import { type ReactNode } from "react"
 import { Syne } from "next/font/google"
 import { draftMode } from "next/headers"
 
@@ -9,7 +8,7 @@ import "@/styles/globals.css"
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne" })
 
 interface RootLayoutProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
