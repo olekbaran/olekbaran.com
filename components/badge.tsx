@@ -1,4 +1,3 @@
-import { type HTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -17,7 +16,7 @@ const badgeVariants = cva("flex items-center gap-2", {
 
 interface BadgeProps
   extends VariantProps<typeof badgeVariants>,
-    HTMLAttributes<HTMLElement> {
+    React.HTMLAttributes<HTMLElement> {
   withHoverAnimation?: boolean
 }
 

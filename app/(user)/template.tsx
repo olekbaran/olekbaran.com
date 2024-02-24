@@ -1,11 +1,10 @@
 "use client"
 
-import { type ReactNode } from "react"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
 interface TemplateProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export default function Template({ children }: TemplateProps) {

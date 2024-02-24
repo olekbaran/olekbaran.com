@@ -1,11 +1,10 @@
-import { type HTMLAttributes } from "react"
 import { SparkleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
 import { Typography } from "./typography"
 
-interface HeroHeadingProps extends HTMLAttributes<HTMLElement> {}
+interface HeroHeadingProps extends React.HTMLAttributes<HTMLElement> {}
 
 export function HeroHeading({ className, ...props }: HeroHeadingProps) {
   return (

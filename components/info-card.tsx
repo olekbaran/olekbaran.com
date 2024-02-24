@@ -1,10 +1,8 @@
-import { type HTMLAttributes } from "react"
-
 import { cn } from "@/lib/utils"
 
 import { Typography } from "./typography"
 
-interface InfoCardProps extends HTMLAttributes<HTMLElement> {
+interface InfoCardProps extends React.HTMLAttributes<HTMLElement> {
   title: string
   subtitle: string
 }

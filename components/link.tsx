@@ -1,10 +1,12 @@
-import { type AnchorHTMLAttributes } from "react"
 import NextLink, { LinkProps as NextLinkProps } from "next/link"
 
 import { cn } from "@/lib/utils"
 
 interface LinkProps
-  extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof NextLinkProps>,
+  extends Omit<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      keyof NextLinkProps
+    >,
     NextLinkProps {}
 
 export function Link({ children, className, ...props }: LinkProps) {
