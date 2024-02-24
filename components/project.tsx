@@ -21,9 +21,9 @@ interface ProjectProps {
   isOpenSourceContribution: boolean
   repository?: string
   demo?: string
-  technologies: string[]
+  technologies?: string[]
   mainImage: Image
-  images: Image[]
+  images?: Image[]
   overview: Block[]
 }
 
@@ -39,7 +39,7 @@ export function Project({
   images,
   overview,
 }: ProjectProps) {
-  const imagesUrls = images.map((image) => urlFor(image).url())
+  const imagesUrls = images ? images.map((image) => urlFor(image).url()) : []
 
   return (
     <article className="flex flex-col gap-16">
@@ -102,7 +102,7 @@ export function Project({
       ) : (
         <ProjectThumbnail title={title} image={urlFor(mainImage).url()} />
       )}
-      {technologies.length > 0 && (
+      {technologies && technologies.length > 0 && (
         <ul className="mb-10 grid gap-10 md:grid-cols-2">
           {technologies.map((technology) => (
             <li key={technology} className="overflow-hidden">
@@ -114,7 +114,7 @@ export function Project({
       <div className="prose prose-lg max-w-none text-gray md:prose-xl prose-headings:uppercase prose-headings:text-white prose-h2:text-lg md:prose-h2:text-2xl">
         <PortableText value={overview} />
       </div>
-      <Gallery images={imagesUrls} />
+      {imagesUrls.length > 0 && <Gallery images={imagesUrls} />}
     </article>
   )
 }
