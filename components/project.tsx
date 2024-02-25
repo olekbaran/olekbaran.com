@@ -4,7 +4,7 @@ import { GitPullRequestArrowIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 import { urlFor } from "@/sanity/lib/url-for"
-import { cn } from "@/lib/utils"
+import { cn, isOdd } from "@/lib/utils"
 
 import { Badge } from "./badge"
 import { Gallery } from "./gallery"
@@ -40,8 +40,7 @@ export function Project({
   images,
   overview,
 }: ProjectProps) {
-  const isTechnologiesQuantityOdd =
-    technologies && technologies.length % 2 !== 0
+  const isTechnologiesQuantityOdd = technologies && isOdd(technologies.length)
   const imagesUrls = images ? images.map((image) => urlFor(image).url()) : []
 
   return (

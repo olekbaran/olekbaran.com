@@ -11,6 +11,10 @@ export function absoluteUrl(pathname: string) {
   return `${siteConfig.url}${pathname}`
 }
 
+export function isOdd(number: number) {
+  return number % 2 !== 0
+}
+
 export function isSubpath(parentPath: string, childPath: string) {
   const parentSegments = parentPath.split("/")
   const childSegments = childPath.split("/")
