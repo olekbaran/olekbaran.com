@@ -4,6 +4,7 @@ import { GitPullRequestArrowIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 import { urlFor } from "@/sanity/lib/url-for"
+import { cn } from "@/lib/utils"
 
 import { Badge } from "./badge"
 import { Gallery } from "./gallery"
@@ -39,6 +40,8 @@ export function Project({
   images,
   overview,
 }: ProjectProps) {
+  const isTechnologiesQuantityOdd =
+    technologies && technologies.length % 2 !== 0
   const imagesUrls = images ? images.map((image) => urlFor(image).url()) : []
 
   return (
@@ -104,8 +107,16 @@ export function Project({
       )}
       {technologies && technologies.length > 0 && (
         <ul className="mb-10 grid gap-10 md:grid-cols-2">
-          {technologies.map((technology) => (
-            <li key={technology} className="overflow-hidden">
+          {technologies.map((technology, index) => (
+            <li
+              key={technology}
+              className={cn(
+                "overflow-hidden",
+                isTechnologiesQuantityOdd &&
+                  index === technologies.length - 1 &&
+                  "md:col-span-2"
+              )}
+            >
               <TechnologyCard name={technology} />
             </li>
           ))}
