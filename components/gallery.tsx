@@ -1,13 +1,13 @@
 import Image from "next/image"
 
-import { cn } from "@/lib/utils"
+import { cn, isOdd } from "@/lib/utils"
 
 interface GalleryProps {
   images: string[]
 }
 
 export function Gallery({ images }: GalleryProps) {
-  const isQuantityOdd = images.length % 2 !== 0
+  const isQuantityOdd = isOdd(images.length)
 
   return (
     <ul className="grid gap-10 md:grid-cols-2">
