@@ -8,6 +8,7 @@ import { Icon } from "./components/icon"
 import { adminRoutes, apiRoutes } from "./config/routes"
 import { siteConfig } from "./config/site"
 import { apiVersion, dataset, projectId } from "./sanity/env"
+import { locate } from "./sanity/presentation/locate"
 import { schema } from "./sanity/schema"
 
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
     structureTool(),
     visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({
+      locate,
       previewUrl: {
         draftMode: {
           enable: apiRoutes.draft,
