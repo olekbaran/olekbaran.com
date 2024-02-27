@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react"
 import { GitPullRequestArrowIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
-import { urlFor } from "@/sanity/lib/url-for"
+import { urlForImage } from "@/sanity/lib/image"
 import { cn, isOdd } from "@/lib/utils"
 
 import { Badge } from "./badge"
@@ -41,7 +41,7 @@ export function Project({
   overview,
 }: ProjectProps) {
   const isTechnologiesQuantityOdd = technologies && isOdd(technologies.length)
-  const imagesUrls = images ? images.map((image) => urlFor(image).url()) : []
+  const imagesUrls = images ? images.map((image) => urlForImage(image)) : []
 
   return (
     <article className="flex flex-col gap-16">
@@ -97,12 +97,12 @@ export function Project({
         >
           <ProjectThumbnail
             title={title}
-            image={urlFor(mainImage).url()}
+            image={urlForImage(mainImage)}
             hasDemo
           />
         </Link>
       ) : (
-        <ProjectThumbnail title={title} image={urlFor(mainImage).url()} />
+        <ProjectThumbnail title={title} image={urlForImage(mainImage)} />
       )}
       {technologies && technologies.length > 0 && (
         <ul className="mb-10 grid gap-10 md:grid-cols-2">
