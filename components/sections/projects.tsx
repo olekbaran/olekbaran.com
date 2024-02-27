@@ -3,7 +3,7 @@ import Link from "next/link"
 import { routes } from "@/config/routes"
 import { urlForImage } from "@/sanity/lib/image"
 
-import { ProjectCard } from "./project-card"
+import { ProjectCard } from "../cards/project-card"
 
 interface ProjectsProps {
   projects: Project[]

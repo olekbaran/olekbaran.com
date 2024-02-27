@@ -1,7 +1,7 @@
 import { calculateYearsOfExperience } from "@/lib/utils"
 
-import { InfoCard } from "./info-card"
-import { Memoji } from "./memoji"
+import { InfoCard } from "../cards/info-card"
+import { Memoji } from "../common/memoji"
 
 interface AboutHeroProps {
   workExperience: WorkExperience[]

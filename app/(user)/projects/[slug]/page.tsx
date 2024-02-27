@@ -8,8 +8,8 @@ import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY, PROJECT_QUERY } from "@/sanity/lib/queries"
 import { getProject } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
-import { LiveQueryWrapper } from "@/components/live-query-wrapper"
-import { Project } from "@/components/project"
+import { Project } from "@/components/sections/project"
+import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
 
 interface ProjectPageProps {
   params: QueryParams

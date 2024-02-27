@@ -1,6 +1,6 @@
 "use client"
 
-import { Error as ErrorComponent } from "@/components/error"
+import { Error as ErrorComponent } from "@/components/sections/error"
 
 interface ErrorProps {
   error: Error & { digest?: string }

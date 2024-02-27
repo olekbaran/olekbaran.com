@@ -1,4 +1,4 @@
-import { TechnologyCard } from "./technology-card"
+import { TechnologyCard } from "../cards/technology-card"
 
 interface TechStackProps {
   technologies: Technology[]

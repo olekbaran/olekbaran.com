@@ -2,10 +2,10 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
 
-import { Link } from "./link"
+import { SocialLinks } from "../buttons/social-links"
+import { Link } from "../nav/link"
+import { Typography } from "../typography/typography"
 import { Logo } from "./logo"
-import { SocialLinks } from "./social-links"
-import { Typography } from "./typography"
 
 export function Footer() {
   const year = new Date().getFullYear()

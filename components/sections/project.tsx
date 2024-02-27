@@ -6,14 +6,14 @@ import { routes } from "@/config/routes"
 import { urlForImage } from "@/sanity/lib/image"
 import { cn, isOdd } from "@/lib/utils"
 
-import { Badge } from "./badge"
-import { Gallery } from "./gallery"
-import { GoBack } from "./go-back"
-import { ProjectInfo } from "./project-info"
-import { ProjectLink } from "./project-link"
-import { ProjectThumbnail } from "./project-thumbnail"
-import { TechnologyCard } from "./technology-card"
-import { Typography } from "./typography"
+import { TechnologyCard } from "../cards/technology-card"
+import { Badge } from "../common/badge"
+import { Gallery } from "../common/gallery"
+import { GoBack } from "../nav/go-back"
+import { ProjectInfo } from "../project/project-info"
+import { ProjectLink } from "../project/project-link"
+import { ProjectThumbnail } from "../project/project-thumbnail"
+import { Typography } from "../typography/typography"
 
 interface ProjectProps {
   title: string

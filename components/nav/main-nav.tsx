@@ -1,8 +1,8 @@
 import { routes } from "@/config/routes"
 import { isSubpath } from "@/lib/utils"
 
+import { Typography } from "../typography/typography"
 import { Link } from "./link"
-import { Typography } from "./typography"
 
 interface MainNavProps extends React.HTMLAttributes<HTMLElement> {
   pathname: string

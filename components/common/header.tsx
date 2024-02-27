@@ -6,10 +6,10 @@ import { MenuIcon, XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-import { IconButton } from "./icon-button"
+import { IconButton } from "../buttons/icon-button"
+import { MainNav } from "../nav/main-nav"
+import { MobileNav } from "../nav/mobile-nav"
 import { Logo } from "./logo"
-import { MainNav } from "./main-nav"
-import { MobileNav } from "./mobile-nav"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

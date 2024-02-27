@@ -1,7 +1,7 @@
 import { ArrowLeftIcon } from "lucide-react"
 
+import { Typography } from "../typography/typography"
 import { Link } from "./link"
-import { Typography } from "./typography"
 
 interface GoBackProps {
   pageTitle: string

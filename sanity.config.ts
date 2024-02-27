@@ -4,7 +4,7 @@ import { defineConfig } from "sanity"
 import { presentationTool } from "sanity/presentation"
 import { structureTool } from "sanity/structure"
 
-import { Icon } from "./components/icon"
+import { Icon } from "./components/common/icon"
 import { adminRoutes, apiRoutes } from "./config/routes"
 import { siteConfig } from "./config/site"
 import { apiVersion, dataset, projectId } from "./sanity/env"

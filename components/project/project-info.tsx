@@ -1,6 +1,6 @@
 import { formatDate } from "@/lib/utils"
 
-import { Typography } from "./typography"
+import { Typography } from "../typography/typography"
 
 interface ProjectInfoProps {
   label: string
