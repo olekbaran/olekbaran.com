@@ -1,4 +1,4 @@
-import { Error } from "@/components/error"
+import { Error } from "@/components/sections/error"
 
 export default function NotFound() {
   return (

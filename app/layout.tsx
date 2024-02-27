@@ -1,7 +1,7 @@
 import { Syne } from "next/font/google"
 import { draftMode } from "next/headers"
 
-import { VisualEditing } from "@/components/visual-editing"
+import { VisualEditing } from "@/components/studio/visual-editing"
 
 import "@/styles/globals.css"
 

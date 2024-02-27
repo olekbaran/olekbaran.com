@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "lucide-react"
 
-import { Link } from "./link"
-import { Typography } from "./typography"
+import { Link } from "../nav/link"
+import { Typography } from "../typography/typography"
 
 interface ContactCardProps {
   label: string

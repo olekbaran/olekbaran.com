@@ -2,7 +2,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { type QueryParams } from "@sanity/client"
 import { type QueryResponseInitial } from "@sanity/react-loader"
 
-import { LiveQueryData } from "@/components/live-query-data"
+import { LiveQueryData } from "@/components/studio/live-query-data"
 
 interface LiveQueryWrapperProps<T> {
   initial: QueryResponseInitial<T>

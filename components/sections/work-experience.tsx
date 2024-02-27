@@ -1,6 +1,6 @@
 import { groupWorkExperience } from "@/lib/utils"
 
-import { ExperienceCard } from "./experience-card"
+import { ExperienceCard } from "../cards/experience-card"
 
 interface WorkExperienceProps {
   workExperience: WorkExperience[]

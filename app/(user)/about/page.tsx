@@ -5,11 +5,11 @@ import { routes } from "@/config/routes"
 import { WORK_EXPERIENCE_QUERY } from "@/sanity/lib/queries"
 import { getWorkExperience } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
-import { AboutHero } from "@/components/about-hero"
-import { Heading } from "@/components/heading"
-import { LiveQueryWrapper } from "@/components/live-query-wrapper"
-import { Typography } from "@/components/typography"
-import { WorkExperience } from "@/components/work-experience"
+import { AboutHero } from "@/components/sections/about-hero"
+import { WorkExperience } from "@/components/sections/work-experience"
+import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
+import { Heading } from "@/components/typography/heading"
+import { Typography } from "@/components/typography/typography"
 
 export const metadata: Metadata = {
   title: routes.about.title,

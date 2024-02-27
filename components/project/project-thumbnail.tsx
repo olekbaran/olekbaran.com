@@ -3,8 +3,8 @@ import { ArrowUpRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-import { Badge } from "./badge"
-import { Typography } from "./typography"
+import { Badge } from "../common/badge"
+import { Typography } from "../typography/typography"
 
 interface ProjectThumbnailProps {
   title: string

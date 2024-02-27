@@ -5,8 +5,8 @@ import {
   GitPullRequestArrowIcon,
 } from "lucide-react"
 
-import { Badge } from "./badge"
-import { Typography } from "./typography"
+import { Badge } from "../common/badge"
+import { Typography } from "../typography/typography"
 
 interface ProjectCardProps {
   title: string

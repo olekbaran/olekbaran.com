@@ -2,8 +2,8 @@ import { ArrowUpRightIcon, SparkleIcon } from "lucide-react"
 
 import { calculateMonthsDifference, formatDate } from "@/lib/utils"
 
-import { Link } from "./link"
-import { Typography } from "./typography"
+import { Link } from "../nav/link"
+import { Typography } from "../typography/typography"
 
 interface ExperienceCardProps extends GroupedWorkExperience {}
 

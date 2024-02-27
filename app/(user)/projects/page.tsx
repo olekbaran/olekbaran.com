@@ -5,9 +5,9 @@ import { routes } from "@/config/routes"
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries"
 import { getAllProjects } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
-import { Heading } from "@/components/heading"
-import { LiveQueryWrapper } from "@/components/live-query-wrapper"
-import { Projects } from "@/components/projects"
+import { Projects } from "@/components/sections/projects"
+import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
+import { Heading } from "@/components/typography/heading"
 
 export const metadata: Metadata = {
   title: routes.projects.title,

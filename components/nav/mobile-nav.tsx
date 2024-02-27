@@ -4,8 +4,8 @@ import { routes } from "@/config/routes"
 import { cn, isSubpath } from "@/lib/utils"
 import { useLockBody } from "@/hooks/use-lock-body"
 
+import { Typography } from "../typography/typography"
 import { Link } from "./link"
-import { Typography } from "./typography"
 
 interface MobileNavProps {
   pathname: string

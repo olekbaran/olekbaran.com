@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-import { Typography } from "./typography"
+import { Typography } from "../typography/typography"
 
 interface InfoCardProps extends React.HTMLAttributes<HTMLElement> {
   title: string

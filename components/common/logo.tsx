@@ -1,7 +1,7 @@
 import { routes } from "@/config/routes"
 
-import { Link } from "./link"
-import { Typography } from "./typography"
+import { Link } from "../nav/link"
+import { Typography } from "../typography/typography"
 
 export function Logo() {
   return (

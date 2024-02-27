@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 import { routes } from "@/config/routes"
-import { urlFor } from "@/sanity/lib/url-for"
+import { urlForImage } from "@/sanity/lib/image"
 
-import { ProjectCard } from "./project-card"
+import { ProjectCard } from "../cards/project-card"
 
 interface ProjectsProps {
   projects: Project[]
@@ -20,7 +20,7 @@ export function Projects({ projects }: ProjectsProps) {
           >
             <ProjectCard
               title={project.title}
-              image={urlFor(project.mainImage).url()}
+              image={urlForImage(project.mainImage)}
               isOpenSourceContribution={project.isOpenSourceContribution}
               isRecentlyAdded={index === 0}
             />

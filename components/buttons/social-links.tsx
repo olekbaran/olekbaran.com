@@ -3,8 +3,8 @@ import { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
+import { Link } from "../nav/link"
 import { iconButtonVariants } from "./icon-button"
-import { Link } from "./link"
 
 const socialLinks = [
   {

@@ -3,7 +3,7 @@ import { SparkleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-import { Typography } from "./typography"
+import { Typography } from "../typography/typography"
 
 const technologyCardVariants = cva(
   "flex items-center justify-between gap-5 border-b border-gray",
