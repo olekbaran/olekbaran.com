@@ -1,5 +1,6 @@
 import { draftMode } from "next/headers"
 
+import { revalidateTime } from "@/config/site"
 import {
   ALL_PROJECTS_QUERY,
   PROJECT_QUERY,
@@ -15,6 +16,9 @@ export async function getAllProjects() {
     {},
     {
       perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+      next: {
+        revalidate: revalidateTime,
+      },
     }
   )
 
@@ -29,6 +33,9 @@ export async function getSlicedProjects(limit: number) {
     },
     {
       perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+      next: {
+        revalidate: revalidateTime,
+      },
     }
   )
 
@@ -43,6 +50,9 @@ export async function getProject(slug: string) {
     },
     {
       perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+      next: {
+        revalidate: revalidateTime,
+      },
     }
   )
 
@@ -55,6 +65,9 @@ export async function getTechnologies() {
     {},
     {
       perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+      next: {
+        revalidate: revalidateTime,
+      },
     }
   )
 
@@ -67,6 +80,9 @@ export async function getWorkExperience() {
     {},
     {
       perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+      next: {
+        revalidate: revalidateTime,
+      },
     }
   )
 
