@@ -1,6 +1,6 @@
 import { env } from "@/env"
 
-export const revalidateTime = 60 * 60 * 24 * 30 // 30 days
+export const revalidateTime = 60 * 60 * 24 * 365 // 1 year
 
 export const siteConfig = {
   name: "Olek Baran",
