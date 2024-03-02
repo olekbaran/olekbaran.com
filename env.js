@@ -3,7 +3,6 @@ import { z } from "zod"
 
 export const env = createEnv({
   server: {
-    CRON_SECRET: z.string().min(1),
     SANITY_API_READ_TOKEN: z.string().min(1),
     SANITY_REVALIDATE_WEBHOOK_SECRET: z.string().min(1),
   },

@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
