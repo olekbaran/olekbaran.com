@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
       return new Response("Invalid secret", { status: 401 })
     }
 
-    revalidatePath("/")
+    revalidatePath("/", "layout")
 
     return new Response("Successfull revalidation", { status: 200 })
   } catch {

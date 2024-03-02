@@ -24,4 +24,5 @@ export const adminRoutes = {
 export const apiRoutes = {
   draft: "/api/draft",
   disableDraft: "/api/disable-draft",
+  revalidate: "/api/revalidate",
 }
