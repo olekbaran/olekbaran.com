@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
 
     if (body._type === "project" && body.slug) {
       revalidatePath(`${routes.projects.pathname}/${body.slug}`)
+      revalidatePath("/server-sitemap.xml")
     }
 
     return new Response("Successfull revalidation", { status: 200 })
