@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { type QueryParams } from "next-sanity"
 
 import { routes } from "@/config/routes"
+import { revalidateTime } from "@/config/site"
 import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY, PROJECT_QUERY } from "@/sanity/lib/queries"
 import { getProject } from "@/sanity/lib/services"
@@ -18,7 +19,11 @@ interface ProjectPageProps {
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
-  const project = await client.fetch<Project>(PROJECT_QUERY, params)
+  const project = await client.fetch<Project>(PROJECT_QUERY, params, {
+    next: {
+      revalidate: revalidateTime,
+    },
+  })
 
   return {
     title: project.title,
@@ -36,7 +41,15 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const projects = await client.fetch<Project[]>(ALL_PROJECTS_QUERY)
+  const projects = await client.fetch<Project[]>(
+    ALL_PROJECTS_QUERY,
+    {},
+    {
+      next: {
+        revalidate: revalidateTime,
+      },
+    }
+  )
 
   return projects.map((project) => ({
     slug: project.slug.current,
