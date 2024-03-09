@@ -1,6 +1,7 @@
 import { type Metadata } from "next"
 import { draftMode } from "next/headers"
 
+import { baseMetadata } from "@/config/metadata"
 import { routes } from "@/config/routes"
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries"
 import { getAllProjects } from "@/sanity/lib/services"
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: routes.projects.pathname,
   },
   openGraph: {
+    ...baseMetadata.openGraph,
     title: routes.projects.title,
     description:
       "Explore what I've been cooking up lately! From techy experiments to creative vibes, this is where all of the projects hang out.",
