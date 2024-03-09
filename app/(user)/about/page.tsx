@@ -1,6 +1,7 @@
 import { type Metadata } from "next"
 import { draftMode } from "next/headers"
 
+import { baseMetadata } from "@/config/metadata"
 import { routes } from "@/config/routes"
 import { WORK_EXPERIENCE_QUERY } from "@/sanity/lib/queries"
 import { getWorkExperience } from "@/sanity/lib/services"
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     canonical: routes.about.pathname,
   },
   openGraph: {
+    ...baseMetadata.openGraph,
     title: routes.about.title,
     url: absoluteUrl(routes.about.pathname),
   },

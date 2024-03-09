@@ -3,6 +3,7 @@ import { draftMode } from "next/headers"
 import { notFound } from "next/navigation"
 import { type QueryParams } from "next-sanity"
 
+import { baseMetadata } from "@/config/metadata"
 import { routes } from "@/config/routes"
 import { revalidateTime } from "@/config/site"
 import { client } from "@/sanity/lib/client"
@@ -32,6 +33,7 @@ export async function generateMetadata({
       canonical: `${routes.projects.pathname}/${project.slug}`,
     },
     openGraph: {
+      ...baseMetadata.openGraph,
       title: project.title,
       description: project.description,
       type: "article",
