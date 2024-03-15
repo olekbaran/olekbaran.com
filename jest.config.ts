@@ -13,6 +13,14 @@ const config: Config = {
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   coveragePathIgnorePatterns: ["/node_modules/", "/env.js"],
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
 }
 
 export default createJestConfig(config)
