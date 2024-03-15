@@ -25,7 +25,7 @@ export function isSubpath(parentPath: string, childPath: string) {
 }
 
 export function formatDate(input: string | number | Date): string {
-  const date = new Date(input)
+  const date = new Date(typeof input === "number" ? Math.abs(input) : input)
   return date.toLocaleDateString("en-US", {
     month: "short",
     year: "numeric",
