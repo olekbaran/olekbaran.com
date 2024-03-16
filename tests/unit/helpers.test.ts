@@ -4,7 +4,7 @@ import {
   generateCompany,
   generatePosition,
   generateWorkExperience,
-} from "@/lib/tests"
+} from "../helpers"
 
 describe("generateCompany", () => {
   it("should generate a company object with a name property when companyName is not provided", () => {
