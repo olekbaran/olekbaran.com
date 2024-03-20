@@ -1,24 +1,27 @@
+import { SparkleIcon } from "lucide-react"
+
 import { routes } from "@/config/routes"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/buttons/button"
+import { ParallaxHorizontal } from "@/components/common/parallax-horizontal"
 import { Link } from "@/components/nav/link"
-import { HeroHeading } from "@/components/typography/hero-heading"
 import { Typography } from "@/components/typography/typography"
 
 export function Hero() {
   return (
     <section className="flex flex-col gap-40 py-16 md:py-32">
-      <div className="inline-flex flex-nowrap overflow-hidden">
-        <div className="animate-infinite-scroll">
-          <HeroHeading className="mx-10" />
+      <ParallaxHorizontal>
+        <div className="mx-10 flex items-center gap-20">
+          <SparkleIcon className="h-16 w-16 shrink-0 stroke-1" />
+          <Typography variant="h1" className="whitespace-nowrap">
+            Olek Baran
+          </Typography>
+          <SparkleIcon className="h-16 w-16 shrink-0 stroke-1" />
+          <Typography variant="h1" className="whitespace-nowrap">
+            Front-end Developer
+          </Typography>
         </div>
-        <div className="animate-infinite-scroll" aria-hidden>
-          <HeroHeading className="mx-10" />
-        </div>
-        <div className="animate-infinite-scroll" aria-hidden>
-          <HeroHeading className="mx-10" />
-        </div>
-      </div>
+      </ParallaxHorizontal>
       <div className="container flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-20">
         <Typography variant="subtitle1" className="max-w-4xl text-gray" asChild>
           <h2>
