@@ -55,7 +55,7 @@ export function ParallaxHorizontal({
   return (
     <div className="flex flex-nowrap overflow-hidden whitespace-nowrap">
       <motion.div className="flex flex-nowrap whitespace-nowrap" style={{ x }}>
-        <div>{children} </div>
+        <div>{children}</div>
         <div aria-hidden>{children}</div>
         <div aria-hidden>{children}</div>
         <div aria-hidden>{children}</div>
