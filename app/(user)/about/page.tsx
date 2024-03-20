@@ -3,8 +3,8 @@ import { type Metadata } from "next"
 import { baseMetadata } from "@/config/metadata"
 import { routes } from "@/config/routes"
 import { absoluteUrl } from "@/lib/utils"
+import { Hero } from "@/components/sections/about/hero"
 import { WorkExperience } from "@/components/sections/about/work-experience"
-import { Hero } from "@/components/sections/home/hero"
 
 export const metadata: Metadata = {
   title: routes.about.title,
