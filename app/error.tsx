@@ -1,6 +1,6 @@
 "use client"
 
-import { Error as ErrorComponent } from "@/components/sections/error"
+import { Error as ErrorSection } from "@/components/sections/common/error"
 
 interface ErrorProps {
   error: Error & { digest?: string }
@@ -8,9 +8,5 @@ interface ErrorProps {
 }
 
 export default function Error({ error }: ErrorProps) {
-  return (
-    <section className="container flex min-h-[100dvh] flex-col items-center justify-center">
-      <ErrorComponent name={error.name} message={error.message} />
-    </section>
-  )
+  return <ErrorSection name={error.name} message={error.message} />
 }

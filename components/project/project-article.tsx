@@ -15,33 +15,17 @@ import { ProjectLink } from "../project/project-link"
 import { ProjectThumbnail } from "../project/project-thumbnail"
 import { Typography } from "../typography/typography"
 
-interface ProjectProps {
-  title: string
-  industry: string
-  date: string
-  isOpenSourceContribution: boolean
-  repository?: string
-  demo?: string
-  technologies?: string[]
-  mainImage: Image
-  images?: Image[]
-  overview: Block[]
+interface ProjectArticle {
+  project: Project
 }
 
-export function Project({
-  title,
-  industry,
-  date,
-  isOpenSourceContribution,
-  repository,
-  demo,
-  technologies,
-  mainImage,
-  images,
-  overview,
-}: ProjectProps) {
-  const isTechnologiesQuantityOdd = technologies && isOdd(technologies.length)
-  const imagesUrls = images ? images.map((image) => urlForImage(image)) : []
+export function ProjectArticle({ project }: ProjectArticle) {
+  const isTechnologiesQuantityOdd =
+    project.technologies && isOdd(project.technologies.length)
+
+  const imagesUrls = project.images
+    ? project.images.map((image) => urlForImage(image))
+    : []
 
   return (
     <article className="flex flex-col gap-16">
@@ -51,7 +35,7 @@ export function Project({
           pathname={routes.projects.pathname}
         />
         <div className="flex flex-col gap-3">
-          {isOpenSourceContribution && (
+          {project.isOpenSourceContribution && (
             <Badge className="border border-gray bg-black">
               <GitPullRequestArrowIcon className="h-5 w-5 shrink-0 stroke-[1.5px]" />
               <Typography variant="body2" className="truncate">
@@ -60,53 +44,56 @@ export function Project({
             </Badge>
           )}
           <Typography variant="h2" className="truncate" asChild>
-            <h1>{title}</h1>
+            <h1>{project.title}</h1>
           </Typography>
         </div>
       </div>
       <div className="flex flex-wrap-reverse items-center justify-between gap-10 border-t border-gray pt-10">
         <ul className="flex flex-wrap items-center gap-10">
           <li>
-            <ProjectInfo label="Industry" value={industry} />
+            <ProjectInfo label="Industry" value={project.industry} />
           </li>
           <li>
-            <ProjectInfo label="Date" value={date} />
+            <ProjectInfo label="Date" value={project.date} />
           </li>
         </ul>
-        {(repository || demo) && (
+        {(project.repository || project.demo) && (
           <ul className="flex flex-wrap items-center gap-10">
-            {repository && (
+            {project.repository && (
               <li>
-                <ProjectLink label="Code" url={repository} />
+                <ProjectLink label="Code" url={project.repository} />
               </li>
             )}
-            {demo && (
+            {project.demo && (
               <li>
-                <ProjectLink label="Demo" url={demo} />
+                <ProjectLink label="Demo" url={project.demo} />
               </li>
             )}
           </ul>
         )}
       </div>
-      {demo ? (
+      {project.demo ? (
         <Link
-          href={demo}
+          href={project.demo}
           target="_blank"
           rel="noreferrer"
           className="rounded-3xl"
         >
           <ProjectThumbnail
-            title={title}
-            image={urlForImage(mainImage)}
+            title={project.title}
+            image={urlForImage(project.mainImage)}
             hasDemo
           />
         </Link>
       ) : (
-        <ProjectThumbnail title={title} image={urlForImage(mainImage)} />
+        <ProjectThumbnail
+          title={project.title}
+          image={urlForImage(project.mainImage)}
+        />
       )}
-      {technologies && technologies.length > 0 && (
+      {project.technologies && project.technologies.length > 0 && (
         <ul className="mb-10 grid gap-10 md:grid-cols-2">
-          {technologies.map((technology, index) => (
+          {project.technologies.map((technology, index, technologies) => (
             <li
               key={technology}
               className={cn(
@@ -122,7 +109,7 @@ export function Project({
         </ul>
       )}
       <div className="prose prose-lg max-w-none text-gray md:prose-xl prose-headings:uppercase prose-headings:text-white prose-h2:text-lg md:prose-h2:text-2xl">
-        <PortableText value={overview} />
+        <PortableText value={project.overview} />
       </div>
       {imagesUrls.length > 0 && <Gallery images={imagesUrls} />}
     </article>
