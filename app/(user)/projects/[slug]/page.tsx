@@ -10,7 +10,7 @@ import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY, PROJECT_QUERY } from "@/sanity/lib/queries"
 import { getProject } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
-import { Project } from "@/components/sections/project"
+import { ProjectArticle } from "@/components/project/project-article"
 import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
 
 interface ProjectPageProps {
@@ -74,20 +74,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         params={isEnabled ? params : undefined}
         query={isEnabled ? PROJECT_QUERY : undefined}
       >
-        <Project
-          title={initialProject.data.title}
-          industry={initialProject.data.industry}
-          date={initialProject.data.date}
-          isOpenSourceContribution={
-            initialProject.data.isOpenSourceContribution
-          }
-          repository={initialProject.data.repository}
-          demo={initialProject.data.demo}
-          technologies={initialProject.data.technologies}
-          mainImage={initialProject.data.mainImage}
-          images={initialProject.data.images}
-          overview={initialProject.data.overview}
-        />
+        <ProjectArticle project={initialProject.data} />
       </LiveQueryWrapper>
     </section>
   )

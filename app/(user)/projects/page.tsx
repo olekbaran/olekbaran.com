@@ -6,7 +6,7 @@ import { routes } from "@/config/routes"
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries"
 import { getAllProjects } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
-import { Projects } from "@/components/sections/projects"
+import { ProjectsList } from "@/components/project/projects-list"
 import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
 import { Heading } from "@/components/typography/heading"
 
@@ -41,7 +41,7 @@ export default async function ProjectsPage() {
         isEnabled={isEnabled}
         query={isEnabled ? ALL_PROJECTS_QUERY : undefined}
       >
-        <Projects projects={initialProjects.data} />
+        <ProjectsList projects={initialProjects.data} />
       </LiveQueryWrapper>
     </section>
   )

@@ -5,11 +5,11 @@ import { urlForImage } from "@/sanity/lib/image"
 
 import { ProjectCard } from "../cards/project-card"
 
-interface ProjectsProps {
+interface ProjectsListProps {
   projects: Project[]
 }
 
-export function Projects({ projects }: ProjectsProps) {
+export function ProjectsList({ projects }: ProjectsListProps) {
   return (
     <ul className="grid gap-10 md:grid-cols-2">
       {projects.map((project, index) => (
