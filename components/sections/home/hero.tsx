@@ -3,9 +3,9 @@ import { SparkleIcon } from "lucide-react"
 import { routes } from "@/config/routes"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/buttons/button"
-import { ParallaxHorizontal } from "@/components/common/parallax-horizontal"
 import { Link } from "@/components/nav/link"
 import { Typography } from "@/components/typography/typography"
+import { ParallaxHorizontal } from "@/components/utils/parallax-horizontal"
 
 export function Hero() {
   return (
