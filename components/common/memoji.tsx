@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import memojiImage from "../../public/images/memoji.png"
+import memojiImage from "@/public/images/memoji.png"
 
 export function Memoji() {
   return (
