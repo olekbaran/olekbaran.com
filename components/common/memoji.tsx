@@ -1,12 +1,12 @@
 import Image from "next/image"
 
-import memojiImage from "@/public/images/memoji.png"
+import { images } from "@/assets/images"
 
 export function Memoji() {
   return (
     <div className="relative w-fit pt-20">
       <Image
-        src={memojiImage}
+        src={images.memoji}
         alt=""
         quality={100}
         priority
