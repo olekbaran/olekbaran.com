@@ -20,7 +20,7 @@ export function ProjectThumbnail({
   return (
     <div className="relative inline-flex aspect-square w-full overflow-hidden rounded-3xl p-0.5 sm:aspect-video">
       <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,theme(colors.black)_0%,theme(colors.white)_25%,theme(colors.black)_50%,theme(colors.black)_100%)]" />
-      <div className="relative w-full overflow-hidden rounded-[22px]">
+      <div className="relative w-full overflow-hidden rounded-[22px] bg-black">
         <Image
           src={image}
           alt={title}

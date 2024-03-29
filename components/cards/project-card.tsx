@@ -35,7 +35,8 @@ export function ProjectCard({
       )}
       <div
         className={cn(
-          isRecentlyAdded && "relative w-full overflow-hidden rounded-[22px]"
+          isRecentlyAdded &&
+            "relative w-full overflow-hidden rounded-[22px] bg-black"
         )}
       >
         <Image
