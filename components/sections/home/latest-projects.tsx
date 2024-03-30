@@ -17,6 +17,10 @@ export async function LatestProjects() {
   const projectsLimit = 2
   const initialProjects = await getSlicedProjects(projectsLimit)
 
+  if (initialProjects.data.length === 0) {
+    return null
+  }
+
   return (
     <section
       id="latest-projects"

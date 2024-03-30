@@ -11,7 +11,11 @@ import { MainNav } from "../nav/main-nav"
 import { MobileNav } from "../nav/mobile-nav"
 import { Logo } from "./logo"
 
-export function Header() {
+interface HeaderProps {
+  disableProjectsRoute?: boolean
+}
+
+export function Header({ disableProjectsRoute }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
 
@@ -23,7 +27,11 @@ export function Header() {
     <header className="sticky top-0 z-50 flex h-16 w-full flex-col justify-center border-b border-gray/10 bg-black">
       <div className="container z-50 flex h-full w-full items-center justify-between gap-10 bg-black">
         <Logo />
-        <MainNav className="hidden md:block" pathname={pathname} />
+        <MainNav
+          className="hidden md:block"
+          pathname={pathname}
+          disableProjectsRoute={disableProjectsRoute}
+        />
         <IconButton
           label={`${isMenuOpen ? "Close" : "Open"} navigation menu`}
           variant="ghost"
@@ -47,6 +55,7 @@ export function Header() {
         pathname={pathname}
         isOpen={isMenuOpen}
         onLinkClick={toggleMenu}
+        disableProjectsRoute={disableProjectsRoute}
       />
     </header>
   )
