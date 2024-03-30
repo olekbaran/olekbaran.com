@@ -13,10 +13,16 @@ export async function GET() {
     { next: { revalidate: revalidateTime } }
   )
 
+  const projectsRoute = {
+    loc: absoluteUrl(routes.projects.pathname),
+  }
+
   const projectsRoutes = projects.map((project) => ({
     loc: absoluteUrl(`${routes.projects.pathname}/${project.slug.current}`),
     lastmod: new Date(project._updatedAt).toISOString(),
   }))
 
-  return getServerSideSitemap(projectsRoutes)
+  return getServerSideSitemap(
+    projects.length !== 0 ? [projectsRoute, ...projectsRoutes] : []
+  )
 }
