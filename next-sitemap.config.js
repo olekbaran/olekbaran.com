@@ -2,7 +2,7 @@
 const nextSitemapConfig = {
   siteUrl: process.env.NEXT_PUBLIC_APP_URL,
   generateIndexSitemap: false,
-  exclude: ["/server-sitemap.xml", "/projects/*"],
+  exclude: ["/server-sitemap.xml", "/projects"],
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
