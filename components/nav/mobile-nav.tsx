@@ -11,9 +11,15 @@ interface MobileNavProps {
   pathname: string
   isOpen: boolean
   onLinkClick?: () => void
+  disableProjectsRoute?: boolean
 }
 
-export function MobileNav({ pathname, isOpen, onLinkClick }: MobileNavProps) {
+export function MobileNav({
+  pathname,
+  isOpen,
+  onLinkClick,
+  disableProjectsRoute,
+}: MobileNavProps) {
   useLockBody(isOpen)
 
   return (
@@ -24,30 +30,42 @@ export function MobileNav({ pathname, isOpen, onLinkClick }: MobileNavProps) {
       )}
     >
       <ul className="container flex flex-col gap-10">
-        {Object.values(routes).map((route) => (
-          <li key={route.pathname} className="border-b border-gray px-5 pb-10">
-            <Link
-              href={route.pathname}
-              className="h-10 w-full"
-              onClick={onLinkClick}
+        {Object.values(routes).map((route) => {
+          if (
+            disableProjectsRoute &&
+            route.pathname === routes.projects.pathname
+          ) {
+            return null
+          }
+
+          return (
+            <li
+              key={route.pathname}
+              className="border-b border-gray px-5 pb-10"
             >
-              <div className="flex items-center gap-5">
-                <Typography
-                  variant="h6"
-                  className={cn(
-                    "truncate",
-                    isSubpath(route.pathname, pathname)
-                      ? "text-white"
-                      : "text-gray"
-                  )}
-                >
-                  {route.title}
-                </Typography>
-                <ArrowUpRightIcon className="h-8 w-8 shrink-0" />
-              </div>
-            </Link>
-          </li>
-        ))}
+              <Link
+                href={route.pathname}
+                className="h-10 w-full"
+                onClick={onLinkClick}
+              >
+                <div className="flex items-center gap-5">
+                  <Typography
+                    variant="h6"
+                    className={cn(
+                      "truncate",
+                      isSubpath(route.pathname, pathname)
+                        ? "text-white"
+                        : "text-gray"
+                    )}
+                  >
+                    {route.title}
+                  </Typography>
+                  <ArrowUpRightIcon className="h-8 w-8 shrink-0" />
+                </div>
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </nav>
   )
