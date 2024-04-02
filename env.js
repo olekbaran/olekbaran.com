@@ -5,6 +5,7 @@ export const env = createEnv({
   server: {
     SANITY_API_READ_TOKEN: z.string().min(1),
     SANITY_REVALIDATE_WEBHOOK_SECRET: z.string().min(1),
+    CRON_SECRET: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),

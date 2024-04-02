@@ -2,6 +2,7 @@ import { revalidatePath } from "next/cache"
 import { type NextRequest } from "next/server"
 import { parseBody } from "next-sanity/webhook"
 
+import { env } from "@/env"
 import { routes } from "@/config/routes"
 import { revalidateWebhookSecret } from "@/sanity/lib/token"
 
@@ -17,12 +18,11 @@ export async function GET(request: NextRequest) {
       revalidateWebhookSecret
     )
 
-    if (!isValidSignature) {
+    if (
+      !isValidSignature &&
+      request.headers.get("Authorization") !== `Bearer ${env.CRON_SECRET}`
+    ) {
       return new Response("Invalid secret", { status: 401 })
-    }
-
-    if (!body?._type) {
-      return new Response("Bad request", { status: 400 })
     }
 
     Object.values(routes)
@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
         revalidatePath(route.pathname)
       })
 
-    if (body._type === "project" && body.slug) {
+    if (body?._type === "project" && body.slug) {
       revalidatePath(`${routes.projects.pathname}/${body.slug}`)
       revalidatePath("/server-sitemap.xml")
     }
