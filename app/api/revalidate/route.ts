@@ -10,7 +10,7 @@ interface RevalidateWebhookBody {
   slug?: string
 }
 
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     const { body, isValidSignature } = await parseBody<RevalidateWebhookBody>(
       request,
