@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, SparkleIcon } from "lucide-react"
 
-import { calculateMonthsDifference, formatDate } from "@/lib/utils"
+import { calculateDatesDifference, formatDate } from "@/lib/utils"
 
 import { Link } from "../nav/link"
 import { Typography } from "../typography/typography"
@@ -44,11 +44,11 @@ export function ExperienceCard({ company, positions }: ExperienceCardProps) {
                   {formatDate(position.startDate)} -{" "}
                   {position.endDate ? formatDate(position.endDate) : "Present"}{" "}
                   (
-                  {calculateMonthsDifference(
+                  {calculateDatesDifference(
                     position.startDate,
                     position.endDate
-                  )}{" "}
-                  mos)
+                  )}
+                  )
                 </p>
               </Typography>
             </div>
