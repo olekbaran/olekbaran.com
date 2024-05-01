@@ -53,7 +53,7 @@ export function calculateYearsOfExperience(workExperience: WorkExperience[]) {
   return totalExperienceInYears
 }
 
-export function calculateMonthsDifference(
+export function calculateDatesDifference(
   start: string | number | Date,
   end?: string | number | Date
 ) {
@@ -68,7 +68,12 @@ export function calculateMonthsDifference(
     startDate.getMonth() +
     (endDate.getDate() >= startDate.getDate() ? 1 : 0)
 
-  return monthsDifference
+  if (monthsDifference < 12) {
+    return `${monthsDifference} mo${monthsDifference > 1 ? "s" : ""}`
+  }
+
+  const yearsDifference = Math.floor(monthsDifference / 12)
+  return `${yearsDifference} year${yearsDifference > 1 ? "s" : ""}`
 }
 
 export function groupWorkExperience(workExperience: WorkExperience[]) {
