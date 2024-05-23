@@ -55,8 +55,26 @@ export const baseMetadata: Metadata = {
     creator: "@olekbaran",
   },
   icons: {
-    icon: "/icons/favicon.ico",
-    shortcut: "/icons/favicon-16x16.png",
+    icon: [
+      {
+        url: "/icons/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icons/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: [
+      {
+        url: "/icons/favicon-16x16.png",
+        sizes: "16x16",
+      },
+      {
+        url: "/icons/favicon-32x32.png",
+        sizes: "32x32",
+      },
+    ],
     apple: "/icons/apple-touch-icon.png",
     other: [
       {
