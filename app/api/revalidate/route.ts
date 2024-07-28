@@ -22,6 +22,8 @@ export async function GET(request: NextRequest) {
 
     if (
       !isValidSignature &&
+      request.headers.get("sanity-webhook-signature") !==
+        revalidateWebhookSecret &&
       request.headers.get("Authorization") !== `Bearer ${env.CRON_SECRET}`
     ) {
       return new Response("Invalid secret", { status: 401 })
