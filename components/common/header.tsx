@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { MenuIcon, XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useNavStore } from "@/stores/nav-store"
 
 import { IconButton } from "../buttons/icon-button"
 import { MainNav } from "../nav/main-nav"
@@ -19,9 +20,17 @@ export function Header({ disableProjectsRoute }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
 
+  const { isContactSectionActive, setIsContactSectionInactive } = useNavStore(
+    (state) => state
+  )
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
   }
+
+  useEffect(() => {
+    setIsContactSectionInactive()
+  }, [pathname, setIsContactSectionInactive])
 
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full flex-col justify-center border-b border-gray/10 bg-black">
@@ -31,6 +40,7 @@ export function Header({ disableProjectsRoute }: HeaderProps) {
           className="hidden md:block"
           pathname={pathname}
           disableProjectsRoute={disableProjectsRoute}
+          isContactSectionActive={isContactSectionActive}
         />
         <IconButton
           label={`${isMenuOpen ? "Close" : "Open"} navigation menu`}
@@ -56,6 +66,7 @@ export function Header({ disableProjectsRoute }: HeaderProps) {
         isOpen={isMenuOpen}
         onLinkClick={toggleMenu}
         disableProjectsRoute={disableProjectsRoute}
+        isContactSectionActive={isContactSectionActive}
       />
     </header>
   )

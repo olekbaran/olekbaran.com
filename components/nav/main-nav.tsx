@@ -1,5 +1,5 @@
 import { routes } from "@/config/routes"
-import { isSubpath } from "@/lib/utils"
+import { cn, isRouteActive } from "@/lib/utils"
 
 import { Typography } from "../typography/typography"
 import { Link } from "./link"
@@ -7,11 +7,13 @@ import { Link } from "./link"
 interface MainNavProps extends React.HTMLAttributes<HTMLElement> {
   pathname: string
   disableProjectsRoute?: boolean
+  isContactSectionActive?: boolean
 }
 
 export function MainNav({
   pathname,
   disableProjectsRoute,
+  isContactSectionActive,
   ...props
 }: MainNavProps) {
   return (
@@ -30,11 +32,16 @@ export function MainNav({
               <Link href={route.pathname}>
                 <Typography
                   variant="body1"
-                  className={
-                    isSubpath(route.pathname, pathname)
+                  className={cn(
+                    isRouteActive(
+                      pathname,
+                      route.pathname,
+                      isContactSectionActive
+                    )
                       ? "text-white"
-                      : "text-gray"
-                  }
+                      : "text-gray",
+                    "transition-colors duration-500 ease-in-out"
+                  )}
                 >
                   {route.title}
                 </Typography>
