@@ -1,6 +1,7 @@
 import { ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+import { routes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
 
 export function cn(...inputs: ClassValue[]) {
@@ -128,4 +129,23 @@ export function groupWorkExperience(workExperience: WorkExperience[]) {
   )
 
   return groupedWorkExperience
+}
+
+export function isRouteActive(
+  currentPathname: string,
+  routePathname: string,
+  isContactSectionActive = false
+) {
+  if (
+    currentPathname === routes.home.pathname &&
+    routePathname === routes.home.pathname
+  ) {
+    return isContactSectionActive ? false : true
+  }
+
+  if (routePathname === routes.contact.pathname) {
+    return isContactSectionActive
+  }
+
+  return isSubpath(routePathname, currentPathname)
 }
