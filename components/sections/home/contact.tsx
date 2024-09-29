@@ -12,7 +12,7 @@ export function Contact() {
     useNavStore((state) => state)
 
   const { ref } = useInView({
-    threshold: 0.69,
+    threshold: 1,
     onChange: (inView) => {
       if (inView) {
         setIsContactSectionActive()
