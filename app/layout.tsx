@@ -4,6 +4,7 @@ import { draftMode } from "next/headers"
 import { VisualEditing } from "@/components/studio/visual-editing"
 
 import "@/styles/globals.css"
+import "locomotive-scroll/locomotive-scroll.css"
 
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne" })
 
