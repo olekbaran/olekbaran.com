@@ -3,12 +3,15 @@
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
+import { useLocomotiveScroll } from "@/hooks/use-locomotive-scroll"
+
 interface TemplateProps {
   children: React.ReactNode
 }
 
 export default function Template({ children }: TemplateProps) {
   const pathname = usePathname()
+  useLocomotiveScroll()
 
   return (
     <motion.div
