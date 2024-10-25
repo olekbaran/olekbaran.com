@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export function useLocomotiveScroll(lock = true) {
+export function useLocomotiveScroll() {
   useEffect(() => {
     const loadLocomotiveScroll = async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default
@@ -8,5 +8,5 @@ export function useLocomotiveScroll(lock = true) {
     }
 
     loadLocomotiveScroll()
-  }, [lock])
+  }, [])
 }
