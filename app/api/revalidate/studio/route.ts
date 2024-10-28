@@ -2,7 +2,6 @@ import { revalidatePath } from "next/cache"
 import { type NextRequest } from "next/server"
 import { parseBody } from "next-sanity/webhook"
 
-import { env } from "@/env"
 import { routes } from "@/config/routes"
 import { revalidateWebhookSecret } from "@/sanity/lib/token"
 
@@ -13,21 +12,19 @@ interface RevalidateWebhookBody {
 
 export const revalidate = 0
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
     const { body, isValidSignature } = await parseBody<RevalidateWebhookBody>(
       request,
       revalidateWebhookSecret
     )
 
-    const temp = await request.text()
-    console.log(`request.text(): ${temp}`)
-
-    if (
-      !isValidSignature &&
-      request.headers.get("Authorization") !== `Bearer ${env.CRON_SECRET}`
-    ) {
+    if (!isValidSignature) {
       return new Response("Invalid secret", { status: 401 })
+    }
+
+    if (!body?._type) {
+      return new Response("Bad Request", { status: 400 })
     }
 
     Object.values(routes)

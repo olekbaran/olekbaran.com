@@ -28,7 +28,7 @@ export default defineConfig({
       locate,
       previewUrl: {
         draftMode: {
-          enable: apiRoutes.draft,
+          enable: apiRoutes.draft.enable,
         },
       },
     }),

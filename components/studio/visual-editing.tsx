@@ -61,7 +61,7 @@ export function VisualEditing() {
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_VERCEL_ENV !== "preview" && window === parent) {
-      location.href = apiRoutes.disableDraft
+      location.href = apiRoutes.draft.disable
     }
   }, [])
 
