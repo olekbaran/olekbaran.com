@@ -20,7 +20,8 @@ export async function GET(request: NextRequest) {
       revalidateWebhookSecret
     )
 
-    console.log(request, revalidateWebhookSecret, body, isValidSignature)
+    const temp = await request.text()
+    console.log(`request.text(): ${temp}`)
 
     if (
       !isValidSignature &&
