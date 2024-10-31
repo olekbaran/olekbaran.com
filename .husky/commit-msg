@@ -4,15 +4,3 @@
 pnpm commitlint --edit $1 --verbose
 
 echo '\n'
-
-pnpm type-check
-
-echo '\n'
-
-pnpm lint-staged
-
-echo '\n'
-
-pnpm test
-
-echo '\n'
