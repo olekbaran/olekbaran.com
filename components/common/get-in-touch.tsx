@@ -32,7 +32,7 @@ function DuctTapeContent({ className, ...props }: DuctTapeContentProps) {
 
 function GetInTouch() {
   return (
-    <div className="relative overflow-hidden py-[3vw]">
+    <div className="relative overflow-hidden py-[5vw] md:py-[3vw]">
       <Link
         href={routes.contact.pathname}
         className="absolute bottom-auto h-11 w-full rotate-3 scale-110 transform-gpu md:h-[5.5rem] md:scale-105"
