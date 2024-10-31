@@ -5,7 +5,7 @@ pnpm type-check
 
 echo '\n'
 
-pnpm lint-staged
+pnpm lint-staged --allow-empty
 
 echo '\n'
 
