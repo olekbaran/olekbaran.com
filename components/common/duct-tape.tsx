@@ -7,7 +7,7 @@ import { ParallaxHorizontal } from "../utils/parallax-horizontal"
 const ductTapeVariants = cva("w-full", {
   variants: {
     variant: {
-      primary: "bg-white text-black",
+      primary: "bg-black text-white",
       secondary: "bg-blue text-white",
     },
   },

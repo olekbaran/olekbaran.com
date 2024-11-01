@@ -44,7 +44,7 @@ function GetInTouch() {
       </Link>
       <Link
         href={routes.contact.pathname}
-        className="h-11 w-full -rotate-3 scale-110 transform-gpu md:h-[5.5rem] md:scale-105"
+        className="h-12 w-full -rotate-3 scale-110 transform-gpu border-2 border-gray md:h-[5.75rem] md:scale-105"
       >
         <DuctTape>
           <DuctTapeContent />
