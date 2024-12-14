@@ -1,4 +1,4 @@
-import NextLink, { LinkProps as NextLinkProps } from "next/link"
+import NextLink, { type LinkProps as NextLinkProps } from "next/link"
 
 import { cn } from "@/lib/utils"
 

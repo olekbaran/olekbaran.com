@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { enableOverlays, HistoryAdapterNavigate } from "@sanity/overlays"
+import { enableOverlays, type HistoryAdapterNavigate } from "@sanity/overlays"
 import { useLiveMode } from "@sanity/react-loader"
 
 import { apiRoutes } from "@/config/routes"
