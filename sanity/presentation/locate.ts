@@ -3,7 +3,7 @@ import { type DocumentLocationResolver } from "sanity/presentation"
 
 import { routes } from "@/config/routes"
 
-export const locate: DocumentLocationResolver = (params, context) => {
+export const locate: DocumentLocationResolver = function (params, context) {
   if (params.type === "company") {
     return {
       locations: [

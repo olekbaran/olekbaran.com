@@ -8,6 +8,6 @@ const imageBuilder = createImageUrlBuilder({
   dataset,
 })
 
-export const urlForImage = (source: SanityImageSource) => {
+export function urlForImage(source: SanityImageSource) {
   return imageBuilder?.image(source).auto("format").fit("max").url()
 }
