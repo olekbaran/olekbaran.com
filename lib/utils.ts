@@ -33,6 +33,14 @@ export function formatDate(input: string | number | Date): string {
   })
 }
 
+export function formatMonths(months: number) {
+  return `${months} mo${months > 1 ? "s" : ""}`
+}
+
+export function formatYears(years: number) {
+  return `${years} yr${years > 1 ? "s" : ""}`
+}
+
 export function calculateYearsOfExperience(workExperience: WorkExperience[]) {
   const currentDate = new Date()
 
@@ -70,19 +78,17 @@ export function calculateDatesDifference(
     (endDate.getDate() >= startDate.getDate() ? 1 : 0)
 
   if (monthsDifference < 12) {
-    return `${monthsDifference} mo${monthsDifference > 1 ? "s" : ""}`
+    return formatMonths(monthsDifference)
   }
 
   const yearsDifference = Math.floor(monthsDifference / 12)
   const remainingMonths = monthsDifference % 12
 
   if (remainingMonths === 0) {
-    return `${yearsDifference} yr${yearsDifference > 1 ? "s" : ""}`
+    return formatYears(yearsDifference)
   }
 
-  return `${yearsDifference} yr${
-    yearsDifference > 1 ? "s" : ""
-  } ${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`
+  return `${formatYears(yearsDifference)} ${formatMonths(remainingMonths)}`
 }
 
 export function groupWorkExperience(workExperience: WorkExperience[]) {
