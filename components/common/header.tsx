@@ -23,7 +23,7 @@ export function Header({ disableProjectsRoute }: HeaderProps) {
     (state) => state
   )
 
-  const toggleMenu = () => {
+  function toggleMenu() {
     setIsMenuOpen((prev) => !prev)
   }
 

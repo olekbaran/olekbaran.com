@@ -74,7 +74,15 @@ export function calculateDatesDifference(
   }
 
   const yearsDifference = Math.floor(monthsDifference / 12)
-  return `${yearsDifference} year${yearsDifference > 1 ? "s" : ""}`
+  const remainingMonths = monthsDifference % 12
+
+  if (remainingMonths === 0) {
+    return `${yearsDifference} yr${yearsDifference > 1 ? "s" : ""}`
+  }
+
+  return `${yearsDifference} yr${
+    yearsDifference > 1 ? "s" : ""
+  } ${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`
 }
 
 export function groupWorkExperience(workExperience: WorkExperience[]) {
