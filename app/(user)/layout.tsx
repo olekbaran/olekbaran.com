@@ -6,9 +6,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { baseMetadata, baseViewport } from "@/config/metadata"
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries"
 import { getAllProjects } from "@/sanity/lib/services"
+import { ReactLenis } from "@/lib/lenis"
 import { Footer } from "@/components/common/footer"
 import { Header } from "@/components/common/header"
 import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
+
+import "lenis/dist/lenis.css"
 
 interface UserLayoutProps {
   children: React.ReactNode
@@ -23,7 +26,7 @@ export default async function UserLayout({ children }: UserLayoutProps) {
   const initialProjects = await getAllProjects()
 
   return (
-    <>
+    <ReactLenis root>
       <LiveQueryWrapper<Project[]>
         initial={initialProjects}
         isEnabled={isEnabled}
@@ -35,6 +38,6 @@ export default async function UserLayout({ children }: UserLayoutProps) {
       <Footer />
       <Analytics />
       <SpeedInsights />
-    </>
+    </ReactLenis>
   )
 }
