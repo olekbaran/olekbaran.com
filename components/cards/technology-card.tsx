@@ -6,15 +6,20 @@ import { cn } from "@/lib/utils"
 import { Typography } from "../typography/typography"
 
 const technologyCardVariants = cva(
-  "flex items-center justify-between gap-5 border-b border-gray",
+  "flex items-center justify-between gap-5 border-b",
   {
     variants: {
+      variant: {
+        default: "text-gray/20 border-gray/20",
+        hightlighted: "text-white border-gray",
+      },
       size: {
         small: "px-5 py-10",
         large: "px-5 py-10",
       },
     },
     defaultVariants: {
+      variant: "default",
       size: "small",
     },
   }
@@ -25,9 +30,9 @@ interface TechnologyCardProps
   name: string
 }
 
-function TechnologyCard({ name, size }: TechnologyCardProps) {
+function TechnologyCard({ name, variant, size }: TechnologyCardProps) {
   return (
-    <div className={cn(technologyCardVariants({ size }))}>
+    <div className={cn(technologyCardVariants({ variant, size }))}>
       <Typography
         variant={size === "large" ? "h5" : "h6"}
         className="truncate"

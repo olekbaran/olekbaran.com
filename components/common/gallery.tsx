@@ -15,7 +15,7 @@ export function Gallery({ images }: GalleryProps) {
         <li
           key={`${image}-${index}`}
           className={cn(
-            "relative aspect-square overflow-hidden rounded-3xl border border-gray/10",
+            "relative aspect-square overflow-hidden rounded-3xl border border-gray/20",
             isQuantityOdd && index === 0 && "md:col-span-2 md:aspect-video"
           )}
         >

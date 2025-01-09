@@ -18,7 +18,7 @@ export async function TechStack() {
       <Heading
         title="Tech stack"
         subtitle="Explore the cutting-edge tools I use to make awesome web applications."
-        className="lg:sticky lg:top-16 lg:self-start lg:pt-10"
+        className="lg:self-start lg:pt-10"
       />
       <LiveQueryWrapper<Technology[]>
         initial={initialTechnologies}

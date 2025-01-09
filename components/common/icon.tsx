@@ -6,7 +6,7 @@ export function Icon() {
       viewBox="0 0 512 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="rounded border border-gray/10"
+      className="rounded border border-gray/20"
     >
       <rect width="512" height="512" rx="89.825" className="fill-black" />
       <path
