@@ -7,8 +7,8 @@ export default async function IndexPage() {
   return (
     <>
       <Hero />
-      <LatestProjects />
       <TechStack />
+      <LatestProjects />
       <Contact />
     </>
   )
