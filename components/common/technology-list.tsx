@@ -13,7 +13,6 @@ export function TechnologyList({ technologies }: TechnologyListProps) {
 
   // TODO: Set active Index to null if section is not visible
   // TODO: More time to scroll for the edges items
-  // TODO: Fix get in touch tapes on zoom out
   // TODO: Remove blank space on zoom out
   // TODO: Test on multiple devices
 
