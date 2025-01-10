@@ -23,7 +23,7 @@ interface DuctTapeProps
 function DuctTape({ variant, className, children, ...props }: DuctTapeProps) {
   return (
     <div className={cn(ductTapeVariants({ variant }), className)} {...props}>
-      <ParallaxHorizontal>
+      <ParallaxHorizontal baseVelocity={-0.5}>
         <div className="mx-10 flex items-center gap-20">{children}</div>
       </ParallaxHorizontal>
     </div>
