@@ -33,7 +33,7 @@ export function SocialLinks() {
   return (
     <ul className="flex flex-wrap items-center justify-center gap-5 md:gap-10">
       {socialLinks.map((link) => (
-        <li key={link.label} className="rounded-xl border border-gray/10">
+        <li key={link.label} className="rounded-xl border border-gray/20">
           <Link
             href={link.href}
             aria-label={link.label}

@@ -27,7 +27,7 @@ export function MobileNav({
   return (
     <nav
       className={cn(
-        "fixed inset-y-0 w-full -translate-y-full overflow-y-auto border-b border-gray/10 bg-black py-16 transition-transform duration-500 ease-in-out md:hidden",
+        "fixed inset-y-0 w-full -translate-y-full overflow-y-auto border-b border-gray/20 bg-black py-16 transition-transform duration-500 ease-in-out md:hidden",
         isOpen && "top-16 translate-y-0"
       )}
     >
