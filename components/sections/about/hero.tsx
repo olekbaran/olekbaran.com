@@ -39,13 +39,13 @@ export async function Hero() {
           />
         </div>
       </LiveQueryWrapper>
-      <div className="flex flex-col gap-5 md:items-center">
-        <Typography variant="h2" className="md:text-center" asChild>
+      <div className="flex flex-col items-center gap-5">
+        <Typography variant="h2" className="text-center" asChild>
           <h1>Olek Baran</h1>
         </Typography>
         <Typography
           variant="subtitle2"
-          className="max-w-2xl text-gray md:text-center"
+          className="max-w-2xl text-center text-gray"
           asChild
         >
           <h2>
