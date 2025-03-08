@@ -26,7 +26,7 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        "relative aspect-square cursor-pointer overflow-hidden rounded-3xl border border-gray/10",
+        "relative aspect-square cursor-pointer overflow-hidden rounded-3xl border border-gray/20",
         isRecentlyAdded && "inline-flex w-full border-0 p-0.5"
       )}
     >

@@ -40,6 +40,9 @@ function GetInTouch() {
       >
         <DuctTape variant="secondary">
           <DuctTapeContent className="ml-40" />
+          <DuctTapeContent className="ml-40" aria-hidden />
+          <DuctTapeContent className="ml-40" aria-hidden />
+          <DuctTapeContent className="ml-40" aria-hidden />
         </DuctTape>
       </Link>
       <Link
@@ -48,6 +51,9 @@ function GetInTouch() {
       >
         <DuctTape>
           <DuctTapeContent />
+          <DuctTapeContent aria-hidden />
+          <DuctTapeContent aria-hidden />
+          <DuctTapeContent aria-hidden />
         </DuctTape>
       </Link>
     </div>

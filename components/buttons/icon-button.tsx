@@ -7,7 +7,7 @@ import { TouchTarget } from "./touch-target"
 const iconButtonVariants = cva("relative p-2", {
   variants: {
     variant: {
-      outline: "rounded-xl border border-gray/10",
+      outline: "rounded-xl border border-gray/20",
       ghost: "",
     },
   },
