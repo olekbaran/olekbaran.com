@@ -1,12 +1,13 @@
 import { draftMode } from "next/headers"
+import Image from "next/image"
 
 import { WORK_EXPERIENCE_QUERY } from "@/sanity/lib/queries"
 import { getWorkExperience } from "@/sanity/lib/services"
 import { calculateYearsOfExperience } from "@/lib/utils"
 import { InfoCard } from "@/components/cards/info-card"
-import { Memoji } from "@/components/common/memoji"
 import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
 import { Typography } from "@/components/typography/typography"
+import { images } from "@/assets/images"
 
 export async function Hero() {
   const { isEnabled } = draftMode()
@@ -30,7 +31,7 @@ export async function Hero() {
             className="md:items-end"
           />
           <div className="order-first flex justify-center md:order-none">
-            <Memoji />
+            <Image src={images.memoji} alt="" quality={100} priority />
           </div>
           <InfoCard
             title={`${yearsOfExperience}+ years`}
