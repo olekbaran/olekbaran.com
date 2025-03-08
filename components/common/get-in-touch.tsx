@@ -35,10 +35,10 @@ function GetInTouch() {
     <div className="relative overflow-hidden py-[5vw] md:py-[3vw]">
       <Link
         href={routes.contact.pathname}
-        className="anti-aliasing absolute bottom-auto h-11 w-full rotate-3 scale-110 transform-gpu md:h-[5.5rem] md:scale-105"
+        className="anti-aliasing absolute bottom-auto h-11 w-full rotate-3 scale-110 transform-gpu border border-gray md:h-[5.5rem] md:scale-105"
         aria-hidden
       >
-        <DuctTape variant="secondary">
+        <DuctTape>
           <DuctTapeContent className="ml-40" />
           <DuctTapeContent className="ml-40" aria-hidden />
           <DuctTapeContent className="ml-40" aria-hidden />
