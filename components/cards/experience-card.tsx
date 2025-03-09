@@ -41,14 +41,23 @@ export function ExperienceCard({ company, positions }: ExperienceCardProps) {
               </Typography>
               <Typography variant="subtitle2" className="text-gray" asChild>
                 <p>
-                  {formatDate(position.startDate)} -{" "}
-                  {position.endDate ? formatDate(position.endDate) : "Present"}{" "}
-                  (
+                  <time dateTime={position.startDate}>
+                    {formatDate(position.startDate)}
+                  </time>
+                  {" - "}
+                  {position.endDate ? (
+                    <time dateTime={position.endDate}>
+                      {formatDate(position.endDate)}
+                    </time>
+                  ) : (
+                    <span>Present</span>
+                  )}
+                  {" ("}
                   {calculateDatesDifference(
                     position.startDate,
                     position.endDate
                   )}
-                  )
+                  {")"}
                 </p>
               </Typography>
             </div>

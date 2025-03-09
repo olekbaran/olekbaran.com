@@ -16,7 +16,11 @@ export function ProjectInfo({ label, value }: ProjectInfoProps) {
         <span>{label}:</span>
       </Typography>
       <Typography variant="subtitle2" asChild>
-        <span>{isValueDate ? formatDate(value) : value}</span>
+        {isValueDate ? (
+          <time dateTime={value}>{formatDate(value)}</time>
+        ) : (
+          <span>{value}</span>
+        )}
       </Typography>
     </div>
   )
