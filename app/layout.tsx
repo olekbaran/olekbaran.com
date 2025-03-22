@@ -1,7 +1,4 @@
 import { Syne } from "next/font/google"
-import { draftMode } from "next/headers"
-
-import { VisualEditing } from "@/components/studio/visual-editing"
 
 import "@/styles/globals.css"
 
@@ -15,10 +12,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={syne.variable} suppressHydrationWarning>
-        <div className="relative flex min-h-[100dvh] flex-col">
-          {children}
-          {draftMode().isEnabled && <VisualEditing />}
-        </div>
+        <div className="min-h-dvh relative flex flex-col">{children}</div>
       </body>
     </html>
   )

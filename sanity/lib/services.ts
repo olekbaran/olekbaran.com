@@ -1,5 +1,3 @@
-import { draftMode } from "next/headers"
-
 import { revalidateTime } from "@/config/site"
 import {
   ALL_PROJECTS_QUERY,
@@ -11,80 +9,75 @@ import {
 import { loadQuery } from "@/sanity/lib/store"
 
 export async function getAllProjects() {
-  const initial = await loadQuery<Project[]>(
+  const response = await loadQuery<Project[]>(
     ALL_PROJECTS_QUERY,
     {},
     {
-      perspective: draftMode().isEnabled ? "previewDrafts" : "published",
       next: {
         revalidate: revalidateTime,
       },
     }
   )
 
-  return initial
+  return response
 }
 
 export async function getSlicedProjects(limit: number) {
-  const initial = await loadQuery<Project[]>(
+  const response = await loadQuery<Project[]>(
     SLICED_PROJECTS_QUERY,
     {
       limit,
     },
     {
-      perspective: draftMode().isEnabled ? "previewDrafts" : "published",
       next: {
         revalidate: revalidateTime,
       },
     }
   )
 
-  return initial
+  return response
 }
 
 export async function getProject(slug: string) {
-  const initial = await loadQuery<Project>(
+  const response = await loadQuery<Project>(
     PROJECT_QUERY,
     {
       slug,
     },
     {
-      perspective: draftMode().isEnabled ? "previewDrafts" : "published",
       next: {
         revalidate: revalidateTime,
       },
     }
   )
 
-  return initial
+  return response
 }
 
 export async function getTechnologies() {
-  const initial = await loadQuery<Technology[]>(
+  const response = await loadQuery<Technology[]>(
     TECHNOLOGIES_QUERY,
     {},
     {
-      perspective: draftMode().isEnabled ? "previewDrafts" : "published",
       next: {
         revalidate: revalidateTime,
       },
     }
   )
 
-  return initial
+  return response
 }
 
 export async function getWorkExperience() {
-  const initial = await loadQuery<WorkExperience[]>(
+  const response = await loadQuery<WorkExperience[]>(
     WORK_EXPERIENCE_QUERY,
     {},
     {
-      perspective: draftMode().isEnabled ? "previewDrafts" : "published",
       next: {
         revalidate: revalidateTime,
       },
     }
   )
 
-  return initial
+  return response
 }

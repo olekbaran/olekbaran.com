@@ -5,8 +5,8 @@ import { viewport as studioViewport } from "next-sanity/studio/viewport"
 import { baseMetadata, baseViewport } from "@/config/metadata"
 import { adminRoutes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
+import { Studio } from "@/sanity/lib/studio"
 import { absoluteUrl } from "@/lib/utils"
-import { Studio } from "@/components/studio/studio"
 
 export const viewport: Viewport = {
   ...baseViewport,

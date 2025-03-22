@@ -1,5 +1,4 @@
 import { type Metadata } from "next"
-import { draftMode } from "next/headers"
 import { notFound } from "next/navigation"
 import { type QueryParams } from "next-sanity"
 
@@ -11,7 +10,6 @@ import { ALL_PROJECTS_QUERY, PROJECT_QUERY } from "@/sanity/lib/queries"
 import { getProject } from "@/sanity/lib/services"
 import { absoluteUrl } from "@/lib/utils"
 import { ProjectArticle } from "@/components/project/project-article"
-import { LiveQueryWrapper } from "@/components/studio/live-query-wrapper"
 
 interface ProjectPageProps {
   params: QueryParams
@@ -63,23 +61,15 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { isEnabled } = draftMode()
-  const initialProject = await getProject(params.slug)
+  const { data } = await getProject(params.slug)
 
-  if (!initialProject.data) {
+  if (!data) {
     notFound()
   }
 
   return (
     <section className="container flex flex-col gap-16 py-16 md:pb-32">
-      <LiveQueryWrapper<Project>
-        initial={initialProject}
-        isEnabled={isEnabled}
-        params={isEnabled ? params : undefined}
-        query={isEnabled ? PROJECT_QUERY : undefined}
-      >
-        <ProjectArticle project={initialProject.data} />
-      </LiveQueryWrapper>
+      <ProjectArticle project={data} />
     </section>
   )
 }

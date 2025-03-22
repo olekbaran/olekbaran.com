@@ -7,7 +7,7 @@ interface ErrorProps {
 
 export function Error({ name, message }: ErrorProps) {
   return (
-    <section className="container flex min-h-[100dvh] flex-col items-center justify-center">
+    <section className="min-h-dvh container flex flex-col items-center justify-center">
       <div className="flex flex-col items-center gap-5">
         <Typography variant="h4">{name}</Typography>
         <Typography
