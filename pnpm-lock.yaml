@@ -8,6 +8,9 @@ dependencies:
   '@motionone/utils':
     specifier: ^10.17.0
     version: 10.17.0
+  '@nosecone/next':
+    specifier: 1.0.0-beta.4
+    version: 1.0.0-beta.4(next@14.0.4)
   '@portabletext/react':
     specifier: ^3.0.11
     version: 3.0.11(react@18.3.1)
@@ -1944,6 +1947,16 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+
+  /@nosecone/next@1.0.0-beta.4(next@14.0.4):
+    resolution: {integrity: sha512-wjfBQ5T1b4rmWVkc5ATqMrwZOBOilVDIw4SwXNne0nQY2moVw18601xG9D9nTghuvYrPHlYZF9MJf+9lwqcyIA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      next: '>=14'
+    dependencies:
+      next: 14.0.4(@babel/core@7.24.0)(react-dom@18.3.1)(react@18.3.1)
+      nosecone: 1.0.0-beta.4
+    dev: false
 
   /@portabletext/react@3.0.11(react@18.3.1):
     resolution: {integrity: sha512-LATQQRxvP3TlAnFayjYt7kPJcnpAtWH6XHl4RFU31pKb1G6gZlTWTB+chXXAv0uQG6Be7OEdRzCmsz9XFEVNew==}
@@ -7447,6 +7460,11 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /nosecone@1.0.0-beta.4:
+    resolution: {integrity: sha512-itrwEwhoyPAeDqT3TgorqajXU3xLbab3TiCI8PNHTP8dK4vaoSy9M97z6pHqpbjIW7+Sco+pNAvuCELV+AzRGw==}
+    engines: {node: '>=18'}
+    dev: false
 
   /npm-run-path@3.1.0:
     resolution: {integrity: sha512-Dbl4A/VfiVGLgQv29URL9xshU8XDY1GeLy+fsaZ1AA8JDSfjvr5P5+pzRbWqRSBxk6/DW7MIh8lTM/PaGnP2kg==}

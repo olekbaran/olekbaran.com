@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache"
 import { Syne } from "next/font/google"
 
 import "@/styles/globals.css"
@@ -9,6 +10,8 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  noStore()
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={syne.variable} suppressHydrationWarning>
