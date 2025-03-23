@@ -26,6 +26,7 @@
     "pnpm": "^8.12.0"
   },
   "dependencies": {
+    "@bprogress/next": "^3.2.10",
     "@motionone/utils": "^10.17.0",
     "@nosecone/next": "1.0.0-beta.4",
     "@portabletext/react": "^3.0.11",
