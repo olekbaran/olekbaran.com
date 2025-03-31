@@ -4,9 +4,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { baseMetadata, baseViewport } from "@/config/metadata"
 import { getAllProjects } from "@/sanity/lib/services"
-import { ReactLenis } from "@/lib/lenis"
 import { Footer } from "@/components/common/footer"
 import { Header } from "@/components/common/header"
+import { SmoothScroll } from "@/components/utils/smooth-scroll"
 
 import "lenis/dist/lenis.css"
 
@@ -22,12 +22,12 @@ export default async function UserLayout({ children }: UserLayoutProps) {
   const { data } = await getAllProjects()
 
   return (
-    <ReactLenis root>
+    <SmoothScroll root>
       <Header disableProjectsRoute={data.length === 0} />
       <main className="flex-1">{children}</main>
       <Footer />
       <Analytics />
       <SpeedInsights />
-    </ReactLenis>
+    </SmoothScroll>
   )
 }
