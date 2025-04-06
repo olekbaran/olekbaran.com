@@ -12,11 +12,11 @@ export function Hero() {
     <section className="flex flex-col gap-40 py-16 md:py-32">
       <ParallaxHorizontal>
         <div className="mx-10 flex items-center gap-20">
-          <SparkleIcon className="h-16 w-16 shrink-0 stroke-1" />
+          <SparkleIcon className="size-16 shrink-0 stroke-1" />
           <Typography variant="h1" className="whitespace-nowrap">
             Olek Baran
           </Typography>
-          <SparkleIcon className="h-16 w-16 shrink-0 stroke-1" />
+          <SparkleIcon className="size-16 shrink-0 stroke-1" />
           <Typography variant="h1" className="whitespace-nowrap">
             Front-end Developer
           </Typography>

@@ -18,14 +18,14 @@ function DuctTapeContent({ className, ...props }: DuctTapeContentProps) {
       )}
       {...props}
     >
-      <ArrowRightIcon className="h-6 w-6 stroke-[1.5px] md:h-14 md:w-14" />
+      <ArrowRightIcon className="size-6 stroke-[1.5px] md:size-14" />
       <Typography
         variant="h4"
         className="truncate font-extrabold uppercase leading-none"
       >
         Get in touch
       </Typography>
-      <ArrowLeftIcon className="h-6 w-6 stroke-[1.5px] md:h-14 md:w-14" />
+      <ArrowLeftIcon className="size-6 stroke-[1.5px] md:size-14" />
     </div>
   )
 }

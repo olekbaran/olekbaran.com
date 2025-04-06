@@ -15,7 +15,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={syne.variable} suppressHydrationWarning>
-        <div className="relative flex min-h-[100dvh] flex-col">{children}</div>
+        <div className="relative flex min-h-dvh flex-col">{children}</div>
       </body>
     </html>
   )

@@ -65,7 +65,7 @@ export function MobileNav({
                   >
                     {route.title}
                   </Typography>
-                  <ArrowUpRightIcon className="h-8 w-8 shrink-0" />
+                  <ArrowUpRightIcon className="size-8 shrink-0" />
                 </div>
               </Link>
             </li>

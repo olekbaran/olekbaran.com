@@ -37,7 +37,7 @@ export function ProjectArticle({ project }: ProjectArticle) {
         <div className="flex flex-col gap-3">
           {project.isOpenSourceContribution && (
             <Badge className="border border-gray bg-black">
-              <GitPullRequestArrowIcon className="h-5 w-5 shrink-0 stroke-[1.5px]" />
+              <GitPullRequestArrowIcon className="size-5 shrink-0 stroke-[1.5px]" />
               <Typography variant="body2" className="truncate">
                 Open Source Contribution
               </Typography>

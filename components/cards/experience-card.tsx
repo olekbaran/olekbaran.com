@@ -21,7 +21,7 @@ export function ExperienceCard({ company, positions }: ExperienceCardProps) {
             <Typography variant="h6" className="truncate" asChild>
               <span>{company.name}</span>
             </Typography>
-            <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
+            <ArrowUpRightIcon className="size-10 shrink-0" />
           </div>
         </Link>
       ) : (
@@ -61,7 +61,7 @@ export function ExperienceCard({ company, positions }: ExperienceCardProps) {
                 </p>
               </Typography>
             </div>
-            <SparkleIcon className="hidden h-10 w-10 stroke-1 sm:block md:h-12 md:w-12" />
+            <SparkleIcon className="hidden size-10 stroke-1 sm:block md:size-12" />
           </li>
         ))}
       </ul>
