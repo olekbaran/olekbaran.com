@@ -18,7 +18,14 @@ export async function Hero() {
           className="md:items-end"
         />
         <div className="order-first flex justify-center md:order-none">
-          <Image src="/images/memoji.png" alt="" quality={100} priority />
+          <Image
+            src="/images/memoji.png"
+            alt=""
+            width={388}
+            height={455}
+            quality={100}
+            priority
+          />
         </div>
         <InfoCard
           title={`${yearsOfExperience}+ years`}
