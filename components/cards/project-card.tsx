@@ -53,7 +53,7 @@ export function ProjectCard({
             {isRecentlyAdded && (
               <div className="overflow-hidden">
                 <Badge withHoverAnimation className="h-9">
-                  <CalendarCheck2Icon className="h-5 w-5 shrink-0 stroke-[1.5px]" />
+                  <CalendarCheck2Icon className="size-5 shrink-0 stroke-[1.5px]" />
                   <Typography variant="body2" className="truncate">
                     Recently added
                   </Typography>
@@ -63,7 +63,7 @@ export function ProjectCard({
             {isOpenSourceContribution && (
               <div className="overflow-hidden">
                 <Badge withHoverAnimation className="h-9">
-                  <GitPullRequestArrowIcon className="h-5 w-5 shrink-0 stroke-[1.5px]" />
+                  <GitPullRequestArrowIcon className="size-5 shrink-0 stroke-[1.5px]" />
                   <Typography variant="body2" className="truncate">
                     Open Source Contribution
                   </Typography>

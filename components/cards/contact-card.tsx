@@ -21,7 +21,7 @@ export function ContactCard({ label, link }: ContactCardProps) {
           <Typography variant="h6" className="truncate" asChild>
             <span>{label}</span>
           </Typography>
-          <ArrowUpRightIcon className="h-10 w-10 shrink-0" />
+          <ArrowUpRightIcon className="size-10 shrink-0" />
         </div>
       </Link>
     </div>

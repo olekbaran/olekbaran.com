@@ -37,8 +37,8 @@ function TechnologyCard({ name, size }: TechnologyCardProps) {
       </Typography>
       <SparkleIcon
         className={cn(
-          "h-10 w-10 shrink-0 stroke-1",
-          size === "large" && "md:h-14 md:w-14"
+          "size-10 shrink-0 stroke-1",
+          size === "large" && "md:size-14"
         )}
       />
     </div>

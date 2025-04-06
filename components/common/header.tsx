@@ -33,7 +33,7 @@ export function Header({ disableProjectsRoute }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full flex-col justify-center border-b border-gray/20 bg-black">
-      <div className="container z-50 flex h-full w-full items-center justify-between gap-10 bg-black">
+      <div className="container z-50 flex size-full items-center justify-between gap-10 bg-black">
         <Logo />
         <MainNav
           className="hidden md:block"
