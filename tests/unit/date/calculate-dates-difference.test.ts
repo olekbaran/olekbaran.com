@@ -1,4 +1,4 @@
-import { calculateDatesDifference } from "@/lib/utils"
+import { calculateDatesDifference } from "@/lib/date"
 
 describe("calculateDatesDifference", () => {
   it("should return the correct singular number of months between two dates", () => {

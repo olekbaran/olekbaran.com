@@ -1,4 +1,4 @@
-import { formatMonths } from "@/lib/utils"
+import { formatMonths } from "@/lib/date"
 
 describe("formatMonths", () => {
   it("should format single month without plural suffix", () => {

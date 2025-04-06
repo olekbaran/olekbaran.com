@@ -2,7 +2,7 @@ import { type Metadata } from "next"
 
 import { baseMetadata } from "@/config/metadata"
 import { routes } from "@/config/routes"
-import { absoluteUrl } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/nav"
 import { Hero } from "@/components/sections/about/hero"
 import { WorkExperience } from "@/components/sections/about/work-experience"
 

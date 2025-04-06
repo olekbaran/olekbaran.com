@@ -4,7 +4,7 @@ import { routes } from "@/config/routes"
 import { revalidateTime } from "@/config/site"
 import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries"
-import { absoluteUrl } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/nav"
 
 export async function GET() {
   const projects = await client.fetch<Project[]>(

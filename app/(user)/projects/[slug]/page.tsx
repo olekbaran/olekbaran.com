@@ -8,7 +8,7 @@ import { revalidateTime } from "@/config/site"
 import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY, PROJECT_QUERY } from "@/sanity/lib/queries"
 import { getProject } from "@/sanity/lib/services"
-import { absoluteUrl } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/nav"
 import { ProjectArticle } from "@/components/project/project-article"
 
 interface ProjectPageProps {

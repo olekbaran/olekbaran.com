@@ -6,7 +6,7 @@ import { baseMetadata, baseViewport } from "@/config/metadata"
 import { adminRoutes } from "@/config/routes"
 import { siteConfig } from "@/config/site"
 import { Studio } from "@/sanity/lib/studio"
-import { absoluteUrl } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/nav"
 
 export const viewport: Viewport = {
   ...baseViewport,

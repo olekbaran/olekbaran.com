@@ -1,8 +1,7 @@
 "use client"
 
-import { useInView } from "react-intersection-observer"
-
 import { siteConfig } from "@/config/site"
+import { useInView } from "@/hooks/use-in-view"
 import { ContactCard } from "@/components/cards/contact-card"
 import { Heading } from "@/components/typography/heading"
 import { useNavStore } from "@/stores/nav-store"
