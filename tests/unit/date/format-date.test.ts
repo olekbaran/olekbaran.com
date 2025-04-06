@@ -1,4 +1,4 @@
-import { formatDate } from "@/lib/utils"
+import { formatDate } from "@/lib/date"
 
 describe("formatDate", () => {
   it("should return a formatted date string when given a valid input date", () => {

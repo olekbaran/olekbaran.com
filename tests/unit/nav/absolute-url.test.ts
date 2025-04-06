@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site"
-import { absoluteUrl } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/nav"
 
 describe("absoluteUrl", () => {
   it("should return the absolute URL when a valid pathname is provided", () => {

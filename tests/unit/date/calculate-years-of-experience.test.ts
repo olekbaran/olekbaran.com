@@ -1,6 +1,5 @@
-import { calculateYearsOfExperience } from "@/lib/utils"
-
-import { generateWorkExperience } from "../helpers"
+import { calculateYearsOfExperience } from "@/lib/date"
+import { generateWorkExperience } from "@/tests/helpers"
 
 describe("calculateYearsOfExperience", () => {
   it("should calculate the total years of experience correctly when given a valid array of WorkExperience objects", () => {

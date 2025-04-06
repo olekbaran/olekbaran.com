@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, SparkleIcon } from "lucide-react"
 
-import { calculateDatesDifference, formatDate } from "@/lib/utils"
+import { calculateDatesDifference, formatDate } from "@/lib/date"
 
 import { Link } from "../nav/link"
 import { Typography } from "../typography/typography"

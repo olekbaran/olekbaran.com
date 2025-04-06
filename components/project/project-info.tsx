@@ -1,4 +1,4 @@
-import { formatDate } from "@/lib/utils"
+import { formatDate } from "@/lib/date"
 
 import { Typography } from "../typography/typography"
 

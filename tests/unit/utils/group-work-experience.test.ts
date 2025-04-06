@@ -1,6 +1,5 @@
 import { groupWorkExperience } from "@/lib/utils"
-
-import { generateCompany, generatePosition } from "../helpers"
+import { generateCompany, generatePosition } from "@/tests/helpers"
 
 describe("groupWorkExperience", () => {
   it("should correctly group work experience by company name", () => {

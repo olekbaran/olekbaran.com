@@ -1,5 +1,6 @@
 import { routes } from "@/config/routes"
-import { cn, isRouteActive } from "@/lib/utils"
+import { isRouteActive } from "@/lib/nav"
+import { cn } from "@/lib/utils"
 
 import { Typography } from "../typography/typography"
 import { Link } from "./link"

@@ -7,7 +7,7 @@ import { revalidateTime } from "@/config/site"
 import { client } from "@/sanity/lib/client"
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries"
 import { getAllProjects } from "@/sanity/lib/services"
-import { absoluteUrl } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/nav"
 import { ProjectsList } from "@/components/project/projects-list"
 import { Heading } from "@/components/typography/heading"
 

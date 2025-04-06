@@ -1,5 +1,5 @@
 import { routes } from "@/config/routes"
-import { isRouteActive } from "@/lib/utils"
+import { isRouteActive } from "@/lib/nav"
 
 describe("isRouteActive", () => {
   it("should return true when currentPathname and routePathname are both the home route and isContactSectionActive is false", () => {

@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 import { getWorkExperience } from "@/sanity/lib/services"
-import { calculateYearsOfExperience } from "@/lib/utils"
+import { calculateYearsOfExperience } from "@/lib/date"
 import { InfoCard } from "@/components/cards/info-card"
 import { Typography } from "@/components/typography/typography"
 

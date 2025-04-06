@@ -1,7 +1,8 @@
 import { ArrowUpRightIcon } from "lucide-react"
 
 import { routes } from "@/config/routes"
-import { cn, isRouteActive } from "@/lib/utils"
+import { isRouteActive } from "@/lib/nav"
+import { cn } from "@/lib/utils"
 import { useLockBody } from "@/hooks/use-lock-body"
 
 import { Typography } from "../typography/typography"

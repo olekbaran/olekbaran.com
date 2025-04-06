@@ -1,4 +1,4 @@
-import { formatYears } from "@/lib/utils"
+import { formatYears } from "@/lib/date"
 
 describe("formatYears", () => {
   it("should format single year without plural suffix", () => {

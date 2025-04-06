@@ -1,4 +1,4 @@
-import { isSubpath } from "@/lib/utils"
+import { isSubpath } from "@/lib/nav"
 
 describe("isSubpath", () => {
   it("should return true when all segments of childPath match with corresponding segments of parentPath", () => {

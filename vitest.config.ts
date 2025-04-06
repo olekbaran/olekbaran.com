@@ -9,6 +9,17 @@ export default defineConfig(({ mode }) => ({
     environment: "jsdom",
     globals: true,
     watch: false,
+    clearMocks: true,
     env: loadEnv(mode, process.cwd(), ""),
+    coverage: {
+      enabled: true,
+      include: ["lib"],
+      thresholds: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100,
+      },
+    },
   },
 }))
