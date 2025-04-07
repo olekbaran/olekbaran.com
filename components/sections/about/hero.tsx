@@ -4,6 +4,7 @@ import { getWorkExperience } from "@/sanity/lib/services"
 import { calculateYearsOfExperience } from "@/lib/date"
 import { InfoCard } from "@/components/cards/info-card"
 import { Typography } from "@/components/typography/typography"
+import { images } from "@/assets/images"
 
 export async function Hero() {
   const { data } = await getWorkExperience()
@@ -18,14 +19,7 @@ export async function Hero() {
           className="md:items-end"
         />
         <div className="order-first flex justify-center md:order-none">
-          <Image
-            src="/images/memoji.png"
-            alt=""
-            width={388}
-            height={455}
-            quality={100}
-            priority
-          />
+          <Image src={images.memoji} alt="" quality={100} priority />
         </div>
         <InfoCard
           title={`${yearsOfExperience}+ years`}
