@@ -1,4 +1,5 @@
 import { codecovWebpackPlugin } from "@codecov/webpack-plugin"
+import { withVercelToolbar } from "@vercel/toolbar/plugins/next"
 
 import "./env.js"
 
@@ -29,4 +30,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+export default withVercelToolbar()(nextConfig)

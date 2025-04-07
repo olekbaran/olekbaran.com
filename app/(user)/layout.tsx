@@ -1,6 +1,7 @@
 import { type Metadata, type Viewport } from "next"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { VercelToolbar } from "@vercel/toolbar/next"
 
 import { baseMetadata, baseViewport } from "@/config/metadata"
 import { getAllProjects } from "@/sanity/lib/services"
@@ -19,6 +20,8 @@ export const viewport: Viewport = baseViewport
 export const metadata: Metadata = baseMetadata
 
 export default async function UserLayout({ children }: UserLayoutProps) {
+  const shouldInjectToolbar = process.env.NODE_ENV === "development"
+
   const { data } = await getAllProjects()
 
   return (
@@ -28,6 +31,7 @@ export default async function UserLayout({ children }: UserLayoutProps) {
       <Footer />
       <Analytics />
       <SpeedInsights />
+      {shouldInjectToolbar && <VercelToolbar />}
     </SmoothScroll>
   )
 }
