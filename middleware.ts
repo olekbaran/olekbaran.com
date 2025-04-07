@@ -20,11 +20,13 @@ const noseconeConfig: NoseconeOptions = {
       ],
       scriptSrc: [
         ...defaults.contentSecurityPolicy.directives.scriptSrc,
+        "https://vercel.live",
         "https://va.vercel-scripts.com",
         `https://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
       ],
       connectSrc: [
         ...defaults.contentSecurityPolicy.directives.connectSrc,
+        "https://vercel.live",
         "https://va.vercel-scripts.com",
         `https://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
         `wss://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
