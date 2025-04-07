@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   generator: baseMetadata.generator,
   applicationName: baseMetadata.applicationName,
   appleWebApp: baseMetadata.appleWebApp,
+  other: baseMetadata.other,
   openGraph: {
     type: "website",
     locale: baseMetadata.openGraph?.locale,

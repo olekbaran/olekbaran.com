@@ -13,16 +13,20 @@ export async function GET() {
     { next: { revalidate: revalidateTime } }
   )
 
-  const projectsRoute = {
-    loc: absoluteUrl(routes.projects.pathname),
-  }
+  const defaultRoutes = Object.values(routes)
+    .filter((route) => !route.pathname.includes("#"))
+    .filter(
+      (route) =>
+        route.pathname !== routes.projects.pathname || projects.length > 0
+    )
+    .map((route) => ({
+      loc: absoluteUrl(route.pathname),
+    }))
 
   const projectsRoutes = projects.map((project) => ({
     loc: absoluteUrl(`${routes.projects.pathname}/${project.slug.current}`),
     lastmod: new Date(project._updatedAt).toISOString(),
   }))
 
-  return getServerSideSitemap(
-    projects.length !== 0 ? [projectsRoute, ...projectsRoutes] : []
-  )
+  return getServerSideSitemap([...defaultRoutes, ...projectsRoutes])
 }
