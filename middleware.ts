@@ -15,6 +15,8 @@ const noseconeConfig: NoseconeOptions = {
       ...defaults.contentSecurityPolicy.directives,
       imgSrc: [
         ...defaults.contentSecurityPolicy.directives.imgSrc,
+        "https://vercel.com",
+        "https://vercel.live",
         "https://cdn.sanity.io",
         "https://avatars.githubusercontent.com",
       ],
@@ -30,6 +32,16 @@ const noseconeConfig: NoseconeOptions = {
         "https://va.vercel-scripts.com",
         `https://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
         `wss://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
+        "wss://ws-us3.pusher.com",
+      ],
+      styleSrc: [
+        ...defaults.contentSecurityPolicy.directives.styleSrc,
+        "https://vercel.live",
+      ],
+      fontSrc: [
+        ...defaults.contentSecurityPolicy.directives.fontSrc,
+        "https://vercel.live",
+        "https://assets.vercel.com",
       ],
       frameSrc: ["https://vercel.live"],
     },
