@@ -31,6 +31,7 @@ const noseconeConfig: NoseconeOptions = {
         `https://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
         `wss://${env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io`,
       ],
+      frameSrc: ["https://vercel.live"],
     },
   },
   crossOriginEmbedderPolicy: {
