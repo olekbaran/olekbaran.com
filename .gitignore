@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+test-report.junit.xml
 
 # next.js
 /.next/

@@ -14,6 +14,7 @@
     "start": "next start",
     "test": "vitest",
     "test:watch": "vitest --watch",
+    "test:ci": "vitest --reporter=junit --outputFile=test-report.junit.xml",
     "lint": "next lint",
     "type-check": "tsc --pretty --noEmit",
     "format-check": "prettier --check .",
