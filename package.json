@@ -47,7 +47,7 @@
     "framer-motion": "^11.0.5",
     "lenis": "^1.1.19",
     "lucide-react": "^0.298.0",
-    "next": "14.2.35",
+    "next": "15.5.21",
     "next-sanity": "^7.0.10",
     "next-sitemap": "^4.2.3",
     "react": "^18.3.1",
@@ -82,13 +82,13 @@
     "husky": "^8.0.3",
     "jsdom": "^26.0.0",
     "lint-staged": "^15.2.0",
-    "postcss": "^8.4.32",
+    "postcss": "^8.5.23",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.3.3",
-    "vite": "^6.4.1",
+    "vite": "^6.4.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.1.1"
+    "vitest": "^3.2.6"
   }
 }
